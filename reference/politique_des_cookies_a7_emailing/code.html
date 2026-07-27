@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Politique des Cookies | A7 Emailing</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#2b1700",
+                        "tertiary": "#202000",
+                        "surface-bright": "#fff7fb",
+                        "on-tertiary-fixed": "#1d1d00",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#cfc3ce",
+                        "on-tertiary-fixed-variant": "#494911",
+                        "secondary-fixed-dim": "#ffb961",
+                        "primary-container": "#4a235a",
+                        "outline": "#7e747e",
+                        "surface-container-high": "#eee6eb",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#865300",
+                        "surface-container-highest": "#e9e0e6",
+                        "primary-fixed": "#f8d8ff",
+                        "deep-purple": "#2E1537",
+                        "background": "#fff7fb",
+                        "tertiary-container": "#353600",
+                        "inverse-surface": "#332f33",
+                        "primary": "#330b43",
+                        "vibrant-orange": "#E67E22",
+                        "surface": "#fff7fb",
+                        "surface-container-low": "#faf1f7",
+                        "surface-gray": "#F8F9FA",
+                        "on-primary-fixed": "#2f0740",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1e1a1e",
+                        "primary-fixed-dim": "#e7b5f7",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e9e0e6",
+                        "on-background": "#1e1a1e",
+                        "tertiary-fixed-dim": "#cbca84",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#e7b5f7",
+                        "border-subtle": "#E9ECEF",
+                        "surface-tint": "#784e88",
+                        "inverse-on-surface": "#f7eef4",
+                        "on-primary-container": "#ba8bca",
+                        "text-muted": "#636E72",
+                        "surface-dim": "#e0d8dd",
+                        "secondary-fixed": "#ffddb9",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#e7e69e",
+                        "text-main": "#2D3436",
+                        "on-secondary-fixed-variant": "#663e00",
+                        "surface-container": "#f4ebf1",
+                        "on-secondary-container": "#694000",
+                        "on-surface-variant": "#4c444d",
+                        "on-tertiary-container": "#a0a05e",
+                        "on-primary-fixed-variant": "#5f366f",
+                        "secondary-container": "#fea520"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "container-max": "1200px",
+                        "stack-sm": "8px",
+                        "stack-lg": "64px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "stack-md": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-link {
+            border-bottom: 2px solid #330b43;
+            color: #330b43;
+            font-weight: 700;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .custom-shadow {
+            box-shadow: 0 4px 12px rgba(46, 21, 55, 0.06);
+        }
+        .custom-shadow-hover:hover {
+            box-shadow: 0 8px 20px rgba(46, 21, 55, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-surface dark:bg-surface-container-lowest shadow-sm transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop py-4">
+<div class="flex items-center gap-4">
+<img alt="A7 Emailing Logo" class="h-10" src="https://lh3.googleusercontent.com/aida/AP1WRLs7gRxfJp-NeZ22HSgV6eFmQPxLJuhMZs2GCMVSh7mXaOHYxX6Rjm5CgYsnPwcyS6IUpn9RHjLcbUGYaAV3jL8olygsSyjs5fsg5xaUt-_lyHc8X4u48nqTz5WIMrR7wnJTbtI4PZEDPh-_SKUP3oJQ4Ftb6ryvpd_4z83wHWLTLIT7UqTVDw3b0qr2alRMdXo-GoWqZLOw0cEdluXo8T17lJN0w4kMAckH_TY7MHHVOPKywMk0nEprzGWe"/>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">E-commerce</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Monetization</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Architecture</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Entreprise</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Automation &amp; IA</a>
+</nav>
+<div>
+<button class="bg-deep-purple text-on-primary px-6 py-2 rounded-lg font-body-md hover:bg-primary transition-all duration-300">Free Trial</button>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-stack-lg">
+<!-- Hero Section -->
+<section class="mb-stack-lg text-center md:text-left">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high rounded-full mb-stack-md">
+<span class="material-symbols-outlined text-primary text-[18px]">cookie</span>
+<span class="text-label-sm font-label-sm text-primary uppercase">Transparence &amp; Confidentialité</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-deep-purple mb-stack-sm">Politique des Cookies</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Chez A7 Emailing, nous utilisons des technologies de suivi pour améliorer votre expérience utilisateur et analyser la performance de nos outils e-commerce.
+            </p>
+</section>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- What are cookies -->
+<div class="md:col-span-8 bg-white rounded-xl p-stack-md custom-shadow custom-shadow-hover transition-all duration-300">
+<div class="flex items-start gap-4 mb-stack-md">
+<div class="p-3 bg-primary-container rounded-lg">
+<span class="material-symbols-outlined text-white">help_outline</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-deep-purple">Qu'est-ce qu'un cookie ?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">
+                            Un cookie est un petit fichier texte déposé sur votre terminal (ordinateur, tablette ou smartphone) lors de la consultation d'un site internet. Il permet à son émetteur d'identifier le terminal dans lequel il est enregistré, pendant la durée de validité ou d'enregistrement du cookie. 
+                            <br/><br/>
+                            Ils nous aident à assurer le bon fonctionnement du site, à sécuriser votre navigation et à personnaliser votre interface en fonction de vos préférences.
+                        </p>
+</div>
+</div>
+</div>
+<!-- Manage Preference CTA -->
+<div class="md:col-span-4 bg-vibrant-orange rounded-xl p-stack-md flex flex-col justify-between text-white transition-all duration-300 hover:scale-[1.02]">
+<div>
+<h3 class="font-headline-md text-headline-md mb-2">Gérer vos choix</h3>
+<p class="font-body-md text-body-md opacity-90">Prenez le contrôle de vos données en personnalisant vos préférences de suivi dès maintenant.</p>
+</div>
+<button class="mt-6 bg-white text-vibrant-orange font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-surface-gray transition-colors" onclick="openPreferenceModal()">
+                    Personnaliser mes cookies
+                </button>
+</div>
+<!-- Cookie Types Grid -->
+<div class="md:col-span-12 mt-stack-md">
+<h2 class="font-headline-lg text-headline-lg text-deep-purple mb-stack-md">Types de cookies utilisés</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Essential Cookies -->
+<div class="bg-surface-gray border border-border-subtle rounded-xl p-stack-md custom-shadow-hover transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-deep-purple text-4xl">verified_user</span>
+<span class="bg-deep-purple text-white px-3 py-1 rounded-full text-label-sm font-label-sm">OBLIGATOIRE</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-deep-purple">Cookies Techniques</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+                            Ces cookies sont indispensables à la navigation sur le site et à l'utilisation de ses fonctionnalités, comme l'accès aux zones sécurisées (votre tableau de bord A7). Sans ces cookies, les services demandés ne peuvent être fournis.
+                        </p>
+<ul class="mt-4 space-y-2">
+<li class="flex items-center gap-2 text-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-vibrant-orange text-sm">check_circle</span>
+                                Authentification utilisateur
+                            </li>
+<li class="flex items-center gap-2 text-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-vibrant-orange text-sm">check_circle</span>
+                                Sécurité de la session
+                            </li>
+</ul>
+</div>
+<!-- Analytics Cookies -->
+<div class="bg-surface-gray border border-border-subtle rounded-xl p-stack-md custom-shadow-hover transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-vibrant-orange text-4xl">query_stats</span>
+<div class="flex gap-2">
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full text-label-sm font-label-sm">Analytics</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-deep-purple">Cookies de Performance</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+                            Nous utilisons ces cookies pour collecter des informations sur la façon dont les visiteurs utilisent notre site (pages les plus visitées, temps passé). Cela nous permet d'optimiser l'architecture de nos solutions e-commerce.
+                        </p>
+<ul class="mt-4 space-y-2">
+<li class="flex items-center gap-2 text-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-vibrant-orange text-sm">check_circle</span>
+                                Google Analytics
+                            </li>
+<li class="flex items-center gap-2 text-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-vibrant-orange text-sm">check_circle</span>
+                                Hotjar (Parcours utilisateur)
+                            </li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Third Party Section -->
+<div class="md:col-span-12 mt-stack-md">
+<div class="bg-white rounded-xl overflow-hidden custom-shadow grid grid-cols-1 md:grid-cols-2 items-center border border-border-subtle">
+<div class="p-stack-md">
+<h2 class="font-headline-lg text-headline-lg text-deep-purple mb-4">Services tiers &amp; Réseaux sociaux</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                            Notre site peut contenir des liens vers ou depuis des sites tiers et des réseaux sociaux (LinkedIn, Twitter). Si vous suivez un lien vers l'un de ces sites, sachez qu'ils ont leurs propres politiques de confidentialité.
+                        </p>
+<div class="flex flex-wrap gap-4">
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container rounded-lg">
+<img alt="LinkedIn" class="w-4 h-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa7WagpQPmi3xJdV9hkADrvBI7hPuq3_tU93vOabwCOYRqOi_1LXMhKUuO0XXpqYOjqdimTM05aavxSEMA8T_wUKgjUl1zC_vO_2OcJUCOChe8q58WoXh0aUM3SoF1FqFvFNC_KTI2_BtppETuwi2Ukyr7tmaKjcR6qa2dAv9JdsHXmV42oTwXPJeTiIa8jI5An7gHc6eQtfirvjxblDqFgj3rPfnVQf4AyEEVchsKpoyNWcg_JL2un8SofJqHdOU3aUP2bcYCgreh"/>
+<span class="text-label-sm font-label-sm">LinkedIn</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container rounded-lg">
+<img alt="Twitter" class="w-4 h-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCj-nnsiNgtYQooqT_malllkyn1xI4bE6tP8eAHVv8xXCRlO_nyXcC7MhYDiVzNKdC3voU-8mJ2_WvMwKYjwxtvk3bsapHmGlFlGIceX8vUyRBtFxNS5uYSBLvATh4WyxJKBV__NjMG1bQas_R-e5dsF0z2qOsjJtm4YiPCWASxkFRR89cifGvYBvZnYJoSeMhTPfshPqw4KqKFnuYzWEc7app_hHYiJsq8PU_XZCKcS_NoT4Z_rNVMuVh6bqzVDsx4XEkd1t5ihGX"/>
+<span class="text-label-sm font-label-sm">X (Twitter)</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container rounded-lg">
+<img alt="Facebook" class="w-4 h-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0aGZ_OYG-nbzuvF7aR8A8l3v0TxFquiysoqa0290xfy9QvTqbmOheT2L7mvB-mr-sIGv-8cFrynsFjITKcdZr_Vq6dbjYIqpOT9QP6Q43XvEmeFcL223_t2NRM0PH6KCIYpTKe-vNhDn1WtOmN_TXKHumdlJbEPqXRBzlX-9hg2njWvaH1rvjrQBACJeBtnAoD8XFlKqO2MV0Ut0Cqj7AESTv-qMthu97CwbAdohpEkEDdwKfyVdleYVnX32cTEhEErONthwCmDql"/>
+<span class="text-label-sm font-label-sm">Facebook</span>
+</div>
+</div>
+</div>
+<div class="h-64 md:h-full min-h-[300px] relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-deep-purple/10 to-vibrant-orange/10"></div>
+<img class="w-full h-full object-cover" data-alt="A modern, abstract digital visualization representing global data connectivity, network nodes, and secure information flow. The color scheme features deep purple and vibrant orange highlights on a clean white background. High-tech corporate aesthetic with minimalist light-mode feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGVSZ-y-aJkwUc1eV7XmTIY6moCuDMaYlLNNGmnFlDOjg74TqNATxWYF3uFgNvZykceigL2MZA0P_jAseV4ydM2oFSotlE0AmrS8pdNGwLaTF5m5QZgz2hRWeGs4HeIOWCQJ20kziLHm2BgFg9G8I2X0HtHevo0qKYob2txHqMPzzz87o4lggc0R3mYlA6vr-2q8x9QGnJAXEBfxESanEtw0oXQFDSd90LtSIcguITvLaj9DGYT2pDSoOPki_XlP6Rxr_mrwLy6eK3"/>
+</div>
+</div>
+</div>
+<!-- Browser Settings -->
+<div class="md:col-span-12 mt-stack-md bg-primary-container text-white rounded-xl p-stack-md">
+<div class="flex flex-col md:flex-row gap-gutter items-center">
+<div class="flex-1">
+<h2 class="font-headline-md text-headline-md mb-stack-sm">Paramétrage via votre navigateur</h2>
+<p class="font-body-md text-body-md opacity-80 leading-relaxed">
+                            Vous pouvez également configurer votre logiciel de navigation de manière à ce que des cookies soient enregistrés dans votre terminal ou, au contraire, qu'ils soient rejetés. Chaque navigateur a sa propre configuration pour la gestion des cookies.
+                        </p>
+</div>
+<div class="flex flex-wrap justify-center gap-4">
+<a class="px-4 py-2 bg-white/10 rounded-lg hover:bg-white/20 transition-all text-label-sm" href="#">Chrome</a>
+<a class="px-4 py-2 bg-white/10 rounded-lg hover:bg-white/20 transition-all text-label-sm" href="#">Firefox</a>
+<a class="px-4 py-2 bg-white/10 rounded-lg hover:bg-white/20 transition-all text-label-sm" href="#">Safari</a>
+<a class="px-4 py-2 bg-white/10 rounded-lg hover:bg-white/20 transition-all text-label-sm" href="#">Edge</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-highest dark:bg-surface-container-lowest border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter max-w-container-max mx-auto px-margin-desktop py-stack-lg">
+<div class="space-y-4">
+<div class="font-headline-md text-headline-md font-bold text-deep-purple">A7 Emailing</div>
+<p class="font-body-md text-body-md text-on-surface-variant">L'excellence de l'emailing au service de votre croissance e-commerce.</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<span class="font-label-sm font-bold text-deep-purple uppercase mb-2">Solutions</span>
+<a class="font-body-md text-on-surface-variant hover:text-vibrant-orange underline transition-colors" href="#">E-shop</a>
+<a class="font-body-md text-on-surface-variant hover:text-vibrant-orange underline transition-colors" href="#">Architecture</a>
+<a class="font-body-md text-on-surface-variant hover:text-vibrant-orange underline transition-colors" href="#">Monétisation</a>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-sm font-bold text-deep-purple uppercase mb-2">Entreprise</span>
+<a class="font-body-md text-on-surface-variant hover:text-vibrant-orange underline transition-colors" href="#">Contact</a>
+<a class="font-body-md text-on-surface-variant hover:text-vibrant-orange underline transition-colors" href="#">Legal</a>
+<a class="font-body-md text-on-surface-variant hover:text-vibrant-orange underline transition-colors" href="#">Privacy Policy</a>
+</div>
+</div>
+<div class="flex flex-col justify-between items-end">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-deep-purple cursor-pointer hover:text-vibrant-orange transition-colors">language</span>
+<span class="material-symbols-outlined text-deep-purple cursor-pointer hover:text-vibrant-orange transition-colors">share</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-auto">© 2024 A7 Emailing. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<!-- Preferences Modal (Hidden by default) -->
+<div class="fixed inset-0 z-[100] hidden" id="cookieModal">
+<div class="absolute inset-0 bg-deep-purple/40 backdrop-blur-sm" onclick="closePreferenceModal()"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg bg-white rounded-xl shadow-2xl p-stack-md border border-border-subtle">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-headline-md text-headline-md text-deep-purple">Gérer mes préférences</h2>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-error transition-colors" onclick="closePreferenceModal()">close</button>
+</div>
+<div class="space-y-6 mb-8">
+<div class="flex items-center justify-between p-4 bg-surface-gray rounded-lg">
+<div>
+<p class="font-bold text-deep-purple">Cookies Essentiels</p>
+<p class="text-label-sm text-on-surface-variant">Nécessaires au fonctionnement</p>
+</div>
+<div class="text-vibrant-orange font-bold text-sm">OBLIGATOIRE</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-gray rounded-lg">
+<div>
+<p class="font-bold text-deep-purple">Analyse d'audience</p>
+<p class="text-label-sm text-on-surface-variant">Mesure de performance anonyme</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-vibrant-orange"></div>
+</label>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-gray rounded-lg">
+<div>
+<p class="font-bold text-deep-purple">Marketing &amp; Social</p>
+<p class="text-label-sm text-on-surface-variant">Publicités ciblées et réseaux</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-vibrant-orange"></div>
+</label>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="flex-1 py-3 border border-deep-purple text-deep-purple font-bold rounded-lg hover:bg-surface-container transition-colors" onclick="closePreferenceModal()">Enregistrer</button>
+<button class="flex-1 py-3 bg-deep-purple text-white font-bold rounded-lg hover:bg-primary transition-colors" onclick="closePreferenceModal()">Tout accepter</button>
+</div>
+</div>
+</div>
+<script>
+        function openPreferenceModal() {
+            document.getElementById('cookieModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        function closePreferenceModal() {
+            document.getElementById('cookieModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Simple scroll behavior for header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md', 'py-2');
+                header.classList.remove('shadow-sm', 'py-4');
+            } else {
+                header.classList.add('shadow-sm', 'py-4');
+                header.classList.remove('shadow-md', 'py-2');
+            }
+        });
+    </script>
+</body></html>

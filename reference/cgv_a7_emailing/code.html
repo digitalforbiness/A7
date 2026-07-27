@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Conditions Générales de Vente | A7 Emailing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed": "#2b1700",
+                    "tertiary": "#202000",
+                    "surface-bright": "#fff7fb",
+                    "on-tertiary-fixed": "#1d1d00",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#cfc3ce",
+                    "on-tertiary-fixed-variant": "#494911",
+                    "secondary-fixed-dim": "#ffb961",
+                    "primary-container": "#4a235a",
+                    "outline": "#7e747e",
+                    "surface-container-high": "#eee6eb",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#865300",
+                    "surface-container-highest": "#e9e0e6",
+                    "primary-fixed": "#f8d8ff",
+                    "deep-purple": "#2E1537",
+                    "background": "#fff7fb",
+                    "tertiary-container": "#353600",
+                    "inverse-surface": "#332f33",
+                    "primary": "#330b43",
+                    "vibrant-orange": "#E67E22",
+                    "surface": "#fff7fb",
+                    "surface-container-low": "#faf1f7",
+                    "surface-gray": "#F8F9FA",
+                    "on-primary-fixed": "#2f0740",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#1e1a1e",
+                    "primary-fixed-dim": "#e7b5f7",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e9e0e6",
+                    "on-background": "#1e1a1e",
+                    "tertiary-fixed-dim": "#cbca84",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#e7b5f7",
+                    "border-subtle": "#E9ECEF",
+                    "surface-tint": "#784e88",
+                    "inverse-on-surface": "#f7eef4",
+                    "on-primary-container": "#ba8bca",
+                    "text-muted": "#636E72",
+                    "surface-dim": "#e0d8dd",
+                    "secondary-fixed": "#ffddb9",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#e7e69e",
+                    "text-main": "#2D3436",
+                    "on-secondary-fixed-variant": "#663e00",
+                    "surface-container": "#f4ebf1",
+                    "on-secondary-container": "#694000",
+                    "on-surface-variant": "#4c444d",
+                    "on-tertiary-container": "#a0a05e",
+                    "on-primary-fixed-variant": "#5f366f",
+                    "secondary-container": "#fea520"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "40px",
+                    "container-max": "1200px",
+                    "stack-sm": "8px",
+                    "stack-lg": "64px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "stack-md": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Montserrat"],
+                    "display-lg": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .nav-active { border-bottom: 2px solid #330b43; font-weight: 700; color: #330b43; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid #E9ECEF;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .pricing-border-ecommerce { border-top: 4px solid #2E1537; }
+        .pricing-border-monetization { border-top: 4px solid #E67E22; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky bg-surface dark:bg-surface-container-lowest shadow-sm z-50">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop py-4">
+<div class="flex items-center gap-4">
+<img alt="A7 Emailing Logo" class="h-10" src="https://lh3.googleusercontent.com/aida/AP1WRLs7gRxfJp-NeZ22HSgV6eFmQPxLJuhMZs2GCMVSh7mXaOHYxX6Rjm5CgYsnPwcyS6IUpn9RHjLcbUGYaAV3jL8olygsSyjs5fsg5xaUt-_lyHc8X4u48nqTz5WIMrR7wnJTbtI4PZEDPh-_SKUP3oJQ4Ftb6ryvpd_4z83wHWLTLIT7UqTVDw3b0qr2alRMdXo-GoWqZLOw0cEdluXo8T17lJN0w4kMAckH_TY7MHHVOPKywMk0nEprzGWe"/>
+<span class="font-headline-md text-headline-md font-bold text-deep-purple dark:text-primary-fixed">A7 Emailing</span>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">E-commerce</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Monetization</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Architecture</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Entreprise</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Automation &amp; IA</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-bold hover:bg-primary-container transition-all duration-300">Free Trial</button>
+</div>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-desktop py-stack-lg">
+<!-- Hero Header -->
+<header class="mb-stack-lg text-center md:text-left">
+<div class="inline-block bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full text-label-sm font-label-sm mb-4">
+                DOCUMENTATION JURIDIQUE
+            </div>
+<h1 class="font-display-lg text-display-lg text-deep-purple mb-4">Conditions Générales de Vente</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Dernière mise à jour : 24 Mai 2024. Veuillez lire attentivement nos conditions de service pour comprendre vos droits et obligations en tant qu'utilisateur de la plateforme A7 Emailing.
+            </p>
+</header>
+<!-- Bento Grid Layout for CGV Content -->
+<div class="bento-grid">
+<!-- Description des Services -->
+<section class="col-span-12 md:col-span-8 glass-card p-stack-md rounded-xl shadow-md hover:shadow-lg transition-shadow">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">description</span>
+<h2 class="font-headline-md text-headline-md text-primary">1. Description des Services</h2>
+</div>
+<div class="space-y-4 text-on-surface-variant leading-relaxed">
+<p>A7 Emailing fournit une plateforme logicielle SaaS (Software as a Service) spécialisée dans l'automatisation du marketing par email, la gestion de campagnes e-commerce et la monétisation de bases de données.</p>
+<div class="grid md:grid-cols-2 gap-4 mt-6">
+<div class="p-4 bg-surface-gray rounded-lg border-l-4 border-deep-purple">
+<h3 class="font-bold text-deep-purple mb-2">E-shop &amp; Boutique</h3>
+<p class="text-sm">Intégration native avec vos flux produits pour des campagnes dynamiques ultra-ciblées.</p>
+</div>
+<div class="p-4 bg-surface-gray rounded-lg border-l-4 border-vibrant-orange">
+<h3 class="font-bold text-vibrant-orange mb-2">Automation &amp; IA</h3>
+<p class="text-sm">Moteurs prédictifs pour optimiser les heures d'envoi et la segmentation comportementale.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing / Tarification -->
+<section class="col-span-12 md:col-span-4 bg-primary text-on-primary p-stack-md rounded-xl shadow-md flex flex-col justify-center border-t-8 border-vibrant-orange">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-on-primary" style="font-variation-settings: 'FILL' 1;">payments</span>
+<h2 class="font-headline-md text-headline-md">2. Tarification</h2>
+</div>
+<p class="mb-4 opacity-90">Nos tarifs sont basés sur le volume de contacts ou le nombre d'envois mensuels, selon le forfait choisi.</p>
+<ul class="space-y-3">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-vibrant-orange text-sm mt-1">check_circle</span>
+<span>Facturation transparente HT.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-vibrant-orange text-sm mt-1">check_circle</span>
+<span>Pas de frais d'installation cachés.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-vibrant-orange text-sm mt-1">check_circle</span>
+<span>Mise à jour tarifaire avec préavis de 30 jours.</span>
+</li>
+</ul>
+</section>
+<!-- Modalités de Paiement -->
+<section class="col-span-12 md:col-span-4 glass-card p-stack-md rounded-xl shadow-md">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">credit_card</span>
+<h2 class="font-headline-md text-headline-md text-primary">3. Paiement</h2>
+</div>
+<p class="text-on-surface-variant mb-4">Le règlement des services s'effectue par prélèvement automatique ou carte bancaire au début de chaque période de facturation.</p>
+<div class="bg-surface-container-low p-3 rounded flex items-center gap-2 text-sm text-on-surface-variant italic">
+<span class="material-symbols-outlined text-xs">info</span>
+                    En cas de défaut de paiement, l'accès au service sera suspendu après 48h.
+                </div>
+</section>
+<!-- Engagement et Résiliation -->
+<section class="col-span-12 md:col-span-8 glass-card p-stack-md rounded-xl shadow-md">
+<div class="grid md:grid-cols-2 gap-8">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">event_repeat</span>
+<h2 class="font-headline-md text-headline-md text-primary">4. Engagement</h2>
+</div>
+<p class="text-on-surface-variant">Sauf mention contraire dans votre devis spécifique, nos contrats sont sans engagement de durée minimale et se renouvellent tacitement chaque mois.</p>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-error">cancel</span>
+<h2 class="font-headline-md text-headline-md text-error">5. Résiliation</h2>
+</div>
+<p class="text-on-surface-variant">La résiliation peut être effectuée à tout moment via l'interface client. Elle prend effet à la fin du cycle de facturation en cours.</p>
+</div>
+</div>
+</section>
+<!-- Clause de Responsabilité & Données -->
+<section class="col-span-12 bg-surface-container p-stack-md rounded-xl flex flex-col md:flex-row items-center gap-8">
+<div class="md:w-1/3">
+<div class="w-full h-48 bg-cover bg-center rounded-lg shadow-sm" data-alt="A clean, professional workspace with a focus on a high-end laptop and tablet displaying complex data analytics dashboards. The lighting is bright and airy, representing a transparent and trustworthy corporate atmosphere. The color scheme uses deep purples and vibrant orange accents consistent with the A7 Emailing brand identity. The style is modern, minimalist, and conveys professional reliability for an enterprise tech solution." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJRoVNXsxyLjaiMwLbaDgjJj5Yfq_pFlkRLQoESzpHizAwv__g5paPpT9_gyiD-FY8esRqM5x3VcEb1SJSlFwmGqOOn7i3dx63NsapCcVfnF3eTAiKG7mpiBkCqfUdefGTPDNxCwOZqhATgbVeT85dwDzVBd7nksMoYXeNlPuNzcMP8f31fOcPGk0kiza9vGFGclZMB14NUyVD-kgZNvP0wjldPtBisjHoHVq1c2rRhCTl-Y1by5ltn3d-RVOR_E49v5fvFPg24MxT')"></div>
+</div>
+<div class="md:w-2/3">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Responsabilité et RGPD</h2>
+<p class="text-on-surface-variant mb-4">A7 Emailing agit en tant que sous-traitant de données. Le client reste propriétaire et responsable de la légalité de ses bases de données. Nous garantissons une infrastructure sécurisée et conforme aux normes européennes en vigueur (RGPD).</p>
+<button class="flex items-center gap-2 text-vibrant-orange font-bold hover:underline">
+                        Consulter notre Politique de Confidentialité
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</section>
+</div>
+<!-- Sticky Trust Banner -->
+<div class="mt-stack-lg p-6 bg-deep-purple text-on-primary rounded-xl flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="text-center md:text-left">
+<p class="font-headline-md text-headline-md">Besoin de précisions sur nos termes ?</p>
+<p class="opacity-80">Notre équipe juridique est disponible pour répondre à vos questions spécifiques.</p>
+</div>
+<a class="bg-vibrant-orange text-white px-8 py-3 rounded-lg font-bold shadow-lg hover:scale-105 transition-transform" href="#">Contactez le Support</a>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-outline-variant bg-surface-container-highest dark:bg-surface-container-lowest">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter max-w-container-max mx-auto px-margin-desktop py-stack-lg">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md font-bold text-deep-purple">A7 Emailing</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">L'expertise emailing au service de votre croissance e-commerce et data.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-vibrant-orange">public</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-vibrant-orange">alternate_email</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-vibrant-orange">share</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<h4 class="font-bold text-deep-purple mb-2">Solutions</h4>
+<a class="text-on-surface-variant hover:text-vibrant-orange underline transition-colors" href="#">E-commerce</a>
+<a class="text-on-surface-variant hover:text-vibrant-orange underline transition-colors" href="#">Monetization</a>
+<a class="text-on-surface-variant hover:text-vibrant-orange underline transition-colors" href="#">Automation</a>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-bold text-deep-purple mb-2">Legal</h4>
+<a class="text-primary font-bold transition-colors" href="#">CGV</a>
+<a class="text-on-surface-variant hover:text-vibrant-orange underline transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-vibrant-orange underline transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-deep-purple">Newsletter</h4>
+<div class="flex">
+<input class="bg-surface rounded-l-lg border-outline-variant w-full focus:border-deep-purple focus:ring-1 focus:ring-deep-purple" placeholder="Votre email" type="email"/>
+<button class="bg-deep-purple text-white px-4 rounded-r-lg hover:bg-primary transition-colors">OK</button>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">© 2024 A7 Emailing. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for hover effects on glass cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+                card.style.transition = 'transform 0.3s ease';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="fr"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>A7 Emailing - Solutions de Monétisation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "vibrant-orange": "#E67E22",
+                    "on-surface": "#1e1a1e",
+                    "text-muted": "#636E72",
+                    "on-tertiary-fixed": "#1d1d00",
+                    "tertiary-container": "#353600",
+                    "primary-fixed": "#f8d8ff",
+                    "tertiary-fixed-dim": "#cbca84",
+                    "secondary-fixed": "#ffddb9",
+                    "secondary-fixed-dim": "#ffb961",
+                    "outline": "#7e747e",
+                    "deep-purple": "#2E1537",
+                    "primary": "#330b43",
+                    "outline-variant": "#cfc3ce",
+                    "secondary": "#865300",
+                    "on-primary-fixed": "#2f0740",
+                    "inverse-on-surface": "#f7eef4",
+                    "primary-fixed-dim": "#e7b5f7",
+                    "on-secondary-container": "#694000",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#e0d8dd",
+                    "secondary-container": "#fea520",
+                    "surface-variant": "#e9e0e6",
+                    "surface-container-low": "#faf1f7",
+                    "on-background": "#1e1a1e",
+                    "surface": "#fff7fb",
+                    "on-primary-container": "#ba8bca",
+                    "surface-container-highest": "#e9e0e6",
+                    "surface-bright": "#fff7fb",
+                    "surface-gray": "#F8F9FA",
+                    "surface-container-high": "#eee6eb",
+                    "on-secondary-fixed-variant": "#663e00",
+                    "on-primary-fixed-variant": "#5f366f",
+                    "tertiary-fixed": "#e7e69e",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#494911",
+                    "on-tertiary-container": "#a0a05e",
+                    "inverse-surface": "#332f33",
+                    "text-main": "#2D3436",
+                    "on-surface-variant": "#4c444d",
+                    "surface-container": "#f4ebf1",
+                    "error": "#ba1a1a",
+                    "primary-container": "#4a235a",
+                    "border-subtle": "#E9ECEF",
+                    "inverse-primary": "#e7b5f7",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "background": "#fff7fb",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#202000",
+                    "surface-tint": "#784e88",
+                    "on-secondary-fixed": "#2b1700"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "64px",
+                    "gutter": "24px",
+                    "stack-md": "24px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px",
+                    "container-max": "1200px",
+                    "unit": "8px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Montserrat"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .pricing-card {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+        }
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(46, 21, 55, 0.1);
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(233, 236, 239, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased selection:bg-vibrant-orange selection:text-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/95 shadow-sm border-b border-border-subtle backdrop-blur-md">
+<div class="flex justify-between items-center max-w-[1200px] mx-auto px-margin-desktop py-4">
+<div class="flex items-center gap-4">
+<img alt="A7 Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida/AP1WRLs7gRxfJp-NeZ22HSgV6eFmQPxLJuhMZs2GCMVSh7mXaOHYxX6Rjm5CgYsnPwcyS6IUpn9RHjLcbUGYaAV3jL8olygsSyjs5fsg5xaUt-_lyHc8X4u48nqTz5WIMrR7wnJTbtI4PZEDPh-_SKUP3oJQ4Ftb6ryvpd_4z83wHWLTLIT7UqTVDw3b0qr2alRMdXo-GoWqZLOw0cEdluXo8T17lJN0w4kMAckH_TY7MHHVOPKywMk0nEprzGWe">
+<span class="text-headline-md font-headline-md font-bold text-deep-purple">A7</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-text-muted hover:text-primary transition-colors text-label-sm font-label-sm" href="#">E-commerce</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 text-label-sm font-label-sm" href="#">Monetization</a>
+<a class="text-text-muted hover:text-primary transition-colors text-label-sm font-label-sm" href="#architecture" style="opacity: 0;">Architecture</a>
+<a class="text-text-muted hover:text-primary transition-colors text-label-sm font-label-sm" href="#">References</a>
+<a class="text-text-muted hover:text-primary transition-colors text-label-sm font-label-sm" href="#">About Us</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-sm text-label-sm hover:bg-deep-purple transition-all active:scale-95 shadow-md">
+                Free Trial
+            </button>
+</div>
+</nav>
+<main class="pt-24 overflow-x-hidden">
+<!-- Hero Section -->
+<section class="relative py-20 px-margin-mobile md:px-margin-desktop max-w-[1200px] mx-auto">
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div class="z-10">
+<span class="bg-vibrant-orange/10 text-vibrant-orange px-3 py-1 rounded-full text-label-sm font-label-sm mb-6 inline-block">
+                        NOUVELLE GÉNÉRATION
+                    </span>
+<h1 class="text-headline-lg-mobile md:text-display-lg font-display-lg text-deep-purple mb-6">
+                        Maximisez vos revenus publicitaires avec nos solutions de monétisation email.
+                    </h1>
+<p class="text-body-lg text-text-muted mb-8 max-w-xl">
+                        A7 transforme votre data email en profit. Grâce à nos algorithmes prédictifs et nos infrastructures haute disponibilité, redonnez de la vigueur à votre ROI face à la baisse des rendements traditionnels.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-vibrant-orange text-white px-8 py-4 rounded-lg font-headline-md text-body-md hover:shadow-lg transition-all active:scale-95">
+                            Démarrer maintenant
+                        </button>
+<button class="bg-surface-gray border border-border-subtle text-deep-purple px-8 py-4 rounded-lg font-headline-md text-body-md hover:bg-white transition-all">
+                            Voir la démo
+                        </button>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute inset-0 bg-primary/5 rounded-3xl -rotate-3 scale-105 group-hover:rotate-0 transition-transform duration-700"></div>
+<div class="relative rounded-3xl overflow-hidden shadow-2xl">
+<img class="w-full h-auto" data-alt="A sophisticated digital interface displaying complex data visualization charts in shades of deep purple and vibrant orange. The interface looks professional and futuristic, with 3D glass elements and glowing data nodes, symbolizing high-end email monetization analytics in a bright, modern corporate environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuYGDNG953zPiXuGJq4QhM5pUQBeSr-oXJIKFF4czPNeCo4s_8J_Bv12NMPwf2--mhSAfYG75thjRHxehLiwShCruYhkU-Gi6ys8-DS1U9CmPeusJYY-aqYB9YZff6xBG4pLaMcLp-LJelUN4TS_UIL-CuBRwLlOZlc5zYjD4jOm_yjIFr2u0RXWU1RgMlSE6PjIuCQUL-OqeKCSw5lbgqdIc7g3R_jnXjHUoe3Hgc1Nq3Z-9luHoMLvPIk9-LIpk_VB29IV_iO-LZ">
+</div>
+</div>
+</div>
+</section>
+<!-- Value Proposition / Bento -->
+<section class="py-stack-lg bg-surface-container-low/30 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-[1200px] mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-headline-lg font-headline-lg text-deep-purple mb-4 transition-all duration-700 opacity-100 translate-y-0">Pourquoi choisir A7 pour votre monétisation ?</h2>
+<p class="text-body-md text-text-muted max-w-2xl mx-auto">Une approche axée sur l'efficacité business et la protection de vos actifs numériques.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-white p-8 rounded-xl shadow-sm border border-border-subtle hover:border-vibrant-orange/50 transition-colors">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary">trending_up</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-deep-purple mb-4">Optimisation de Yield</h3>
+<p class="text-body-md text-text-muted">Nos algorithmes intelligents comparent en temps réel les performances des campagnes pour maximiser chaque clic sortant.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-8 rounded-xl shadow-sm border border-border-subtle hover:border-vibrant-orange/50 transition-colors">
+<div class="w-12 h-12 bg-vibrant-orange/10 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-vibrant-orange">security</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-deep-purple mb-4">Réputation Protégée</h3>
+<p class="text-body-md text-text-muted">Rotation d'IP intelligente et monitoring constant pour garantir la meilleure délivrabilité et protéger votre nom de domaine.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-8 rounded-xl shadow-sm border border-border-subtle hover:border-vibrant-orange/50 transition-colors">
+<div class="w-12 h-12 bg-secondary-container/10 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary">gavel</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-deep-purple mb-4">Conformité RGPD</h3>
+<p class="text-body-md text-text-muted">Des outils 100% compliant avec les standards européens, assurant une monétisation sereine et pérenne de vos bases.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Tiers -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop max-w-[1200px] mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-headline-lg font-headline-lg text-deep-purple mb-4 transition-all duration-700 opacity-100 translate-y-0">Nos Offres de Monétisation</h2>
+<p class="text-body-md text-text-muted">Des solutions adaptées à votre volume et vos ambitions de croissance.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-end">
+<!-- Tier 1 -->
+<div class="pricing-card bg-white rounded-xl border border-border-subtle overflow-hidden flex flex-col transition-all duration-700 opacity-100 translate-y-0">
+<div class="p-6 border-b border-border-subtle">
+<h4 class="text-headline-md font-headline-md text-deep-purple mb-2">Editeur de sites</h4>
+<div class="text-vibrant-orange font-bold text-headline-lg">897 € <span class="text-label-sm font-label-sm text-text-muted">HT/mois</span></div>
+</div>
+<div class="p-6 flex-grow">
+<ul class="space-y-4">
+<li class="flex items-center gap-3 text-body-md">
+<span class="material-symbols-outlined text-vibrant-orange text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Cloud dédié
+                            </li>
+<li class="flex items-center gap-3 text-body-md">
+<span class="material-symbols-outlined text-vibrant-orange text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                8 IP incluses
+                            </li>
+<li class="flex items-center gap-3 text-body-md">
+<span class="material-symbols-outlined text-vibrant-orange text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                6M mails / mois
+                            </li>
+</ul>
+</div>
+<div class="p-6 bg-surface-gray">
+<button class="w-full py-3 rounded-lg border border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all">Choisir</button>
+</div>
+</div>
+<!-- Tier 2 (Highlighted) -->
+<div class="pricing-card bg-white rounded-xl border-2 border-vibrant-orange overflow-hidden flex flex-col relative transform scale-105 z-10 transition-all duration-700 opacity-100 translate-y-0">
+<div class="bg-vibrant-orange text-white text-center py-2 text-label-sm font-label-sm uppercase tracking-widest">Recommandé</div>
+<div class="p-6 border-b border-border-subtle bg-vibrant-orange/5">
+<h4 class="text-headline-md font-headline-md text-deep-purple mb-2">Marketing Performance</h4>
+<div class="text-vibrant-orange font-bold text-headline-lg">1297 € <span class="text-label-sm font-label-sm text-text-muted">HT/mois</span></div>
+</div>
+<div class="p-6 flex-grow">
+<ul class="space-y-4">
+<li class="flex items-center gap-3 text-body-md">
+<span class="material-symbols-outlined text-vibrant-orange text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                16 IP incluses
+                            </li>
+<li class="flex items-center gap-3 text-body-md">
+<span class="material-symbols-outlined text-vibrant-orange text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                API Capsule
+                            </li>
+<li class="flex items-center gap-3 text-body-md">
+<span class="material-symbols-outlined text-vibrant-orange text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                10M mails / mois
+                            </li>
+<li class="flex items-center gap-3 text-body-md">
+<span class="material-symbols-outlined text-vibrant-orange text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Support prioritaires
+                            </li>
+</ul>
+</div>
+<div class="p-6 bg-surface-gray">
+<button class="w-full py-3 rounded-lg bg-vibrant-orange text-white font-bold hover:shadow-lg transition-all">Souscrire</button>
+</div>
+</div>
+<!-- Tier 3 -->
+<div class="pricing-card bg-white rounded-xl border border-border-subtle overflow-hidden flex flex-col transition-all duration-700 opacity-100 translate-y-0">
+<div class="p-6 border-b border-border-subtle">
+<h4 class="text-headline-md font-headline-md text-deep-purple mb-2">Régie multi-bases</h4>
+<div class="text-vibrant-orange font-bold text-headline-lg">1997 € <span class="text-label-sm font-label-sm text-text-muted">HT/mois</span></div>
+</div>
+<div class="p-6 flex-grow">
+<ul class="space-y-4">
+<li class="flex items-center gap-3 text-body-md">
+<span class="material-symbols-outlined text-vibrant-orange text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                32 IP incluses
+                            </li>
+<li class="flex items-center gap-3 text-body-md">
+<span class="material-symbols-outlined text-vibrant-orange text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Multi SMTP
+                            </li>
+<li class="flex items-center gap-3 text-body-md">
+<span class="material-symbols-outlined text-vibrant-orange text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                30M mails / mois
+                            </li>
+</ul>
+</div>
+<div class="p-6 bg-surface-gray">
+<button class="w-full py-3 rounded-lg border border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all">Choisir</button>
+</div>
+</div>
+<!-- Tier 4 -->
+<div class="pricing-card bg-deep-purple rounded-xl overflow-hidden flex flex-col text-white transition-all duration-700 opacity-100 translate-y-0">
+<div class="p-6 border-b border-white/10">
+<h4 class="text-headline-md font-headline-md mb-2">Agence e-marketing</h4>
+<div class="text-secondary-container font-bold text-headline-lg">Sur mesure</div>
+</div>
+<div class="p-6 flex-grow">
+<p class="text-surface-variant mb-6 text-body-md italic">Pour les besoins extrêmes en volume et personnalisation.</p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 text-body-md">
+<span class="material-symbols-outlined text-secondary-container text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Custom Cloud High Volume
+                            </li>
+<li class="flex items-center gap-3 text-body-md">
+<span class="material-symbols-outlined text-secondary-container text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Expert dédié (SLA)
+                            </li>
+</ul>
+</div>
+<div class="p-6 bg-white/5">
+<button class="w-full py-3 rounded-lg bg-white text-deep-purple font-bold hover:bg-secondary-container hover:text-on-secondary transition-all">Contacter nous</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Excellence / Asymmetric Layout -->
+<section class="py-stack-lg max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+<div class="order-2 md:order-1">
+<div class="relative w-full aspect-square max-w-md mx-auto">
+<div class="absolute inset-0 bg-gradient-to-tr from-deep-purple to-primary rounded-full blur-3xl opacity-20"></div>
+<img class="w-full h-full object-cover rounded-2xl shadow-xl border border-white/20" data-alt="A clean, close-up photograph of high-tech server racks in a data center with blue and purple ambient lighting. The perspective is from a low angle, emphasizing the scale and technical precision of the equipment. The lighting is crisp and modern, reflecting a high-tier enterprise infrastructure environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfsuzh58_SFo7E4Nq68yxwBHHSqz2hTcXirnwMLfeKzD_630XP55pjshE-WEd7Ta_KFSFVVPz4mIEhrtTW-gPmVRNlQ_svEH7zJhAG7MnSlhKiIEPWV4mgVJs3Wwysp2UJbtGzSfG53-734JKGltUxQAXdS1Ze-wkIt0maNAs1KXvWBSfdHLAoB5Fm_DsK827lMP2wnIAisDaUWuGjggNS67-IXcFsNewGPaQOGRJa0yuEt9VBH6UR45537UHmM0UsIIx9tMklcwG6">
+<div class="absolute -bottom-10 -right-10 glass-effect p-6 rounded-xl shadow-lg max-w-xs">
+<div class="flex items-center gap-2 mb-2 text-vibrant-orange font-bold">
+<span class="material-symbols-outlined">bolt</span>
+                            99.9% Uptime
+                        </div>
+<p class="text-body-md text-text-muted">Infrastructure redondante sur 4 datacenters Tier III pour une sécurité totale.</p>
+</div>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<h2 class="text-headline-lg font-headline-lg text-deep-purple mb-6 transition-all duration-700 opacity-100 translate-y-0">Expertise technique &amp; Support dédié</h2>
+<p class="text-body-lg text-text-muted mb-6">
+                    Face à la baisse de rentabilité des canaux historiques, nos experts vous accompagnent pour restructurer votre stratégie de monétisation.
+                </p>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white">psychology</span>
+</div>
+<div>
+<h4 class="text-body-lg font-bold text-deep-purple">Conseil stratégique</h4>
+<p class="text-body-md text-text-muted">Analyse de vos bases et recommandation de segmentation pour maximiser l'engagement.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white">monitoring</span>
+</div>
+<div>
+<h4 class="text-body-lg font-bold text-deep-purple">Reporting avancé</h4>
+<p class="text-body-md text-text-muted">Tableaux de bord en temps réel pour suivre chaque euro généré avec une précision chirurgicale.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Final -->
+<section class="py-stack-lg max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop mb-stack-lg">
+<div class="bg-deep-purple rounded-3xl p-12 text-center text-white relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-vibrant-orange/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-primary-container/20 rounded-full -ml-32 -mb-32 blur-3xl"></div>
+<h2 class="text-headline-lg font-headline-lg mb-6 relative z-10 transition-all duration-700 opacity-100 translate-y-0">Prêt à transformer vos emails en revenus ?</h2>
+<p class="text-body-lg text-surface-variant mb-10 max-w-2xl mx-auto relative z-10">Rejoignez les leaders de l'e-commerce qui font confiance à A7 pour leur croissance publicitaire.</p>
+<div class="flex flex-wrap justify-center gap-4 relative z-10">
+<button class="bg-vibrant-orange hover:bg-[#D35400] text-white px-10 py-4 rounded-lg font-headline-md text-body-md transition-all">Démarrer gratuitement</button>
+<button class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-10 py-4 rounded-lg font-headline-md text-body-md transition-all">Parler à un expert</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-deep-purple text-on-primary">
+<div class="max-w-[1200px] mx-auto px-margin-desktop py-stack-lg grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Brand -->
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<img alt="A7 Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida/AP1WRLs7gRxfJp-NeZ22HSgV6eFmQPxLJuhMZs2GCMVSh7mXaOHYxX6Rjm5CgYsnPwcyS6IUpn9RHjLcbUGYaAV3jL8olygsSyjs5fsg5xaUt-_lyHc8X4u48nqTz5WIMrR7wnJTbtI4PZEDPh-_SKUP3oJQ4Ftb6ryvpd_4z83wHWLTLIT7UqTVDw3b0qr2alRMdXo-GoWqZLOw0cEdluXo8T17lJN0w4kMAckH_TY7MHHVOPKywMk0nEprzGWe">
+<span class="text-headline-md font-headline-md font-bold text-on-primary">A7</span>
+</div>
+<p class="text-label-sm font-label-sm text-surface-variant/80">Precision-driven communication for modern enterprises.</p>
+</div>
+<!-- Quick Links -->
+<div>
+<h5 class="text-body-md font-bold mb-6 text-secondary-fixed">Navigation</h5>
+<ul class="space-y-3">
+<li class=""><a class="text-label-sm font-label-sm text-surface-variant/80 hover:text-on-primary transition-colors underline decoration-secondary-container" href="#">E-commerce</a></li>
+<li class=""><a class="text-label-sm font-label-sm text-secondary-fixed" href="#">Monetization</a></li>
+<li class=""><a class="text-label-sm font-label-sm text-surface-variant/80 hover:text-on-primary transition-colors underline decoration-secondary-container" href="#">GDPR Compliance</a></li>
+<li class=""><a class="text-label-sm font-label-sm text-surface-variant/80 hover:text-on-primary transition-colors underline decoration-secondary-container" href="#architecture">Architecture</a></li></ul>
+</div>
+<!-- Support -->
+<div>
+<h5 class="text-body-md font-bold mb-6 text-secondary-fixed">Resources</h5>
+<ul class="space-y-3">
+<li class=""><a class="text-label-sm font-label-sm text-surface-variant/80 hover:text-on-primary transition-colors underline decoration-secondary-container" href="#">Quality Standards</a></li>
+<li class=""><a class="text-label-sm font-label-sm text-surface-variant/80 hover:text-on-primary transition-colors underline decoration-secondary-container" href="#">Contact Support</a></li>
+<li class=""><a class="text-label-sm font-label-sm text-surface-variant/80 hover:text-on-primary transition-colors underline decoration-secondary-container" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<!-- Newsletter/Social Placeholder -->
+<div>
+<h5 class="text-body-md font-bold mb-6 text-secondary-fixed">Connect</h5>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-vibrant-orange transition-all" href="#"><span class="material-symbols-outlined text-body-md">share</span></a>
+<a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-vibrant-orange transition-all" href="#"><span class="material-symbols-outlined text-body-md">mail</span></a>
+</div>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto px-margin-desktop py-6 border-t border-white/10 text-center">
+<p class="text-label-sm font-label-sm text-surface-variant/60">© 2024 A7 Emailing Platform. All rights reserved. Precision-driven communication.</p>
+</div>
+</footer>
+<script>
+        // Simple scroll reveal interaction
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.pricing-card, section h2, .bento-grid > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+
+
+</body></html>

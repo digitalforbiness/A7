@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Conditions Générales d'Utilisation - A7 Emailing</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#2b1700",
+                        "tertiary": "#202000",
+                        "surface-bright": "#fff7fb",
+                        "on-tertiary-fixed": "#1d1d00",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#cfc3ce",
+                        "on-tertiary-fixed-variant": "#494911",
+                        "secondary-fixed-dim": "#ffb961",
+                        "primary-container": "#4a235a",
+                        "outline": "#7e747e",
+                        "surface-container-high": "#eee6eb",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#865300",
+                        "surface-container-highest": "#e9e0e6",
+                        "primary-fixed": "#f8d8ff",
+                        "deep-purple": "#2E1537",
+                        "background": "#fff7fb",
+                        "tertiary-container": "#353600",
+                        "inverse-surface": "#332f33",
+                        "primary": "#330b43",
+                        "vibrant-orange": "#E67E22",
+                        "surface": "#fff7fb",
+                        "surface-container-low": "#faf1f7",
+                        "surface-gray": "#F8F9FA",
+                        "on-primary-fixed": "#2f0740",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1e1a1e",
+                        "primary-fixed-dim": "#e7b5f7",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e9e0e6",
+                        "on-background": "#1e1a1e",
+                        "tertiary-fixed-dim": "#cbca84",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#e7b5f7",
+                        "border-subtle": "#E9ECEF",
+                        "surface-tint": "#784e88",
+                        "inverse-on-surface": "#f7eef4",
+                        "on-primary-container": "#ba8bca",
+                        "text-muted": "#636E72",
+                        "surface-dim": "#e0d8dd",
+                        "secondary-fixed": "#ffddb9",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#e7e69e",
+                        "text-main": "#2D3436",
+                        "on-secondary-fixed-variant": "#663e00",
+                        "surface-container": "#f4ebf1",
+                        "on-secondary-container": "#694000",
+                        "on-surface-variant": "#4c444d",
+                        "on-tertiary-container": "#a0a05e",
+                        "on-primary-fixed-variant": "#5f366f",
+                        "secondary-container": "#fea520"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "container-max": "1200px",
+                        "stack-sm": "8px",
+                        "stack-lg": "64px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "stack-md": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-active .accordion-content {
+            max-height: 2000px;
+        }
+        .accordion-active .rotate-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky bg-surface dark:bg-surface-container-lowest shadow-sm z-50">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop py-4">
+<div class="flex items-center gap-4">
+<img alt="A7 Emailing Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida/AP1WRLs7gRxfJp-NeZ22HSgV6eFmQPxLJuhMZs2GCMVSh7mXaOHYxX6Rjm5CgYsnPwcyS6IUpn9RHjLcbUGYaAV3jL8olygsSyjs5fsg5xaUt-_lyHc8X4u48nqTz5WIMrR7wnJTbtI4PZEDPh-_SKUP3oJQ4Ftb6ryvpd_4z83wHWLTLIT7UqTVDw3b0qr2alRMdXo-GoWqZLOw0cEdluXo8T17lJN0w4kMAckH_TY7MHHVOPKywMk0nEprzGWe"/>
+<span class="font-headline-md text-headline-md font-bold text-deep-purple dark:text-primary-fixed">A7 Emailing</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-vibrant-orange transition-colors duration-300" href="#">E-commerce</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-vibrant-orange transition-colors duration-300" href="#">Monetization</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-vibrant-orange transition-colors duration-300" href="#">Architecture</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-vibrant-orange transition-colors duration-300" href="#">Entreprise</a>
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed font-bold border-b-2 border-primary" href="#">Legal</a>
+</nav>
+<button class="bg-vibrant-orange text-white px-6 py-2 rounded-lg font-bold hover:bg-opacity-90 transition-all shadow-md">
+                Free Trial
+            </button>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-stack-lg">
+<!-- Hero Section for CGU -->
+<div class="text-center mb-stack-lg">
+<h1 class="font-display-lg text-display-lg text-deep-purple mb-4">Conditions Générales d'Utilisation</h1>
+<p class="text-on-surface-variant font-body-lg text-body-lg max-w-2xl mx-auto">
+                Dernière mise à jour : 24 Mai 2024. Veuillez lire attentivement ces conditions avant d'utiliser les services de la plateforme A7 Emailing.
+            </p>
+</div>
+<!-- CGU Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Side Navigation Links (Desktop) -->
+<aside class="hidden lg:block lg:col-span-3">
+<div class="sticky top-24 bg-white p-6 rounded-lg border border-border-subtle shadow-sm">
+<h3 class="font-headline-md text-headline-md text-deep-purple mb-6">Sommaire</h3>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#definitions"><span class="material-symbols-outlined text-sm">arrow_forward</span> Définitions</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#acces"><span class="material-symbols-outlined text-sm">arrow_forward</span> Accès au Service</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#responsabilites"><span class="material-symbols-outlined text-sm">arrow_forward</span> Responsabilités</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#propriete"><span class="material-symbols-outlined text-sm">arrow_forward</span> Propriété Intellectuelle</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#responsabilite-juridique"><span class="material-symbols-outlined text-sm">arrow_forward</span> Responsabilité Juridique</a></li>
+</ul>
+</div>
+</aside>
+<!-- Main Legal Content -->
+<div class="lg:col-span-9 space-y-6">
+<!-- Section 1: Définitions -->
+<div class="accordion-item bg-white rounded-lg border border-border-subtle shadow-sm overflow-hidden accordion-active" id="definitions">
+<button class="w-full flex justify-between items-center p-6 text-left" onclick="toggleAccordion(this)">
+<div class="flex items-center gap-4">
+<div class="bg-primary-container p-2 rounded-lg">
+<span class="material-symbols-outlined text-on-primary-container">description</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-deep-purple">01. Définitions</h2>
+</div>
+<span class="material-symbols-outlined rotate-icon transition-transform duration-300">expand_more</span>
+</button>
+<div class="accordion-content">
+<div class="p-6 pt-0 border-t border-border-subtle text-on-surface-variant leading-relaxed">
+<p class="mb-4">Les termes suivants, lorsqu’ils sont employés avec une majuscule, ont la signification suivante :</p>
+<ul class="list-disc pl-6 space-y-3">
+<li><strong>Client :</strong> Toute personne morale ou physique agissant à des fins professionnelles ayant souscrit aux Services de A7 Emailing.</li>
+<li><strong>Plateforme :</strong> L'ensemble des outils logiciels et services accessibles via le site a7emailing.com.</li>
+<li><strong>Contenu :</strong> Toutes les données, textes, images ou fichiers importés par l'Utilisateur sur la Plateforme.</li>
+<li><strong>Utilisateur :</strong> Toute personne autorisée par le Client à accéder au compte de ce dernier.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Section 2: Accès au Service -->
+<div class="accordion-item bg-white rounded-lg border border-border-subtle shadow-sm overflow-hidden" id="acces">
+<button class="w-full flex justify-between items-center p-6 text-left" onclick="toggleAccordion(this)">
+<div class="flex items-center gap-4">
+<div class="bg-secondary-container p-2 rounded-lg">
+<span class="material-symbols-outlined text-on-secondary-container">login</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-deep-purple">02. Accès au Service</h2>
+</div>
+<span class="material-symbols-outlined rotate-icon transition-transform duration-300">expand_more</span>
+</button>
+<div class="accordion-content">
+<div class="p-6 pt-0 border-t border-border-subtle text-on-surface-variant leading-relaxed">
+<p class="mb-4">A7 Emailing s'efforce de permettre l'accès à la Plateforme 24 heures sur 24, 7 jours sur 7, sauf en cas de force majeure ou d'un événement hors du contrôle de l'Éditeur, et sous réserve des éventuelles pannes et interventions de maintenance nécessaires au bon fonctionnement du service.</p>
+<p>L'accès au Service est subordonné à la création d'un Compte Client et au paiement des frais d'abonnement correspondants aux offres souscrites (E-commerce, Monetization, Architecture, Entreprise).</p>
+</div>
+</div>
+</div>
+<!-- Section 3: Responsabilités de l'Utilisateur -->
+<div class="accordion-item bg-white rounded-lg border border-border-subtle shadow-sm overflow-hidden" id="responsabilites">
+<button class="w-full flex justify-between items-center p-6 text-left" onclick="toggleAccordion(this)">
+<div class="flex items-center gap-4">
+<div class="bg-primary-container p-2 rounded-lg">
+<span class="material-symbols-outlined text-on-primary-container">person_check</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-deep-purple">03. Responsabilités de l'Utilisateur</h2>
+</div>
+<span class="material-symbols-outlined rotate-icon transition-transform duration-300">expand_more</span>
+</button>
+<div class="accordion-content">
+<div class="p-6 pt-0 border-t border-border-subtle text-on-surface-variant leading-relaxed">
+<p class="mb-4">L'Utilisateur s'engage à utiliser les Services conformément aux lois et règlements en vigueur, notamment en matière de protection des données personnelles (RGPD).</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+<div class="bg-surface-gray p-4 rounded-lg border border-border-subtle">
+<h4 class="font-bold text-deep-purple mb-2">Sécurité</h4>
+<p class="text-sm">Confidentialité des identifiants et mots de passe d'accès.</p>
+</div>
+<div class="bg-surface-gray p-4 rounded-lg border border-border-subtle">
+<h4 class="font-bold text-deep-purple mb-2">Contenu</h4>
+<p class="text-sm">Légalité des messages envoyés via la plateforme (Loi pour la Confiance dans l’Économie Numérique).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 4: Propriété Intellectuelle -->
+<div class="accordion-item bg-white rounded-lg border border-border-subtle shadow-sm overflow-hidden" id="propriete">
+<button class="w-full flex justify-between items-center p-6 text-left" onclick="toggleAccordion(this)">
+<div class="flex items-center gap-4">
+<div class="bg-secondary-container p-2 rounded-lg">
+<span class="material-symbols-outlined text-on-secondary-container">copyright</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-deep-purple">04. Propriété Intellectuelle</h2>
+</div>
+<span class="material-symbols-outlined rotate-icon transition-transform duration-300">expand_more</span>
+</button>
+<div class="accordion-content">
+<div class="p-6 pt-0 border-t border-border-subtle text-on-surface-variant leading-relaxed">
+<p class="mb-4">Tous les éléments constituant la Plateforme A7 Emailing (logiciels, design, logos, bases de données) sont la propriété exclusive de l'Éditeur ou de ses partenaires.</p>
+<p>Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable.</p>
+</div>
+</div>
+</div>
+<!-- Section 5: Responsabilité Juridique -->
+<div class="accordion-item bg-white rounded-lg border border-border-subtle shadow-sm overflow-hidden" id="responsabilite-juridique">
+<button class="w-full flex justify-between items-center p-6 text-left" onclick="toggleAccordion(this)">
+<div class="flex items-center gap-4">
+<div class="bg-primary-container p-2 rounded-lg">
+<span class="material-symbols-outlined text-on-primary-container">gavel</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-deep-purple">05. Responsabilité Juridique</h2>
+</div>
+<span class="material-symbols-outlined rotate-icon transition-transform duration-300">expand_more</span>
+</button>
+<div class="accordion-content">
+<div class="p-6 pt-0 border-t border-border-subtle text-on-surface-variant leading-relaxed">
+<p class="mb-4">A7 Emailing agit en tant que prestataire de services techniques et ne saurait être tenue pour responsable des dommages directs ou indirects causés par l'utilisation du service par le Client.</p>
+<div class="bg-surface-gray p-6 rounded-lg italic border-l-4 border-vibrant-orange">
+                                "La responsabilité de l'Éditeur ne peut être engagée en cas de retard de livraison des emails lié à des problèmes techniques chez les FAI ou pour toute perte de données imputable au Client."
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Download & Support Section -->
+<section class="mt-stack-lg bg-deep-purple text-white p-8 rounded-xl flex flex-col md:flex-row justify-between items-center gap-8 shadow-lg">
+<div>
+<h3 class="font-headline-md text-headline-md mb-2">Besoin d'une version PDF ?</h3>
+<p class="text-primary-fixed opacity-90">Conservez une copie locale de nos conditions générales d'utilisation.</p>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 bg-white text-deep-purple px-6 py-3 rounded-lg font-bold hover:bg-surface-variant transition-all">
+<span class="material-symbols-outlined">download</span> Télécharger
+                </button>
+<button class="flex items-center gap-2 border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-deep-purple transition-all">
+<span class="material-symbols-outlined">support_agent</span> Contact Support
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-highest dark:bg-surface-container-lowest border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter max-w-container-max mx-auto px-margin-desktop py-stack-lg">
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<img alt="A7 Emailing" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida/AP1WRLs7gRxfJp-NeZ22HSgV6eFmQPxLJuhMZs2GCMVSh7mXaOHYxX6Rjm5CgYsnPwcyS6IUpn9RHjLcbUGYaAV3jL8olygsSyjs5fsg5xaUt-_lyHc8X4u48nqTz5WIMrR7wnJTbtI4PZEDPh-_SKUP3oJQ4Ftb6ryvpd_4z83wHWLTLIT7UqTVDw3b0qr2alRMdXo-GoWqZLOw0cEdluXo8T17lJN0w4kMAckH_TY7MHHVOPKywMk0nEprzGWe"/>
+<span class="font-headline-md text-headline-md font-bold text-deep-purple">A7 Emailing</span>
+</div>
+<p class="text-on-surface-variant">Solution d'emailing premium pour entreprises exigeantes. Architecture scalable et monétisation intelligente.</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<h4 class="font-bold mb-4 text-deep-purple">Solutions</h4>
+<ul class="space-y-2 text-on-surface-variant font-body-md text-body-md">
+<li><a class="hover:text-vibrant-orange underline transition-colors duration-200" href="#">Solutions</a></li>
+<li><a class="hover:text-vibrant-orange underline transition-colors duration-200" href="#">Company</a></li>
+<li><a class="hover:text-vibrant-orange underline transition-colors duration-200" href="#">Legal</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4 text-deep-purple">Ressources</h4>
+<ul class="space-y-2 text-on-surface-variant font-body-md text-body-md">
+<li><a class="hover:text-vibrant-orange underline transition-colors duration-200" href="#">Contact</a></li>
+<li><a class="hover:text-vibrant-orange underline transition-colors duration-200" href="#">Privacy Policy</a></li>
+<li><a class="text-primary font-bold transition-colors duration-200" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-deep-purple">Newsletter</h4>
+<p class="text-sm text-on-surface-variant">Recevez nos conseils en marketing digital.</p>
+<div class="flex">
+<input class="bg-white border border-border-subtle rounded-l-lg px-4 py-2 w-full focus:outline-none focus:border-deep-purple" placeholder="Email" type="email"/>
+<button class="bg-deep-purple text-white px-4 py-2 rounded-r-lg font-bold">OK</button>
+</div>
+<div class="pt-4 text-on-surface-variant text-sm">
+                    © 2024 A7 Emailing. All rights reserved.
+                </div>
+</div>
+</div>
+</footer>
+<script>
+        function toggleAccordion(element) {
+            const parent = element.parentElement;
+            const isActive = parent.classList.contains('accordion-active');
+            
+            // Close all others if needed
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                item.classList.remove('accordion-active');
+            });
+            
+            if (!isActive) {
+                parent.classList.add('accordion-active');
+            }
+        }
+
+        // Initialize micro-interactions
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                        // Open accordion if targeted
+                        if(target.classList.contains('accordion-item')) {
+                            document.querySelectorAll('.accordion-item').forEach(item => item.classList.remove('accordion-active'));
+                            target.classList.add('accordion-active');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body></html>

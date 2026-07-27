@@ -1,0 +1,430 @@
+<!DOCTYPE html><html class="light" lang="fr"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Automation &amp; AI | A7 Emailing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-surface-variant": "#4c444d",
+                "vibrant-orange": "#E67E22",
+                "surface": "#fff7fb",
+                "secondary-fixed-dim": "#ffb961",
+                "on-tertiary-fixed": "#1d1d00",
+                "tertiary-fixed-dim": "#cbca84",
+                "surface-container-high": "#eee6eb",
+                "error-container": "#ffdad6",
+                "on-primary-fixed": "#2f0740",
+                "inverse-on-surface": "#f7eef4",
+                "secondary": "#865300",
+                "on-tertiary-container": "#a0a05e",
+                "tertiary-container": "#353600",
+                "on-primary-container": "#ba8bca",
+                "on-error-container": "#93000a",
+                "outline": "#7e747e",
+                "on-error": "#ffffff",
+                "on-background": "#1e1a1e",
+                "error": "#ba1a1a",
+                "secondary-container": "#fea520",
+                "outline-variant": "#cfc3ce",
+                "tertiary": "#202000",
+                "on-secondary-container": "#694000",
+                "on-tertiary": "#ffffff",
+                "on-primary": "#ffffff",
+                "background": "#fff7fb",
+                "text-muted": "#636E72",
+                "border-subtle": "#E9ECEF",
+                "surface-container": "#f4ebf1",
+                "inverse-surface": "#332f33",
+                "deep-purple": "#2E1537",
+                "on-secondary-fixed": "#2b1700",
+                "surface-variant": "#e9e0e6",
+                "surface-dim": "#e0d8dd",
+                "on-surface": "#1e1a1e",
+                "tertiary-fixed": "#e7e69e",
+                "primary-fixed": "#f8d8ff",
+                "on-secondary-fixed-variant": "#663e00",
+                "surface-bright": "#fff7fb",
+                "surface-tint": "#784e88",
+                "primary": "#330b43",
+                "on-tertiary-fixed-variant": "#494911",
+                "on-primary-fixed-variant": "#5f366f",
+                "surface-container-lowest": "#ffffff",
+                "surface-gray": "#F8F9FA",
+                "secondary-fixed": "#ffddb9",
+                "inverse-primary": "#e7b5f7",
+                "surface-container-low": "#faf1f7",
+                "text-main": "#2D3436",
+                "primary-container": "#4a235a",
+                "surface-container-highest": "#e9e0e6",
+                "primary-fixed-dim": "#e7b5f7",
+                "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "stack-lg": "64px",
+                "stack-sm": "8px",
+                "gutter": "24px",
+                "margin-mobile": "16px",
+                "unit": "8px",
+                "margin-desktop": "40px",
+                "stack-md": "24px",
+                "container-max": "1200px"
+            },
+            "fontFamily": {
+                "headline-md": ["Montserrat"],
+                "label-sm": ["Inter"],
+                "body-lg": ["Inter"],
+                "body-md": ["Inter"],
+                "headline-lg-mobile": ["Montserrat"],
+                "headline-lg": ["Montserrat"],
+                "display-lg": ["Montserrat"]
+            },
+            "fontSize": {
+                "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(233, 236, 239, 0.5);
+        }
+        .text-gradient-purple {
+            background: linear-gradient(135deg, #330b43 0%, #E67E22 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-mesh {
+            background-image: radial-gradient(at 0% 0%, rgba(51, 11, 67, 0.05) 0, transparent 50%), 
+                              radial-gradient(at 50% 0%, rgba(230, 126, 34, 0.05) 0, transparent 50%);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .elevation-2 { box-shadow: 0 4px 12px rgba(46, 21, 55, 0.06); }
+        .elevation-3 { box-shadow: 0 8px 20px rgba(46, 21, 55, 0.1); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky bg-surface z-50 border-b border-border-subtle shadow-sm">
+<div class="flex justify-between items-center h-16 px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<img alt="A7 Emailing Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLs7gRxfJp-NeZ22HSgV6eFmQPxLJuhMZs2GCMVSh7mXaOHYxX6Rjm5CgYsnPwcyS6IUpn9RHjLcbUGYaAV3jL8olygsSyjs5fsg5xaUt-_lyHc8X4u48nqTz5WIMrR7wnJTbtI4PZEDPh-_SKUP3oJQ4Ftb6ryvpd_4z83wHWLTLIT7UqTVDw3b0qr2alRMdXo-GoWqZLOw0cEdluXo8T17lJN0w4kMAckH_TY7MHHVOPKywMk0nEprzGWe">
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-on-surface-variant hover:text-vibrant-orange transition-colors duration-300" href="#">E-commerce</a>
+<a class="font-body-md text-on-surface-variant hover:text-vibrant-orange transition-colors duration-300" href="#">Monetization</a>
+<a class="font-body-md text-on-surface-variant hover:text-vibrant-orange transition-colors duration-300" href="#">Architecture</a>
+<a class="font-body-md text-on-surface-variant hover:text-vibrant-orange transition-colors duration-300" href="#">Enterprise</a>
+<a class="font-body-md text-primary font-bold border-b-2 border-vibrant-orange pb-1" href="#">Automation &amp; AI</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block text-on-surface-variant font-label-sm hover:text-primary transition-all">Login</button>
+<button class="bg-primary text-white px-6 py-2 rounded-lg font-label-sm hover:bg-primary-container transition-all active:scale-95">Get Started</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-stack-lg pb-stack-lg hero-mesh">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none">
+
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop relative z-10">
+<div class="max-w-3xl">
+<span class="inline-block px-4 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm mb-stack-sm">NOUVELLE GÉNÉRATION</span>
+<h1 class="font-display-lg text-display-lg text-primary mb-stack-md leading-tight">
+                        Automatisation &amp; IA : <span class="text-vibrant-orange">L'Emailing</span> Nouvelle Génération
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg leading-relaxed">
+                        Boostez votre ROI grâce à l'automatisation intelligente et l'IA prédictive. Passez de la communication de masse à l'hyper-personnalisation automatisée.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-vibrant-orange text-white px-8 py-4 rounded-lg font-headline-md hover:brightness-110 elevation-2 transition-all active:scale-95 flex items-center justify-center gap-2">
+                            Découvrir nos solutions
+                            <span class="material-symbols-outlined">trending_up</span>
+</button>
+<button class="border-2 border-primary text-primary px-8 py-4 rounded-lg font-headline-md hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">
+                            Voir la démo
+                            <span class="material-symbols-outlined">play_circle</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Key Benefits -->
+<section class="py-stack-lg bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-stack-lg">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">L'excellence technologique au service de votre croissance</h2>
+<div class="h-1 w-24 bg-vibrant-orange mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Benefit 1 -->
+<div class="bg-surface-container-lowest p-stack-md rounded-xl elevation-2 hover:elevation-3 transition-all border-t-4 border-deep-purple group">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">account_tree</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Scénarios Intelligents</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                            Créez des parcours clients automatisés basés sur le comportement en temps réel. Chaque clic déclenche une expérience unique.
+                        </p>
+</div>
+<!-- Benefit 2 -->
+<div class="bg-surface-container-lowest p-stack-md rounded-xl elevation-2 hover:elevation-3 transition-all border-t-4 border-vibrant-orange group">
+<div class="w-12 h-12 rounded-lg bg-secondary-container flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">insights</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">IA Prédictive</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                            Anticipez les besoins de vos clients. Notre IA optimise l'heure d'envoi et le contenu pour maximiser l'engagement individuel.
+                        </p>
+</div>
+<!-- Benefit 3 -->
+<div class="bg-surface-container-lowest p-stack-md rounded-xl elevation-2 hover:elevation-3 transition-all border-t-4 border-deep-purple group">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">groups_3</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Segmentation Dynamique</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                            Laissez l'algorithme regrouper vos audiences selon des clusters de données complexes, dépassant les segments traditionnels.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Deep Dive Section -->
+<section class="py-stack-lg relative overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col lg:flex-row items-center gap-16">
+<div class="flex-1">
+<div class="relative w-full aspect-square max-w-md mx-auto">
+<div class="absolute inset-0 bg-primary rounded-full blur-3xl opacity-10"></div>
+<div class="relative z-10 w-full h-full rounded-2xl overflow-hidden elevation-2">
+<img class="w-full h-full object-cover" data-alt="A sophisticated abstract 3D visualization of interconnected neural networks and flowing data streams in deep purple and vibrant orange colors. The style is high-tech corporate modern, with soft glowing nodes and sleek lines representing data processing and artificial intelligence within a minimalist digital space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9ir4VDtiZisk9l6ixyGjl9oB5NlxiVS0Qg5UNLgcuSVs4Nqnr2X_qbsscVPcAJ7_QJBCvU7uUU8YEqBTW2XnSzKV-KYDLtSkNI3wl4wnZBpdzKUjiR1EG0UnMVSuOKqh1dwm7SWPJRPds8FmqoG5TAoEHLse71kEyy20u-Pq8uiZaWvYg-AiEaPtVLHLc5fwXDUGQl-h7I7IMwWkRkqRR5biEBERRHP9WSsNnIFJNsuxSbrrnjkBaSQ4zeADl7t4u0__QtgqOOLgB">
+</div>
+</div>
+</div>
+<div class="flex-1">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-stack-md leading-tight">
+                            Au-delà de l'envoi : <br><span class="text-vibrant-orange">L'Intelligence de la donnée</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md">
+                            La puissance d'A7 Emailing réside dans sa capacité à traiter des millions de points de données pour transformer chaque interaction en une opportunité de conversion.
+                        </p>
+<ul class="space-y-4 mb-stack-lg">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-vibrant-orange mt-1">check_circle</span>
+<span class="text-on-surface">Analyse sémantique du contenu pour une pertinence accrue.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-vibrant-orange mt-1">check_circle</span>
+<span class="text-on-surface">Tracking multi-canal unifié pour une vue client à 360°.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-vibrant-orange mt-1">check_circle</span>
+<span class="text-on-surface">Machine learning continu améliorant les performances à chaque campagne.</span>
+</li>
+</ul>
+<button class="text-primary font-bold hover:text-vibrant-orange transition-colors flex items-center gap-2 group">
+                            En savoir plus sur nos algorithmes
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Bento Grid -->
+<section class="py-stack-lg bg-primary">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-stack-lg text-white">
+<h2 class="font-headline-lg text-headline-lg mb-4">Fonctionnalités Phares</h2>
+<p class="text-primary-fixed opacity-80 max-w-2xl mx-auto font-body-lg">Des outils de pointe conçus pour surpasser vos objectifs les plus ambitieux.</p>
+</div>
+<div class="bento-grid">
+<!-- Feature 1: Trigger Marketing -->
+<div class="col-span-12 md:col-span-8 bg-primary-container rounded-2xl p-stack-md text-white border border-on-primary-container/20 group hover:border-vibrant-orange/50 transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="px-3 py-1 bg-vibrant-orange/20 text-vibrant-orange rounded-full text-[10px] font-bold tracking-widest uppercase">Performance</div>
+<span class="material-symbols-outlined text-vibrant-orange text-3xl">bolt</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4">Trigger Marketing</h3>
+<p class="text-primary-fixed opacity-70 font-body-md max-w-lg">
+                                Ne manquez plus aucune opportunité. Des paniers abandonnés aux séries de bienvenue ultra-personnalisées, réagissez à l'instant T.
+                            </p>
+</div>
+<div class="mt-8 pt-6 border-t border-white/10 flex gap-4">
+<span class="text-xs text-vibrant-orange">#MarketingAutomation</span>
+<span class="text-xs text-primary-fixed">#Conversion</span>
+</div>
+</div>
+<!-- Feature 2: Smart Delivery -->
+<div class="col-span-12 md:col-span-4 bg-deep-purple rounded-2xl p-stack-md text-white border border-on-primary-container/10 group hover:border-vibrant-orange transition-all relative overflow-hidden">
+<div class="relative z-10">
+<div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-vibrant-orange transition-colors">
+<span class="material-symbols-outlined">send</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Smart Delivery</h3>
+<p class="text-primary-fixed opacity-70 font-body-md">
+                                Évitez les filtres spam grâce au machine learning qui optimise la délivrabilité.
+                            </p>
+</div>
+<div class="absolute -bottom-8 -right-8 w-32 h-32 opacity-20">
+
+</div>
+</div>
+<!-- Feature 3: A/B Testing -->
+<div class="col-span-12 md:col-span-4 bg-surface-container-highest rounded-2xl p-stack-md text-primary border border-border-subtle group hover:bg-white transition-all">
+<div class="flex gap-2 mb-6">
+<div class="flex-1 h-2 rounded-full bg-primary/10 overflow-hidden">
+<div class="w-[60%] h-full bg-primary group-hover:w-[75%] transition-all duration-1000"></div>
+</div>
+<div class="flex-1 h-2 rounded-full bg-vibrant-orange/10 overflow-hidden">
+<div class="w-[40%] h-full bg-vibrant-orange group-hover:w-[85%] transition-all duration-1000"></div>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">A/B Testing Automatisé</h3>
+<p class="text-on-surface-variant font-body-md">
+                            L'IA teste, analyse et déploie automatiquement la version gagnante en temps réel.
+                        </p>
+</div>
+<!-- Feature 4: Large Graphic Card -->
+<div class="col-span-12 md:col-span-8 bg-white rounded-2xl overflow-hidden border border-border-subtle flex flex-col md:flex-row elevation-2 group">
+<div class="flex-1 p-stack-md flex flex-col justify-center">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Analyses Temps Réel</h3>
+<p class="text-on-surface-variant font-body-md mb-6">
+                                Visualisez l'impact de l'IA sur vos revenus avec une clarté sans précédent.
+                            </p>
+<button class="bg-primary text-white w-fit px-6 py-2 rounded-lg font-label-sm hover:bg-vibrant-orange transition-all">Voir les rapports</button>
+</div>
+<div class="flex-1 bg-surface-container-low min-h-[200px]">
+<img class="w-full h-full object-cover" data-alt="A futuristic dashboard interface showing real-time email analytics with floating bar charts, circular progress rings, and data heatmaps. The color scheme uses deep purples for the UI and vibrant orange for positive data highlights. The design is clean, minimalist, and high-contrast for optimal readability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqQz0NNvLWlyqKv0tw3hHFPFvhdkablyNeG2aTM5FKATDv2XOU7RHv4WSchUv0pyVz6-ztnAuQL5UT-OocVFNFymjto7fbJIoRcq4cg0DW7jXIcFrDeFXewzniCB-bNge2C5VZNFSiLm--YGLednf9ykz87xfcSiTVG_FmNfzW3FMcliVwIjHmw5ExOKRpDEC5w8OcrHKPVifB_XrczBnNec-Cjb-LXwmf6O962YpZo9FFF5hb9dqyQ413LXfXIuU2-DP6HGEWqfqM">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-stack-lg bg-surface relative overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-10">
+
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop relative z-10 text-center">
+<h2 class="font-display-lg text-display-lg text-primary mb-stack-md">Prêt à automatiser votre succès ?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-2xl mx-auto">
+                    Rejoignez plus de 500 entreprises qui utilisent déjà l'IA d'A7 Emailing pour transformer leur communication digitale.
+                </p>
+<div class="flex flex-col sm:flex-row justify-center gap-stack-sm">
+<button class="bg-vibrant-orange text-white px-10 py-5 rounded-lg font-headline-md elevation-2 hover:brightness-110 hover:-translate-y-1 transition-all active:scale-95">
+                        Essayer Gratuitement
+                    </button>
+<button class="bg-primary text-white px-10 py-5 rounded-lg font-headline-md elevation-2 hover:bg-primary-container hover:-translate-y-1 transition-all active:scale-95">
+                        Contacter un expert
+                    </button>
+</div>
+<p class="mt-6 text-text-muted font-label-sm">14 jours d'essai gratuit • Sans carte bancaire</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-stack-lg border-t border-border-subtle bg-surface-container-lowest pt-stack-lg pb-stack-md">
+  <div class="max-w-container-max mx-auto px-margin-desktop">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-16 mb-stack-lg">
+      <div class="md:col-span-4">
+        <img alt="A7 Emailing Logo" class="h-10 w-auto object-contain mb-6" src="https://lh3.googleusercontent.com/aida/AP1WRLs7gRxfJp-NeZ22HSgV6eFmQPxLJuhMZs2GCMVSh7mXaOHYxX6Rjm5CgYsnPwcyS6IUpn9RHjLcbUGYaAV3jL8olygsSyjs5fsg5xaUt-_lyHc8X4u48nqTz5WIMrR7wnJTbtI4PZEDPh-_SKUP3oJQ4Ftb6ryvpd_4z83wHWLTLIT7UqTVDw3b0qr2alRMdXo-GoWqZLOw0cEdluXo8T17lJN0w4kMAckH_TY7MHHVOPKywMk0nEprzGWe">
+        <p class="text-on-surface-variant font-body-md leading-relaxed">
+          L'infrastructure emailing premium pour les professionnels de l'e-commerce et de la data. Performance, sécurité et souveraineté.
+        </p>
+      </div>
+      <div class="md:col-span-2">
+        <h4 class="font-bold text-primary mb-6">Solutions</h4>
+        <ul class="space-y-4">
+          <li class=""><a href="#" class="text-on-surface-variant hover:text-vibrant-orange transition-colors font-body-md">E-commerce</a></li>
+          <li class=""><a href="#" class="text-on-surface-variant hover:text-vibrant-orange transition-colors font-body-md">Monétisation</a></li>
+          <li class=""><a href="#" class="text-on-surface-variant hover:text-vibrant-orange transition-colors font-body-md">Architecture</a></li>
+          <li class=""><a href="#" class="text-on-surface-variant hover:text-vibrant-orange transition-colors font-body-md">Délivrabilité</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-3">
+        <h4 class="font-bold text-primary mb-6">Entreprise</h4>
+        <ul class="space-y-4">
+          <li class=""><a href="#" class="text-on-surface-variant hover:text-vibrant-orange transition-colors font-body-md">Qui sommes-nous ?</a></li>
+          <li class=""><a href="#" class="text-on-surface-variant hover:text-vibrant-orange transition-colors font-body-md">Quality Standards</a></li>
+          <li class=""><a href="#" class="text-on-surface-variant hover:text-vibrant-orange transition-colors font-body-md">Contact Info</a></li>
+          <li class=""><a href="#" class="text-on-surface-variant hover:text-vibrant-orange transition-colors font-body-md">Références</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-3">
+        <h4 class="font-bold text-primary mb-6">Légal</h4>
+        <ul class="space-y-4">
+          <li class=""><a href="#" class="text-on-surface-variant hover:text-vibrant-orange transition-colors font-body-md">Privacy Policy</a></li>
+          <li class=""><a href="#" class="text-on-surface-variant hover:text-vibrant-orange transition-colors font-body-md">Terms of Service</a></li>
+          <li class=""><a href="#" class="text-on-surface-variant hover:text-vibrant-orange transition-colors font-body-md">GDPR Compliance</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-border-subtle flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="font-label-sm text-text-muted">
+        © 2024 A7 Emailing. All rights reserved.
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="#" class="text-primary hover:text-vibrant-orange transition-colors">
+          <span class="material-symbols-outlined">mail</span>
+        </a>
+        <a href="#" class="text-primary hover:text-vibrant-orange transition-colors">
+          <span class="material-symbols-outlined">share</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Hover effect for feature cards
+        const cards = document.querySelectorAll('.elevation-2');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.classList.add('elevation-3');
+            });
+            card.addEventListener('mouseleave', () => {
+                card.classList.remove('elevation-3');
+            });
+        });
+    </script>
+
+
+</body></html>

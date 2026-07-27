@@ -1,0 +1,515 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="fr" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>A7 - Tarification &amp; Paiement</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-variant": "#e9e0e6",
+                      "surface": "#fff7fb",
+                      "text-main": "#2D3436",
+                      "tertiary-fixed": "#e7e69e",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed": "#1d1d00",
+                      "on-primary": "#ffffff",
+                      "on-primary-container": "#ba8bca",
+                      "surface-container-highest": "#e9e0e6",
+                      "secondary-container": "#fea520",
+                      "on-secondary-container": "#694000",
+                      "secondary-fixed-dim": "#ffb961",
+                      "on-surface": "#1e1a1e",
+                      "on-secondary-fixed-variant": "#663e00",
+                      "secondary-fixed": "#ffddb9",
+                      "surface-dim": "#e0d8dd",
+                      "surface-tint": "#784e88",
+                      "surface-gray": "#F8F9FA",
+                      "on-primary-fixed": "#2f0740",
+                      "on-tertiary-fixed-variant": "#494911",
+                      "inverse-surface": "#332f33",
+                      "border-subtle": "#E9ECEF",
+                      "on-secondary-fixed": "#2b1700",
+                      "vibrant-orange": "#E67E22",
+                      "primary-container": "#4a235a",
+                      "primary-fixed-dim": "#e7b5f7",
+                      "surface-container-high": "#eee6eb",
+                      "tertiary": "#202000",
+                      "text-muted": "#636E72",
+                      "on-secondary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container": "#f4ebf1",
+                      "tertiary-fixed-dim": "#cbca84",
+                      "primary": "#330b43",
+                      "inverse-on-surface": "#f7eef4",
+                      "surface-bright": "#fff7fb",
+                      "background": "#fff7fb",
+                      "inverse-primary": "#e7b5f7",
+                      "error": "#ba1a1a",
+                      "on-tertiary-container": "#a0a05e",
+                      "primary-fixed": "#f8d8ff",
+                      "outline": "#7e747e",
+                      "on-error": "#ffffff",
+                      "surface-container-low": "#faf1f7",
+                      "tertiary-container": "#353600",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed-variant": "#5f366f",
+                      "on-background": "#1e1a1e",
+                      "on-surface-variant": "#4c444d",
+                      "error-container": "#ffdad6",
+                      "deep-purple": "#2E1537",
+                      "secondary": "#865300",
+                      "outline-variant": "#cfc3ce"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "container-max": "1200px",
+                      "gutter": "24px",
+                      "unit": "8px",
+                      "stack-sm": "8px",
+                      "margin-desktop": "40px",
+                      "stack-lg": "64px",
+                      "stack-md": "24px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "headline-md": ["Montserrat"],
+                      "headline-lg-mobile": ["Montserrat"],
+                      "display-lg": ["Montserrat"],
+                      "headline-lg": ["Montserrat"],
+                      "body-lg": ["Inter"],
+                      "label-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .pricing-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .pricing-card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(46, 21, 55, 0.1), 0 10px 10px -5px rgba(46, 21, 55, 0.04);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/95 shadow-sm border-b border-border-subtle">
+<div class="flex justify-between items-center max-w-[1200px] mx-auto px-margin-desktop py-4">
+<div class="h-10 w-auto flex items-center"><img src="https://lh3.googleusercontent.com/aida/AP1WRLs7gRxfJp-NeZ22HSgV6eFmQPxLJuhMZs2GCMVSh7mXaOHYxX6Rjm5CgYsnPwcyS6IUpn9RHjLcbUGYaAV3jL8olygsSyjs5fsg5xaUt-_lyHc8X4u48nqTz5WIMrR7wnJTbtI4PZEDPh-_SKUP3oJQ4Ftb6ryvpd_4z83wHWLTLIT7UqTVDw3b0qr2alRMdXo-GoWqZLOw0cEdluXo8T17lJN0w4kMAckH_TY7MHHVOPKywMk0nEprzGWe" alt="A7 Logo" class="h-full w-auto object-contain"></div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-text-muted hover:text-primary transition-colors font-body-md text-body-md" href="#">E-commerce</a>
+<a class="text-text-muted hover:text-primary transition-colors font-body-md text-body-md" href="#">Monetization</a>
+<a class="text-text-muted hover:text-primary transition-colors font-body-md text-body-md" href="#">Architecture</a>
+<a class="text-text-muted hover:text-primary transition-colors font-body-md text-body-md" href="#">References</a>
+<a class="text-text-muted hover:text-primary transition-colors font-body-md text-body-md" href="#">Entreprise</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block text-primary font-bold px-4 py-2 hover:bg-surface-gray rounded-lg transition-all">Connexion</button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-bold shadow-md hover:scale-95 transition-transform">Free Trial</button>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="max-w-[1200px] mx-auto px-margin-desktop py-stack-lg text-center relative overflow-hidden">
+<div class="relative z-10">
+<span class="inline-block bg-secondary-container/10 text-secondary font-label-sm text-label-sm px-4 py-1.5 rounded-full mb-4 border border-secondary-container/20">
+                    TARIFICATION TRANSPARENTE
+                </span>
+<h1 class="font-display-lg text-display-lg text-deep-purple mb-6 max-w-3xl mx-auto">
+                    Formules flexibles et évolutives
+                </h1>
+<p class="text-body-lg font-body-lg text-text-muted max-w-2xl mx-auto mb-8">
+                    Développez votre activité avec une plateforme d'emailing de précision conçue pour les performances e-commerce.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4 bg-surface-container-low p-6 rounded-xl border border-border-subtle max-w-lg mx-auto">
+<span class="material-symbols-outlined text-vibrant-orange text-3xl">celebration</span>
+<div class="text-left">
+<p class="font-bold text-deep-purple">Commencez gratuitement</p>
+<p class="text-text-muted text-body-md">15 jours ou 300 envois offerts sans engagement.</p>
+</div>
+</div>
+</div>
+<!-- Atmospheric decoration -->
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-24 -left-24 w-96 h-96 bg-secondary-container/5 rounded-full blur-3xl"></div>
+</section>
+<!-- Pricing Grid (Bento Style) -->
+<section class="max-w-[1200px] mx-auto px-margin-desktop mb-stack-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Tier: E-shop -->
+<div class="pricing-card-hover bg-white rounded-xl p-8 border border-border-subtle flex flex-col h-full relative overflow-hidden shadow-sm" style="opacity: 1; transform: translateY(0px); transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl">storefront</span>
+</div>
+<div class="mb-6">
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-wider bg-surface-container px-2 py-1 rounded">E-shop</span>
+<div class="mt-4 flex items-baseline gap-1">
+<span class="text-headline-lg font-headline-lg">29€</span>
+<span class="text-text-muted font-body-md">/mois</span>
+</div>
+<p class="text-text-muted text-body-md mt-2">Pour les boutiques émergentes.</p>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-vibrant-orange text-[20px]">check_circle</span>
+<span class="text-body-md">Jusqu'à 5 000 emails</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-vibrant-orange text-[20px]">check_circle</span>
+<span class="text-body-md">Automation de base</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-vibrant-orange text-[20px]">check_circle</span>
+<span class="text-body-md">Segmentation clients</span>
+</li>
+</ul>
+<button class="w-full py-3 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all">Choisir E-shop</button>
+</div>
+<!-- Tier: E-boutique (Popular) -->
+<div class="pricing-card-hover bg-white rounded-xl p-8 border-2 border-primary flex flex-col h-full relative overflow-hidden shadow-md" style="opacity: 1; transform: translateY(0px); transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-4 py-1 rounded-bl-lg uppercase tracking-tighter">Populaire</div>
+<div class="mb-6">
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-wider bg-surface-container px-2 py-1 rounded">E-boutique</span>
+<div class="mt-4 flex items-baseline gap-1">
+<span class="text-headline-lg font-headline-lg">79€</span>
+<span class="text-text-muted font-body-md">/mois</span>
+</div>
+<p class="text-text-muted text-body-md mt-2">Accélérez votre croissance.</p>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-vibrant-orange text-[20px]">check_circle</span>
+<span class="text-body-md font-medium">Jusqu'à 25 000 emails</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-vibrant-orange text-[20px]">check_circle</span>
+<span class="text-body-md">A/B Testing avancé</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-vibrant-orange text-[20px]">check_circle</span>
+<span class="text-body-md">Relance panier abandonné</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-vibrant-orange text-[20px]">check_circle</span>
+<span class="text-body-md">Support Prioritaire 24/7</span>
+</li>
+</ul>
+<button class="w-full py-3 rounded-lg bg-primary text-on-primary font-bold shadow-lg hover:brightness-110 transition-all">Choisir E-boutique</button>
+</div>
+<!-- Tier: E-retailer -->
+<div class="pricing-card-hover bg-white rounded-xl p-8 border border-border-subtle flex flex-col h-full relative overflow-hidden shadow-sm" style="opacity: 1; transform: translateY(0px); transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="mb-6">
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-wider bg-surface-container px-2 py-1 rounded">E-retailer</span>
+<div class="mt-4 flex items-baseline gap-1">
+<span class="text-headline-lg font-headline-lg">199€</span>
+<span class="text-text-muted font-body-md">/mois</span>
+</div>
+<p class="text-text-muted text-body-md mt-2">Volume et performance.</p>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-vibrant-orange text-[20px]">check_circle</span>
+<span class="text-body-md">Jusqu'à 100 000 emails</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-vibrant-orange text-[20px]">check_circle</span>
+<span class="text-body-md">IP Dédiée incluse</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-vibrant-orange text-[20px]">check_circle</span>
+<span class="text-body-md">Connecteurs CRM</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-vibrant-orange text-[20px]">check_circle</span>
+<span class="text-body-md">Dashboard personnalisé</span>
+</li>
+</ul>
+<button class="w-full py-3 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all">Choisir E-retailer</button>
+</div>
+<!-- Tier: E-marketing -->
+<div class="pricing-card-hover bg-deep-purple rounded-xl p-8 flex flex-col h-full relative overflow-hidden shadow-sm text-white" style="opacity: 1; transform: translateY(0px); transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="mb-6">
+<span class="text-label-sm font-label-sm text-secondary uppercase tracking-wider bg-white/10 px-2 py-1 rounded">E-marketing</span>
+<div class="mt-4 flex items-baseline gap-1">
+<span class="text-headline-lg font-headline-lg">Sur devis</span>
+</div>
+<p class="text-surface-variant/70 text-body-md mt-2">Solutions sur mesure.</p>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-container text-[20px]">check_circle</span>
+<span class="text-body-md">Emails illimités</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-container text-[20px]">check_circle</span>
+<span class="text-body-md">Compte Manager dédié</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-container text-[20px]">check_circle</span>
+<span class="text-body-md">SLA Garanti 99.9%</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-container text-[20px]">check_circle</span>
+<span class="text-body-md">Accès API complet</span>
+</li>
+</ul>
+<button class="w-full py-3 rounded-lg bg-secondary-container text-deep-purple font-bold hover:brightness-110 transition-all">Nous contacter</button>
+</div>
+</div>
+</section>
+<!-- Checkout Section -->
+<section class="bg-surface-container-low py-stack-lg border-y border-border-subtle">
+<div class="max-w-[1200px] mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+<!-- Left: Trust & Information -->
+<div>
+<h2 class="font-headline-lg text-headline-lg text-deep-purple mb-6">Payer en ligne et commencez maintenant</h2>
+<p class="text-text-muted mb-10 text-body-lg">
+                            Activez votre compte instantanément après le paiement. Nous utilisons des protocoles de sécurité de niveau bancaire pour protéger vos transactions.
+                        </p>
+<div class="space-y-6">
+<div class="flex gap-4 p-4 bg-white rounded-lg shadow-sm border border-border-subtle items-center">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">security</span>
+</div>
+<div>
+<h4 class="font-bold text-deep-purple">Sécurité 256-bit SSL</h4>
+<p class="text-text-muted text-body-md">Vos données de paiement sont cryptées.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 bg-white rounded-lg shadow-sm border border-border-subtle items-center">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">cloud_done</span>
+</div>
+<div>
+<h4 class="font-bold text-deep-purple">Activation Instantanée</h4>
+<p class="text-text-muted text-body-md">Accès immédiat à tous vos outils.</p>
+</div>
+</div>
+</div>
+<div class="mt-12">
+<p class="text-label-sm font-label-sm text-text-muted uppercase mb-4 tracking-widest">Moyens de paiement acceptés</p>
+<div class="flex flex-wrap gap-4 opacity-70">
+<div class="h-10 w-16 bg-white border border-border-subtle rounded flex items-center justify-center px-2">
+<img class="h-6 object-contain" data-alt="Official blue and red Visa card logo icon, clean vector graphic on a white background, payment method representative illustration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYdI7w8Fi5dfmA6Bx9Y9Z7r1r9Mg_L1vgMa4UqRuMFOXxwVcNbx8OSrLx7LU2EcYw0o_8rYOWLJRASbQztea9l2aYQCOwNR2sD4wd2T-vfJHDDvXj3aH1PJoJaq7xR63bm6VGKwkrSEprArETl1zjL7dfFeIGbbEE4eSbp-Ey8WA-TF1xSEONbC4Wno6rSu_nQKuuJgsmAxWYOQFK0Hkx5FhuyVbsjEN9Sj0QNedRNp_42lUdRtBxoTWgLBd73Us8PxBUFFrFtYKdq">
+</div>
+<div class="h-10 w-16 bg-white border border-border-subtle rounded flex items-center justify-center px-2">
+<img class="h-6 object-contain" data-alt="Official Mastercard logo with overlapping red and yellow circles, clean professional digital icon, payment method graphic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgKdMXgFPi_tltxI2__6zO14_oMLQv9lu_Y1iPoBTWkqEcyR4zpWkMUVWPCsZ1jmpLrQrgP_80lDl7iD5sd3fkzYBbClFt4Iru6ndq_UjLV4lieF9HEU-TmSzCleOgPxX-4INPFSvLwSuIf98YD4JaDXV8eJ3GWU5nkvzJIy2tNBXs2x-ndJ1AJ-Qfy2VDKiZS5Y142MgFMgogbcmGY63NFC5WpqI7WGc_GRydTRJ764sIfQxYEyHwrS-hNzu8RZoZ_P4KkDRasBgn">
+</div>
+<div class="h-10 w-16 bg-white border border-border-subtle rounded flex items-center justify-center px-2">
+<img class="h-6 object-contain" data-alt="Official American Express logo, blue square with white typography, minimalist clean digital asset, professional finance icon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2BLnNnnwTfLhnapNFzI-uehkEzBg2eyWcYQTDff6G0cOXXA8-i-pTflOCsuJv-mtiQzG2o515M1fB-Ewb6gU-i689m1BHD4ZacyLgu58XAAKlGiDkzzSXNjvJ76dsj29PmgiTO1OLY89T4r5Q359-45mvLN6lcv_kTegDHLQeCN_iyKGrI4zlIcgESrX1x5pnfAJHqFB6144d-IqWuPkyvAwVxZr47KK_gz87SDqQgBu4c21MaXgPhxWjjN9iC1ZP4WZ4RZf2hcSD">
+</div>
+<div class="h-10 w-16 bg-white border border-border-subtle rounded flex items-center justify-center px-2">
+<img class="h-6 object-contain" data-alt="Official PayPal logo with two overlapping P letters in blue gradients, modern fintech digital icon on white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSUlz0CS616kdirCeH2OS1704lwWrvbFMoKjft6sSiYHtH5LXA5u2WOgc3vaEjfGXdjoHG2j-BVXanQCniJVLbn4xG6Ol1Aopq_7Czjj_oaKOVez99YZbJS8LIHhxbft_BRhg3Vfaj845LOfeA2JcybGPfh4QGGOuflH35_DwEOO6Pu3MtEM16_4aqvRBl8Jfy4vd0Y7hVsqrTPNX_7PLVdwND7U9QGbMOypQxkcQ1Kdof14TkN1GAF2XpoIJBUEj4ARKZAHoQzPRK">
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Quick Checkout Form -->
+<div class="bg-white rounded-2xl shadow-xl p-8 border border-border-subtle">
+<div class="mb-8 pb-6 border-b border-border-subtle">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-md text-headline-md text-deep-purple">Récapitulatif</h3>
+<span class="bg-primary/10 text-primary text-label-sm font-label-sm px-3 py-1 rounded">E-BOUTIQUE</span>
+</div>
+<div class="flex justify-between text-body-md text-text-main mb-2">
+<span class="">Abonnement mensuel</span>
+<span class="">79,00 €</span>
+</div>
+<div class="flex justify-between text-body-md text-text-main mb-2">
+<span class="">TVA (20%)</span>
+<span class="">15,80 €</span>
+</div>
+<div class="flex justify-between text-headline-md font-bold text-deep-purple mt-4">
+<span class="">Total à payer</span>
+<span class="">94,80 €</span>
+</div>
+</div>
+<form class="space-y-6">
+<div>
+<label class="block text-label-sm font-label-sm text-text-muted mb-2 uppercase">Nom de l'entreprise</label>
+<input class="w-full bg-surface-gray border border-border-subtle rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" placeholder="SARL E-Boutique" type="text">
+</div>
+<div>
+<label class="block text-label-sm font-label-sm text-text-muted mb-2 uppercase">Informations de carte</label>
+<div class="relative">
+<input class="w-full bg-surface-gray border border-border-subtle rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all pr-12" placeholder="0000 0000 0000 0000" type="text">
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">credit_card</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-label-sm font-label-sm text-text-muted mb-2 uppercase">Expiration</label>
+<input class="w-full bg-surface-gray border border-border-subtle rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" placeholder="MM/YY" type="text">
+</div>
+<div>
+<label class="block text-label-sm font-label-sm text-text-muted mb-2 uppercase">CVC</label>
+<input class="w-full bg-surface-gray border border-border-subtle rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" placeholder="123" type="text">
+</div>
+</div>
+<div class="flex items-start gap-3 text-body-md text-text-muted">
+<input class="mt-1 rounded text-primary focus:ring-primary" type="checkbox">
+<span class="">J'accepte les conditions générales de vente et la politique de confidentialité.</span>
+</div>
+<button class="w-full py-4 rounded-xl bg-vibrant-orange text-white font-bold text-headline-md shadow-lg shadow-vibrant-orange/20 hover:scale-[1.02] active:scale-95 transition-all" type="submit">
+                                Confirmer le paiement
+                            </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="max-w-[800px] mx-auto px-margin-desktop py-stack-lg">
+<h2 class="font-headline-lg text-headline-lg text-deep-purple mb-12 text-center">Questions fréquentes</h2>
+<div class="space-y-4">
+<details class="group bg-white border border-border-subtle rounded-xl overflow-hidden shadow-sm transition-all" open="">
+<summary class="flex justify-between items-center p-6 cursor-pointer hover:bg-surface-gray list-none">
+<span class="font-bold text-deep-purple">Puis-je changer de forfait à tout moment ?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-text-muted border-t border-border-subtle bg-surface-container-lowest">
+                        Oui, absolument. Vous pouvez upgrader ou downgrader votre forfait directement depuis votre tableau de bord. La différence sera calculée au prorata sur votre prochaine facture.
+                    </div>
+</details>
+<details class="group bg-white border border-border-subtle rounded-xl overflow-hidden shadow-sm transition-all">
+<summary class="flex justify-between items-center p-6 cursor-pointer hover:bg-surface-gray list-none">
+<span class="font-bold text-deep-purple">Qu'arrive-t-il si je dépasse mon quota d'envoi ?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-text-muted border-t border-border-subtle bg-surface-container-lowest">
+                        Nous vous alertons lorsque vous atteignez 80% et 90% de votre quota. Si vous dépassez, les envois supplémentaires sont facturés à l'unité selon une grille tarifaire dégressive, ou vous pouvez choisir de passer au forfait supérieur.
+                    </div>
+</details>
+<details class="group bg-white border border-border-subtle rounded-xl overflow-hidden shadow-sm transition-all">
+<summary class="flex justify-between items-center p-6 cursor-pointer hover:bg-surface-gray list-none">
+<span class="font-bold text-deep-purple">Y a-t-il une période d'engagement ?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-text-muted border-t border-border-subtle bg-surface-container-lowest">
+                        Nos forfaits sont sans engagement sur une base mensuelle. Vous pouvez annuler votre abonnement à tout moment, et il prendra fin à l'issue de la période de facturation en cours.
+                    </div>
+</details>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="max-w-[1200px] mx-auto px-margin-desktop pb-stack-lg">
+<div class="bg-gradient-to-r from-deep-purple to-primary p-12 rounded-3xl text-center text-white relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg mb-4">Prêt à booster vos ventes ?</h2>
+<p class="text-body-lg mb-8 opacity-90">Rejoignez plus de 5000 e-commerçants qui nous font confiance.</p>
+<button class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-xl font-bold text-headline-md shadow-xl hover:scale-105 transition-all">
+                        Démarrer l'essai gratuit
+                    </button>
+</div>
+<!-- Background decoration -->
+<div class="absolute -bottom-10 -right-10 w-48 h-48 bg-white/10 rounded-full blur-2xl"></div>
+<div class="absolute -top-10 -left-10 w-48 h-48 bg-vibrant-orange/20 rounded-full blur-2xl"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-deep-purple text-on-primary w-full mt-stack-lg">
+<div class="max-w-[1200px] mx-auto px-margin-desktop py-stack-lg grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="col-span-1">
+<div class="h-12 w-auto flex items-center mb-4"><img src="https://lh3.googleusercontent.com/aida/AP1WRLs7gRxfJp-NeZ22HSgV6eFmQPxLJuhMZs2GCMVSh7mXaOHYxX6Rjm5CgYsnPwcyS6IUpn9RHjLcbUGYaAV3jL8olygsSyjs5fsg5xaUt-_lyHc8X4u48nqTz5WIMrR7wnJTbtI4PZEDPh-_SKUP3oJQ4Ftb6ryvpd_4z83wHWLTLIT7UqTVDw3b0qr2alRMdXo-GoWqZLOw0cEdluXo8T17lJN0w4kMAckH_TY7MHHVOPKywMk0nEprzGWe" alt="A7 Logo" class="h-full w-auto object-contain brightness-0 invert"></div>
+<p class="text-label-sm font-label-sm opacity-70 leading-relaxed">
+                    Plateforme d'emailing de précision pour le e-commerce moderne.
+                </p>
+</div>
+<div>
+<h4 class="font-bold mb-4">Produit</h4>
+<ul class="space-y-2">
+<li class=""><a class="text-surface-variant/80 hover:text-on-primary transition-colors text-body-md" href="#">E-commerce</a></li>
+<li class=""><a class="text-surface-variant/80 hover:text-on-primary transition-colors text-body-md" href="#">Monetization</a></li>
+<li class=""><a class="text-surface-variant/80 hover:text-on-primary transition-colors text-body-md" href="#">Architecture</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Légal &amp; Aide</h4>
+<ul class="space-y-2">
+<li class=""><a class="text-surface-variant/80 hover:text-on-primary transition-colors text-body-md" href="#">GDPR Compliance</a></li>
+<li class=""><a class="text-surface-variant/80 hover:text-on-primary transition-colors text-body-md" href="#">Privacy Policy</a></li>
+<li class=""><a class="text-surface-variant/80 hover:text-on-primary transition-colors text-body-md" href="#">Contact Support</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Suivez-nous</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+</div>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto px-margin-desktop py-8 border-t border-white/10 text-center text-label-sm font-label-sm opacity-60">
+            © 2024 A7 Emailing Platform. All rights reserved. Precision-driven communication.
+        </div>
+</footer>
+<script>
+        // Smooth reveal interaction for cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.pricing-card-hover').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                observer.observe(card);
+            });
+        });
+    </script>
+
+
+
+
+
+
+</body></html>

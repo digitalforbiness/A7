@@ -1,0 +1,526 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="fr"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>A7 Emailing | Routage SaaS &amp; Data Technologies</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e9e0e6",
+                        "surface": "#fff7fb",
+                        "text-main": "#2D3436",
+                        "tertiary-fixed": "#e7e69e",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#1d1d00",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#ba8bca",
+                        "surface-container-highest": "#e9e0e6",
+                        "secondary-container": "#fea520",
+                        "on-secondary-container": "#694000",
+                        "secondary-fixed-dim": "#ffb961",
+                        "on-surface": "#1e1a1e",
+                        "on-secondary-fixed-variant": "#663e00",
+                        "secondary-fixed": "#ffddb9",
+                        "surface-dim": "#e0d8dd",
+                        "surface-tint": "#784e88",
+                        "surface-gray": "#F8F9FA",
+                        "on-primary-fixed": "#2f0740",
+                        "on-tertiary-fixed-variant": "#494911",
+                        "inverse-surface": "#332f33",
+                        "border-subtle": "#E9ECEF",
+                        "on-secondary-fixed": "#2b1700",
+                        "vibrant-orange": "#E67E22",
+                        "primary-container": "#4a235a",
+                        "primary-fixed-dim": "#e7b5f7",
+                        "surface-container-high": "#eee6eb",
+                        "tertiary": "#202000",
+                        "text-muted": "#636E72",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#f4ebf1",
+                        "tertiary-fixed-dim": "#cbca84",
+                        "primary": "#330b43",
+                        "inverse-on-surface": "#f7eef4",
+                        "surface-bright": "#fff7fb",
+                        "background": "#fff7fb",
+                        "inverse-primary": "#e7b5f7",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#a0a05e",
+                        "primary-fixed": "#f8d8ff",
+                        "outline": "#7e747e",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#faf1f7",
+                        "tertiary-container": "#353600",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#5f366f",
+                        "on-background": "#1e1a1e",
+                        "on-surface-variant": "#4c444d",
+                        "error-container": "#ffdad6",
+                        "deep-purple": "#2E1537",
+                        "secondary": "#865300",
+                        "outline-variant": "#cfc3ce"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "container-max": "1200px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "stack-sm": "8px",
+                        "margin-desktop": "40px",
+                        "stack-lg": "64px",
+                        "stack-md": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-md": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #2E1537 0%, #4a235a 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 4px 12px rgba(46, 21, 55, 0.06);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .card-shadow:hover {
+            box-shadow: 0 8px 20px rgba(46, 21, 55, 0.1);
+            transform: translateY(-4px);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-md border-b border-border-subtle shadow-sm">
+<div class="flex justify-between items-center max-w-[1200px] mx-auto px-margin-desktop py-4">
+<div class="flex items-center gap-4">
+<img alt="A7 Emailing Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida/AP1WRLs7gRxfJp-NeZ22HSgV6eFmQPxLJuhMZs2GCMVSh7mXaOHYxX6Rjm5CgYsnPwcyS6IUpn9RHjLcbUGYaAV3jL8olygsSyjs5fsg5xaUt-_lyHc8X4u48nqTz5WIMrR7wnJTbtI4PZEDPh-_SKUP3oJQ4Ftb6ryvpd_4z83wHWLTLIT7UqTVDw3b0qr2alRMdXo-GoWqZLOw0cEdluXo8T17lJN0w4kMAckH_TY7MHHVOPKywMk0nEprzGWe">
+<div class="hidden lg:block border-l border-outline-variant pl-4">
+<p class="text-label-sm font-label-sm text-primary uppercase tracking-wider">Precision-driven</p>
+<p class="text-label-sm font-label-sm text-text-muted">Routage &amp; Data</p>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">E-commerce</a>
+<a class="text-text-muted hover:text-primary transition-colors font-body-md text-body-md" href="#">Monetization</a>
+<a class="text-text-muted hover:text-primary transition-colors font-body-md text-body-md" href="#">Architecture</a>
+<a class="text-text-muted hover:text-primary transition-colors font-body-md text-body-md" href="#">References</a>
+<a class="text-text-muted hover:text-primary transition-colors font-body-md text-body-md" href="#">Entreprise</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="hidden lg:flex flex-col items-end mr-4" href="tel:330183641616">
+<span class="text-label-sm font-label-sm text-text-muted uppercase">Expert Support</span>
+<span class="text-body-md font-bold text-primary">01 83 64 16 16</span>
+</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-bold text-body-md hover:bg-primary-container transition-all active:scale-95">
+                    Free Trial
+                </button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-20 overflow-hidden bg-deep-purple">
+
+<div class="relative max-w-[1200px] mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="z-10">
+<span class="inline-block px-4 py-1 rounded-full bg-secondary-container/20 text-secondary-container text-label-sm font-label-sm uppercase tracking-widest mb-6">
+                    SaaS Routing &amp; Data Technologies
+                </span>
+<h1 class="font-display-lg text-display-lg text-on-primary mb-6">
+                    Le partenaire des professionnels <span class="text-secondary-fixed-dim">exigeants</span>.
+                </h1>
+<p class="text-body-lg font-body-lg text-surface-variant/80 mb-8 max-w-xl">
+                    Optimisez votre ROI avec une infrastructure de routage haute performance. A7 Emailing combine expertise métier et technologies prédictives pour vos campagnes les plus critiques.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-vibrant-orange text-white px-8 py-4 rounded-lg font-bold text-body-lg hover:scale-105 transition-transform flex items-center gap-2">
+                        Essai Gratuit 15 jours
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="border border-surface-variant/30 text-on-primary px-8 py-4 rounded-lg font-bold text-body-lg hover:bg-white/10 transition-colors">
+                        Découvrir nos solutions
+                    </button>
+</div>
+<p class="mt-4 text-label-sm font-label-sm text-surface-variant/50">
+                    *Sans carte bancaire. 300 envois inclus immédiatement.
+                </p>
+</div>
+<div class="relative z-10 hidden lg:block">
+<div class="bg-surface/5 backdrop-blur-xl p-8 rounded-xl border border-white/10 card-shadow">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-3 h-3 rounded-full bg-red-400"></div>
+<div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+<div class="w-3 h-3 rounded-full bg-green-400"></div>
+<span class="text-surface-variant/40 text-label-sm font-label-sm ml-auto uppercase">Live Monitoring</span>
+</div>
+<div class="space-y-4">
+<div class="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-vibrant-orange w-[85%] transition-all duration-1000"></div>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<div class="p-4 bg-white/5 rounded-lg">
+<span class="block text-secondary-fixed-dim font-bold text-headline-md">99.9%</span>
+<span class="text-label-sm font-label-sm text-surface-variant/60 uppercase">Délivrabilité</span>
+</div>
+<div class="p-4 bg-white/5 rounded-lg">
+<span class="block text-secondary-fixed-dim font-bold text-headline-md">15M+</span>
+<span class="text-label-sm font-label-sm text-surface-variant/60 uppercase">Mails/jour</span>
+</div>
+<div class="p-4 bg-white/5 rounded-lg">
+<span class="block text-secondary-fixed-dim font-bold text-headline-md">24/7</span>
+<span class="text-label-sm font-label-sm text-surface-variant/60 uppercase">Uptime</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Service Dualism -->
+<section class="py-stack-lg max-w-[1200px] mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- E-Commerce Card -->
+<div class="group relative overflow-hidden rounded-xl p-10 bg-white card-shadow border-l-8 border-primary">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[80px]" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-primary mb-4">E-Commerce</h3>
+<p class="text-body-md text-text-muted mb-6 leading-relaxed">
+                    L'emailing est le moteur de votre croissance. Nous comprenons les contraintes du retail : réactivité, segmentation fine et automatisation transactionnelle sans faille.
+                </p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-3 text-body-md text-text-main">
+<span class="material-symbols-outlined text-vibrant-orange">check_circle</span>
+                        Automation marketing &amp; Relances panier
+                    </li>
+<li class="flex items-center gap-3 text-body-md text-text-main">
+<span class="material-symbols-outlined text-vibrant-orange">check_circle</span>
+                        Connecteurs Shopify, Magento &amp; PrestaShop
+                    </li>
+<li class="flex items-center gap-3 text-body-md text-text-main">
+<span class="material-symbols-outlined text-vibrant-orange">check_circle</span>
+                        Segmentation comportementale avancée
+                    </li>
+</ul>
+<a class="inline-flex items-center gap-2 font-bold text-primary group/link hover:underline" href="#">
+                    Explorer la solution E-commerce 
+                    <span class="material-symbols-outlined transition-transform group-hover/link:translate-x-1">arrow_right_alt</span>
+</a>
+</div>
+<!-- Monetization Card -->
+<div class="group relative overflow-hidden rounded-xl p-10 bg-white card-shadow border-l-8 border-secondary-container">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[80px]" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-secondary mb-4">Monétisation</h3>
+<p class="text-body-md text-text-muted mb-6 leading-relaxed">
+                    Maximisez la valeur de vos bases de données. Face à la baisse des revenus CPM, nous offrons des outils métier orientés performance et conformité.
+                </p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-3 text-body-md text-text-main">
+<span class="material-symbols-outlined text-vibrant-orange">check_circle</span>
+                        Algorithmes d'optimisation de rendement
+                    </li>
+<li class="flex items-center gap-3 text-body-md text-text-main">
+<span class="material-symbols-outlined text-vibrant-orange">check_circle</span>
+                        Protection de réputation d'expéditeur
+                    </li>
+<li class="flex items-center gap-3 text-body-md text-text-main">
+<span class="material-symbols-outlined text-vibrant-orange">check_circle</span>
+                        Gestion multi-bases &amp; Compliance RGPD
+                    </li>
+</ul>
+<a class="inline-flex items-center gap-2 font-bold text-secondary group/link hover:underline" href="#">
+                    Optimiser vos revenus Data
+                    <span class="material-symbols-outlined transition-transform group-hover/link:translate-x-1">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="bg-surface-gray py-stack-lg border-y border-border-subtle">
+<div class="max-w-[1200px] mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary uppercase tracking-tight">Le partenaire des professionnels exigeants</h2>
+<div class="w-20 h-1 bg-vibrant-orange mx-auto mt-4"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter text-center">
+<div class="p-6">
+<span class="material-symbols-outlined text-[48px] text-primary mb-4" style="font-variation-settings: 'FILL' 1;">mail</span>
+<p class="text-display-lg font-display-lg text-primary mb-1">15B</p>
+<p class="text-label-sm font-label-sm text-text-muted uppercase tracking-widest leading-tight">Mails délivrés<br>en 2023</p>
+</div>
+<div class="p-6">
+<span class="material-symbols-outlined text-[48px] text-primary mb-4" style="font-variation-settings: 'FILL' 1;">person_search</span>
+<p class="text-display-lg font-display-lg text-primary mb-1">120M</p>
+<p class="text-label-sm font-label-sm text-text-muted uppercase tracking-widest leading-tight">Profils uniques<br>qualifiés</p>
+</div>
+<div class="p-6">
+<span class="material-symbols-outlined text-[48px] text-primary mb-4" style="font-variation-settings: 'FILL' 1;">handshake</span>
+<p class="text-display-lg font-display-lg text-primary mb-1">86</p>
+<p class="text-label-sm font-label-sm text-text-muted uppercase tracking-widest leading-tight">Clients grands<br>comptes</p>
+</div>
+<div class="p-6">
+<span class="material-symbols-outlined text-[48px] text-primary mb-4" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+<p class="text-display-lg font-display-lg text-primary mb-1">24</p>
+<p class="text-label-sm font-label-sm text-text-muted uppercase tracking-widest leading-tight">Experts<br>disponibles</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Client Logos -->
+<section class="py-stack-md bg-white overflow-hidden">
+<div class="max-w-[1200px] mx-auto px-margin-desktop mb-8 text-center">
+<p class="text-label-sm font-label-sm text-text-muted uppercase tracking-widest">Ils nous font confiance</p>
+</div>
+<div class="flex whitespace-nowrap overflow-hidden py-4 opacity-60 hover:opacity-100 transition-opacity">
+<div class="flex items-center gap-16 animate-marquee">
+<!-- Repeated logos for scrolling effect -->
+<div class="text-headline-md font-bold text-outline">VISTAPRINT</div>
+<div class="text-headline-md font-bold text-outline">ASSURLAND</div>
+<div class="text-headline-md font-bold text-outline">SIGNAL</div>
+<div class="text-headline-md font-bold text-outline">MEETIC</div>
+<div class="text-headline-md font-bold text-outline">INKCLUB</div>
+<div class="text-headline-md font-bold text-outline">3SUISSES</div>
+<!-- Duplicate for loop -->
+<div class="text-headline-md font-bold text-outline">VISTAPRINT</div>
+<div class="text-headline-md font-bold text-outline">ASSURLAND</div>
+<div class="text-headline-md font-bold text-outline">SIGNAL</div>
+<div class="text-headline-md font-bold text-outline">MEETIC</div>
+<div class="text-headline-md font-bold text-outline">INKCLUB</div>
+<div class="text-headline-md font-bold text-outline">3SUISSES</div>
+</div>
+</div>
+<style>
+            @keyframes marquee {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+            }
+            .animate-marquee {
+                display: flex;
+                animation: marquee 30s linear infinite;
+                width: max-content;
+            }
+        </style>
+</section>
+<!-- Pricing Grid (Modernized) -->
+<section class="py-stack-lg bg-surface-container">
+<div class="max-w-[1200px] mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary">Des formules flexibles et évolutives</h2>
+<p class="text-body-md text-text-muted mt-2">Des solutions adaptées à chaque stade de votre croissance.</p>
+</div>
+<!-- Pricing Tabs/Category Toggles -->
+<div class="flex flex-col gap-12">
+<!-- E-Commerce Category -->
+<div>
+<div class="flex items-center gap-4 mb-8">
+<span class="bg-primary text-white p-2 rounded-lg material-symbols-outlined">shopping_bag</span>
+<h3 class="font-headline-md text-headline-md text-primary">Solutions E-Commerce</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Plan 1 -->
+<div class="bg-white p-8 rounded-xl card-shadow border border-border-subtle flex flex-col">
+<h4 class="font-bold text-primary mb-2">E-shop &amp; TPE</h4>
+<p class="text-label-sm font-label-sm text-text-muted uppercase mb-6">Idéal pour démarrer</p>
+<ul class="space-y-4 mb-8 text-body-md flex-grow">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-vibrant-orange text-sm mt-1">check</span> 50,000 contacts</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-vibrant-orange text-sm mt-1">check</span> Emails illimités</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-vibrant-orange text-sm mt-1">check</span> 2 IP Dédiées</li>
+</ul>
+<div class="text-headline-md font-bold text-primary mb-6">297 € <span class="text-label-sm font-label-sm text-text-muted">HT / mois</span></div>
+<button class="w-full py-3 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all">Choisir</button>
+</div>
+<!-- Plan 2 -->
+<div class="bg-primary p-8 rounded-xl card-shadow transform scale-105 z-10 border border-primary-container flex flex-col text-on-primary">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-vibrant-orange text-white px-4 py-1 rounded-full text-label-sm font-label-sm">POPULAIRE</div>
+<h4 class="font-bold mb-2">E-boutique</h4>
+<p class="text-label-sm font-label-sm text-surface-variant/60 uppercase mb-6">Profilage CRM complet</p>
+<ul class="space-y-4 mb-8 text-body-md flex-grow">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-white text-sm mt-1">check</span> Marketing &amp; Transactionnel</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-white text-sm mt-1">check</span> 3 Millions d'emails</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-white text-sm mt-1">check</span> NoSpam Configuration</li>
+</ul>
+<div class="text-headline-md font-bold mb-6">497 € <span class="text-label-sm font-label-sm text-surface-variant/60">HT / mois</span></div>
+<button class="w-full py-3 rounded-lg bg-vibrant-orange text-white font-bold shadow-lg hover:brightness-110 transition-all">Démarrer</button>
+</div>
+<!-- Plan 3 -->
+<div class="bg-white p-8 rounded-xl card-shadow border border-border-subtle flex flex-col">
+<h4 class="font-bold text-primary mb-2">E-retailer</h4>
+<p class="text-label-sm font-label-sm text-text-muted uppercase mb-6">Puissance Big Data</p>
+<ul class="space-y-4 mb-8 text-body-md flex-grow">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-vibrant-orange text-sm mt-1">check</span> Hyper-segmentation</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-vibrant-orange text-sm mt-1">check</span> 6 Millions d'emails</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-vibrant-orange text-sm mt-1">check</span> Scénarios complexes</li>
+</ul>
+<div class="text-headline-md font-bold text-primary mb-6">897 € <span class="text-label-sm font-label-sm text-text-muted">HT / mois</span></div>
+<button class="w-full py-3 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all">Choisir</button>
+</div>
+</div>
+</div>
+<!-- Monetization Category -->
+<div>
+<div class="flex items-center gap-4 mb-8 mt-12">
+<span class="bg-secondary-container text-on-secondary-container p-2 rounded-lg material-symbols-outlined">trending_up</span>
+<h3 class="font-headline-md text-headline-md text-secondary">Solutions Monétisation</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-white p-8 rounded-xl card-shadow border-t-4 border-secondary-container">
+<h4 class="font-bold text-secondary mb-2">Editeur de sites</h4>
+<p class="text-label-sm font-label-sm text-text-muted uppercase mb-6">8 IP dédiées</p>
+<div class="text-headline-md font-bold text-secondary mb-6">897 € <span class="text-label-sm font-label-sm text-text-muted">HT / mois</span></div>
+</div>
+<div class="bg-white p-8 rounded-xl card-shadow border-t-4 border-secondary-container">
+<h4 class="font-bold text-secondary mb-2">Performance</h4>
+<p class="text-label-sm font-label-sm text-text-muted uppercase mb-6">16 IP dédiées + API</p>
+<div class="text-headline-md font-bold text-secondary mb-6">1297 € <span class="text-label-sm font-label-sm text-text-muted">HT / mois</span></div>
+</div>
+<div class="bg-white p-8 rounded-xl card-shadow border-t-4 border-secondary-container">
+<h4 class="font-bold text-secondary mb-2">Régie Multi-bases</h4>
+<p class="text-label-sm font-label-sm text-text-muted uppercase mb-6">32 IP dédiées</p>
+<div class="text-headline-md font-bold text-secondary mb-6">1997 € <span class="text-label-sm font-label-sm text-text-muted">HT / mois</span></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Custom CTA -->
+<div class="mt-20 p-10 bg-white rounded-2xl shadow-xl border border-border-subtle flex flex-col md:flex-row items-center justify-between gap-8">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">Besoin d'un accompagnement sur-mesure ?</h3>
+<p class="text-body-md text-text-muted mt-2">Scoring, nettoyage de base, médiation FAI : nos experts construisent votre offre à la carte.</p>
+</div>
+<div class="flex items-center gap-6">
+<a class="flex flex-col" href="tel:330183641616">
+<span class="text-label-sm font-label-sm text-text-muted uppercase">Ligne Directe</span>
+<span class="text-headline-md font-bold text-primary">01 83 64 16 16</span>
+</a>
+<button class="bg-deep-purple text-on-primary px-8 py-4 rounded-lg font-bold hover:bg-primary transition-all">Contactez-nous</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-deep-purple text-on-primary mt-stack-lg">
+<div class="max-w-[1200px] mx-auto px-margin-desktop py-stack-lg">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-12">
+<div>
+<img alt="A7 Logo White" class="h-10 w-auto mb-6 brightness-0 invert" src="https://lh3.googleusercontent.com/aida/AP1WRLs7gRxfJp-NeZ22HSgV6eFmQPxLJuhMZs2GCMVSh7mXaOHYxX6Rjm5CgYsnPwcyS6IUpn9RHjLcbUGYaAV3jL8olygsSyjs5fsg5xaUt-_lyHc8X4u48nqTz5WIMrR7wnJTbtI4PZEDPh-_SKUP3oJQ4Ftb6ryvpd_4z83wHWLTLIT7UqTVDw3b0qr2alRMdXo-GoWqZLOw0cEdluXo8T17lJN0w4kMAckH_TY7MHHVOPKywMk0nEprzGWe">
+<p class="text-body-md text-surface-variant/70 leading-relaxed mb-6">
+                        Le partenaire stratégique des professionnels de l'emailing. Expertise, Performance et Précision.
+                    </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-surface-variant/40 hover:text-white cursor-pointer">face_nod</span>
+<span class="material-symbols-outlined text-surface-variant/40 hover:text-white cursor-pointer">public</span>
+<span class="material-symbols-outlined text-surface-variant/40 hover:text-white cursor-pointer">hub</span>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-label-sm font-label-sm uppercase tracking-widest mb-6">Nos Services</h4>
+<ul class="space-y-4">
+<li class=""><a class="text-surface-variant/70 hover:text-white transition-colors" href="#">E-commerce</a></li>
+<li class=""><a class="text-surface-variant/70 hover:text-white transition-colors" href="#">Monétisation</a></li>
+<li class=""><a class="text-surface-variant/70 hover:text-white transition-colors" href="#">Architecture</a></li>
+<li class=""><a class="text-surface-variant/70 hover:text-white transition-colors" href="#">Entreprise</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-label-sm font-label-sm uppercase tracking-widest mb-6">Démarche Qualité</h4>
+<ul class="space-y-4">
+<li class=""><a class="text-surface-variant/70 hover:text-white transition-colors" href="#">Politique Anti-Spam</a></li>
+<li class=""><a class="text-surface-variant/70 hover:text-white transition-colors" href="#">Signaler un abus</a></li>
+<li class=""><a class="text-surface-variant/70 hover:text-white transition-colors" href="#">Relation FAI</a></li>
+<li class=""><a class="text-surface-variant/70 hover:text-white transition-colors" href="#">Conformité RGPD</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-label-sm font-label-sm uppercase tracking-widest mb-6">Contact</h4>
+<p class="text-body-md text-surface-variant/70 mb-4">
+                        20 avenue de Fontvieille<br>
+                        98000 Monaco
+                    </p>
+<p class="text-body-md text-surface-variant/70 mb-2">01 83 64 16 16</p>
+<p class="text-body-md text-surface-variant/70">contact@a7emailing.com</p>
+</div>
+</div>
+<div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-label-sm font-label-sm text-surface-variant/40">
+                    © 2024 A7 Emailing Platform. All rights reserved. Precision-driven communication.
+                </p>
+<div class="flex gap-8">
+<a class="text-label-sm font-label-sm text-surface-variant/40 hover:text-white underline decoration-secondary-container" href="#">Confidentialité</a>
+<a class="text-label-sm font-label-sm text-surface-variant/40 hover:text-white underline decoration-secondary-container" href="#">Mentions légales</a>
+<a class="text-label-sm font-label-sm text-surface-variant/40 hover:text-white underline decoration-secondary-container" href="#">Cookies</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Cookie Banner (Discrete Modern Style) -->
+<div class="fixed bottom-6 left-6 right-6 md:left-auto md:w-96 z-[100] transform transition-transform duration-500" id="cookie-banner">
+<div class="bg-white p-6 rounded-xl shadow-2xl border border-border-subtle flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-vibrant-orange">cookie</span>
+<h5 class="font-bold text-primary">Confidentialité</h5>
+</div>
+<p class="text-label-sm font-label-sm text-text-muted">
+                Ce site n'utilise pas des cookies pour le suivi publicitaire. Nous respectons votre vie privée par défaut.
+            </p>
+<button class="w-full bg-secondary text-white py-2 rounded font-bold hover:bg-secondary-container transition-colors" onclick="document.getElementById('cookie-banner').style.transform = 'translateY(200%)'">
+                D'accord
+            </button>
+</div>
+</div>
+<script>
+        // Micro-interaction for active nav states and smooth scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.add('py-4');
+                nav.classList.remove('py-2');
+            }
+        });
+    </script>
+
+
+
+
+</body></html>
