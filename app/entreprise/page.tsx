@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { contact } from "@/lib/navigation";
 
 export const metadata: Metadata = {
   title: "Entreprise",
@@ -66,12 +65,12 @@ export default function EntreprisePage() {
                 </ul>
               </div>
               <div className="flex flex-wrap gap-4 pt-4">
-                <a
+                <Link
                   className="bg-vibrant-orange text-white px-8 py-4 rounded-lg font-bold shadow-lg hover:brightness-110 transition-all flex items-center gap-2"
-                  href={`mailto:${contact.email}`}
+                  href="/contact"
                 >
                   Nous Contacter <span className="material-symbols-outlined">arrow_forward</span>
-                </a>{" "}
+                </Link>{" "}
                 <Link
                   className="inline-flex items-center justify-center border-2 border-primary text-primary px-8 py-4 rounded-lg font-bold hover:bg-primary hover:text-white transition-all"
                   href="/nos-clients"
@@ -284,12 +283,12 @@ export default function EntreprisePage() {
                 >
                   Démarrer un essai gratuit
                 </Link>{" "}
-                <a
+                <Link
                   className="inline-flex items-center justify-center bg-vibrant-orange text-white px-10 py-4 rounded-xl font-bold hover:brightness-110 shadow-lg transition-all"
-                  href={`mailto:${contact.email}`}
+                  href="/contact"
                 >
                   Contacter un expert
-                </a>
+                </Link>
               </div>
             </div>
           </div>

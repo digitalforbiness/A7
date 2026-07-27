@@ -1,5 +1,3 @@
-import { contact } from "@/lib/navigation";
-
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -180,12 +178,12 @@ export default function CgvPage() {
               Notre équipe juridique est disponible pour répondre à vos questions spécifiques.
             </p>
           </div>
-          <a
+          <Link
             className="inline-flex items-center justify-center bg-vibrant-orange text-white px-8 py-3 rounded-lg font-bold shadow-lg hover:scale-105 transition-transform"
-            href={`mailto:${contact.email}`}
+            href="/contact"
           >
             Contactez le Support
-          </a>
+          </Link>
         </div>
       </div>
       {/* Footer */}

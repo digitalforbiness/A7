@@ -4,7 +4,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Logo from "./Logo";
-import { contact, isActive, mainNav } from "@/lib/navigation";
+import { contact, contactRoute, isActive, mainNav } from "@/lib/navigation";
+
+// Le lien Contact complète les liens « services » dans la barre de navigation.
+const navLinks = [...mainNav, { href: contactRoute, label: "Contact" }];
 
 export default function Header() {
   const pathname = usePathname();
@@ -27,7 +30,7 @@ export default function Header() {
         </Link>
 
         <nav aria-label="Navigation principale" className="hidden lg:flex items-center gap-8">
-          {mainNav.map((link) => {
+          {navLinks.map((link) => {
             const active = isActive(link.href, pathname);
             return (
               <Link
@@ -83,7 +86,7 @@ export default function Header() {
           className="lg:hidden border-t border-border-subtle bg-surface px-margin-mobile py-stack-md"
         >
           <ul className="flex flex-col gap-stack-sm">
-            {mainNav.map((link) => (
+            {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}

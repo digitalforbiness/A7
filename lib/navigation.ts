@@ -18,6 +18,13 @@ export const mainNav: NavLink[] = [
   { href: "/entreprise", label: "Entreprise" },
 ];
 
+/**
+ * Page contact — cible unique de tous les appels à l'action commerciaux
+ * ("Nous contacter", "Parler à un expert", "Voir la démo"…). Mise en avant
+ * dans le header et rappelée dans le footer.
+ */
+export const contactRoute = "/contact";
+
 /** Colonne "Démarche qualité" du footer. Ces pages restent à écrire. */
 export const qualityNav: NavLink[] = [
   { href: "/tarifs", label: "Tarifs & paiement" },

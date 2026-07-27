@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { contact } from "@/lib/navigation";
 
 export const metadata: Metadata = {
   title: "Tarification & paiement",
@@ -246,12 +245,12 @@ export default function TarifsPage() {
                   <span className="text-body-md">Accès API complet</span>
                 </li>
               </ul>
-              <a
+              <Link
                 className="inline-flex items-center justify-center w-full py-3 rounded-lg bg-secondary-container text-deep-purple font-bold hover:brightness-110 transition-all"
-                href={`mailto:${contact.email}`}
+                href="/contact"
               >
                 Nous contacter
-              </a>
+              </Link>
             </div>
           </div>
         </section>

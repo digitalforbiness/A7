@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { contact } from "@/lib/navigation";
 
 export const metadata: Metadata = {
   title: "Automation & IA",
@@ -38,12 +37,12 @@ export default function AutomationIaPage() {
                   Découvrir nos solutions{" "}
                   <span className="material-symbols-outlined">trending_up</span>
                 </Link>{" "}
-                <a
+                <Link
                   className="border-2 border-primary text-primary px-8 py-4 rounded-lg font-headline-md hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2"
-                  href={`mailto:${contact.email}`}
+                  href="/contact"
                 >
                   Voir la démo <span className="material-symbols-outlined">play_circle</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -251,12 +250,12 @@ export default function AutomationIaPage() {
                   <p className="text-on-surface-variant font-body-md mb-6">
                     Visualisez l’impact de l’IA sur vos revenus avec une clarté sans précédent.
                   </p>
-                  <a
+                  <Link
                     className="inline-flex items-center justify-center bg-primary text-white w-fit px-6 py-2 rounded-lg font-label-sm hover:bg-vibrant-orange transition-all"
-                    href={`mailto:${contact.email}`}
+                    href="/contact"
                   >
                     Voir les rapports
-                  </a>
+                  </Link>
                 </div>
                 <div className="flex-1 bg-surface-container-low min-h-[200px]">
                   <Image
@@ -289,12 +288,12 @@ export default function AutomationIaPage() {
               >
                 Essayer Gratuitement
               </Link>{" "}
-              <a
+              <Link
                 className="inline-flex items-center justify-center bg-primary text-white px-10 py-5 rounded-lg font-headline-md elevation-2 hover:bg-primary-container hover:-translate-y-1 transition-all active:scale-95"
-                href={`mailto:${contact.email}`}
+                href="/contact"
               >
                 Contacter un expert
-              </a>
+              </Link>
             </div>
             <p className="mt-6 text-text-muted font-label-sm">
               14 jours d’essai gratuit • Sans carte bancaire

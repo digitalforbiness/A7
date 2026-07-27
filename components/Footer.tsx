@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Logo from "./Logo";
-import { contact, legalNav, mainNav, qualityNav } from "@/lib/navigation";
+import { contact, contactRoute, legalNav, mainNav, qualityNav } from "@/lib/navigation";
 
 export default function Footer() {
   return (
@@ -72,6 +72,13 @@ export default function Footer() {
                 </a>
               </p>
             </address>
+            <Link
+              href={contactRoute}
+              className="inline-flex items-center gap-1 mt-4 font-bold text-secondary-fixed-dim hover:text-white transition-colors"
+            >
+              Nous écrire
+              <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </Link>
           </div>
         </div>
 

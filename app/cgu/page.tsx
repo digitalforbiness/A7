@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Accordion from "@/components/Accordion";
 import PrintButton from "@/components/PrintButton";
-import { contact } from "@/lib/navigation";
 
 export const metadata: Metadata = {
   title: "Conditions générales d'utilisation",
@@ -189,13 +189,13 @@ export default function CguPage() {
               <span className="material-symbols-outlined">download</span>
               Enregistrer en PDF
             </PrintButton>
-            <a
-              href={`mailto:${contact.email}`}
+            <Link
+              href="/contact"
               className="inline-flex items-center gap-2 border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-deep-purple transition-all"
             >
               <span className="material-symbols-outlined">support_agent</span>
               Contacter le support
-            </a>
+            </Link>
           </div>
         </section>
       </div>

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import ClientLogoWall from "@/components/ClientLogoWall";
 import Link from "next/link";
-import { contact } from "@/lib/navigation";
 
 export const metadata: Metadata = {
   title: "Ils nous font confiance",
@@ -222,12 +221,12 @@ export default function NosClientsPage() {
               >
                 Lancer mon essai gratuit
               </Link>{" "}
-              <a
+              <Link
                 className="inline-flex items-center justify-center bg-white/10 backdrop-blur text-on-primary border border-white/20 px-8 py-4 rounded-xl font-headline-md text-body-md hover:bg-white/20 transition-all"
-                href={`mailto:${contact.email}`}
+                href="/contact"
               >
                 Contactez un expert
-              </a>
+              </Link>
             </div>
           </div>
         </section>

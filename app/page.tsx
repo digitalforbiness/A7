@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { contact } from "@/lib/navigation";
 
 export default function AccueilPage() {
   return (
@@ -467,12 +466,12 @@ export default function AccueilPage() {
                 </span>{" "}
                 <span className="text-headline-md font-bold text-primary">01 83 64 16 16</span>
               </a>{" "}
-              <a
+              <Link
                 className="inline-flex items-center justify-center bg-deep-purple text-on-primary px-8 py-4 rounded-lg font-bold hover:bg-primary transition-all"
-                href={`mailto:${contact.email}`}
+                href="/contact"
               >
                 Contactez-nous
-              </a>
+              </Link>
             </div>
           </div>
         </div>
