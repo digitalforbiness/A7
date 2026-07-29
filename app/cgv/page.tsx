@@ -160,7 +160,7 @@ export default function CgvPage() {
               </p>
               <Link
                 className="flex items-center gap-2 text-vibrant-orange font-bold hover:underline"
-                href="/politique-cookies"
+                href="/politique-confidentialite"
               >
                 Consulter notre Politique de Confidentialité{" "}
                 <span className="material-symbols-outlined text-sm">arrow_forward</span>

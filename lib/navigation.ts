@@ -25,20 +25,21 @@ export const mainNav: NavLink[] = [
  */
 export const contactRoute = "/contact";
 
-/** Colonne "Démarche qualité" du footer. Ces pages restent à écrire. */
+/** Colonne "Démarche qualité" du footer. */
 export const qualityNav: NavLink[] = [
   { href: "/tarifs", label: "Tarifs & paiement" },
   { href: "/cgv", label: "Conditions de vente" },
   { href: "/cgu", label: "Conditions d'utilisation" },
-  { href: "/politique-cookies", label: "Conformité RGPD" },
+  { href: "/politique-confidentialite", label: "Confidentialité & RGPD" },
 ];
 
 /** Barre légale en bas de footer. */
 export const legalNav: NavLink[] = [
   { href: "/mentions-legales", label: "Mentions légales" },
+  { href: "/politique-confidentialite", label: "Confidentialité" },
+  { href: "/politique-cookies", label: "Cookies" },
   { href: "/cgu", label: "CGU" },
   { href: "/cgv", label: "CGV" },
-  { href: "/politique-cookies", label: "Cookies" },
 ];
 
 /** Coordonnées, référencées partout plutôt que réécrites page par page. */

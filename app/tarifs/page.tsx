@@ -422,7 +422,10 @@ export default function TarifsPage() {
                         conditions générales de vente
                       </Link>{" "}
                       et la{" "}
-                      <Link href="/politique-cookies" className="underline hover:text-primary">
+                      <Link
+                        href="/politique-confidentialite"
+                        className="underline hover:text-primary"
+                      >
                         politique de confidentialité
                       </Link>
                       .

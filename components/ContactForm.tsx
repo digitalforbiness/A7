@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 const SUBJECTS = [
@@ -184,8 +185,11 @@ export default function ContactForm({
           className="mt-1 rounded text-primary focus:ring-primary"
         />
         <label htmlFor="consentement">
-          J&apos;accepte que mes données soient utilisées pour traiter ma demande, conformément à la
-          politique de confidentialité.
+          J&apos;accepte que mes données soient utilisées pour traiter ma demande, conformément à la{" "}
+          <Link href="/politique-confidentialite" className="underline hover:text-primary">
+            politique de confidentialité
+          </Link>
+          .
         </label>
       </div>
 
