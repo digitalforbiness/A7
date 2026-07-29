@@ -25,10 +25,12 @@ app/
   layout.tsx              Header, Footer, polices, consentement cookies, métadonnées
   page.tsx                Accueil (offre e-commerce)
   entreprise/ architecture/ automation-ia/ monetisation/ tarifs/ nos-clients/
-  cgu/ cgv/ mentions-legales/ politique-cookies/
+  contact/                Formulaire + coordonnées directes
+  cgu/ cgv/ mentions-legales/ politique-cookies/ politique-confidentialite/
+  api/contact/            Stub — à brancher sur le fournisseur d'e-mail
   api/souscription/       Stub — à brancher sur le prestataire de paiement
   globals.css             Design tokens A7 + classes héritées des maquettes
-components/               Header, Footer, Logo, Accordion, ClientLogoWall, CookieConsent…
+components/               Header, Footer, Logo, Accordion, ContactForm, CookieConsent…
 lib/
   navigation.ts           Source unique des routes et des coordonnées
   clients.ts              Mur de logos clients
@@ -40,6 +42,11 @@ reference/                Maquettes HTML d'origine, conservées pour comparaison
 
 **Navigation** — `lib/navigation.ts` alimente le header, le menu mobile et le footer.
 Ajouter une page revient à créer son dossier dans `app/` puis à compléter ce fichier.
+
+**Contact** — tous les appels à l'action commerciaux pointent vers `/contact`. Le
+formulaire poste vers `app/api/contact/route.ts`, un stub qui valide la saisie mais
+n'expédie pas encore d'e-mail : brancher un fournisseur (Resend, SMTP…) avant la mise
+en ligne, sinon les messages ne sont pas transmis.
 
 **Design system** — les tokens de `reference/a7_digital_identity/DESIGN.md` sont portés
 dans le bloc `@theme` de `app/globals.css`. Les classes utilitaires nommées
