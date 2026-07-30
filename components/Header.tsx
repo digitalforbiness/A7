@@ -29,7 +29,10 @@ export default function Header() {
           <Logo className="h-10 w-auto" />
         </Link>
 
-        <nav aria-label="Navigation principale" className="hidden lg:flex items-center gap-6">
+        <nav
+          aria-label="Navigation principale"
+          className="hidden xl:flex items-center gap-5 whitespace-nowrap"
+        >
           {navLinks.map((link) => {
             const active = isActive(link.href, pathname);
             return (
@@ -49,7 +52,7 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="flex items-center gap-4 shrink-0 lg:ml-8">
+        <div className="flex items-center gap-4 shrink-0 xl:ml-6">
           <Link
             href="/tarifs"
             className="hidden sm:inline-block shrink-0 bg-primary text-on-primary px-6 py-2 rounded-lg font-bold text-body-md hover:bg-primary-container transition-all active:scale-95"
@@ -63,7 +66,7 @@ export default function Header() {
             aria-expanded={menuOpen}
             aria-controls="menu-mobile"
             aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
-            className="lg:hidden text-primary p-2 -mr-2"
+            className="xl:hidden text-primary p-2 -mr-2"
           >
             <span className="material-symbols-outlined text-3xl">
               {menuOpen ? "close" : "menu"}
@@ -76,7 +79,7 @@ export default function Header() {
         <nav
           id="menu-mobile"
           aria-label="Navigation mobile"
-          className="lg:hidden border-t border-border-subtle bg-surface px-margin-mobile py-stack-md"
+          className="xl:hidden border-t border-border-subtle bg-surface px-margin-mobile py-stack-md"
         >
           <ul className="flex flex-col gap-stack-sm">
             {navLinks.map((link) => (
