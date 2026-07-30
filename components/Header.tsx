@@ -26,7 +26,7 @@ export default function Header() {
     <header className="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-md border-b border-border-subtle shadow-sm">
       <div className="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-4">
         <Link href="/" className="flex items-center gap-4 shrink-0">
-          <Logo className="h-10 w-auto" />
+          <Logo priority className="h-12 w-auto" />
         </Link>
 
         <nav

@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-12">
           <div>
-            <Logo variant="dark" className="h-10 w-auto mb-6" />
+            <Logo variant="dark" className="h-12 w-auto mb-6" />
             <p className="text-body-md text-surface-variant/70 leading-relaxed">
               Le partenaire stratégique des professionnels de l&apos;emailing. Expertise,
               performance et précision.

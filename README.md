@@ -69,9 +69,9 @@ directement, ce qui permet aux maquettes d'origine de fonctionner telles quelles
 (7,6 Ko au lieu de ~3,5 Mo). Après avoir ajouté une icône dans une page, lancer
 `npm run icons`, sinon elle s'affiche en toutes lettres.
 
-**Logo** — `components/Logo.tsx` est un logotype SVG de substitution : le logo des
-maquettes pointait vers une URL temporaire aujourd'hui inaccessible. Déposer le vrai
-fichier dans `public/` et remplacer le SVG par un `<Image />`.
+**Logo** — logo officiel dans `public/logo-a7.png` (PNG transparent), affiché via
+`components/Logo.tsx`. La variante `dark` (footer) le rend en blanc via
+`brightness-0 invert`.
 
 **Images** — les visuels sont générés par IA et servis depuis `public/images/`. Les
 logos de moyens de paiement (`img-05`, `img-09`, `img-13`, `img-24`) imitent des
