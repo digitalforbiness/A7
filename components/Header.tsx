@@ -49,7 +49,7 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="flex items-center gap-4 shrink-0">
+        <div className="flex items-center gap-4 shrink-0 lg:ml-8">
           <Link
             href="/tarifs"
             className="hidden sm:inline-block shrink-0 bg-primary text-on-primary px-6 py-2 rounded-lg font-bold text-body-md hover:bg-primary-container transition-all active:scale-95"
