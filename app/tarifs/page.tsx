@@ -63,7 +63,7 @@ export default function TarifsPage() {
                   E-shop
                 </span>
                 <div className="mt-4 flex items-baseline gap-1">
-                  <span className="text-headline-lg font-headline-lg">29€</span>{" "}
+                  <span className="text-headline-lg font-headline-lg">297€</span>{" "}
                   <span className="text-text-muted font-body-md">/mois</span>
                 </div>
                 <p className="text-text-muted text-body-md mt-2">Pour les boutiques émergentes.</p>
@@ -112,7 +112,7 @@ export default function TarifsPage() {
                   E-boutique
                 </span>
                 <div className="mt-4 flex items-baseline gap-1">
-                  <span className="text-headline-lg font-headline-lg">79€</span>{" "}
+                  <span className="text-headline-lg font-headline-lg">497€</span>{" "}
                   <span className="text-text-muted font-body-md">/mois</span>
                 </div>
                 <p className="text-text-muted text-body-md mt-2">Accélérez votre croissance.</p>
@@ -164,7 +164,7 @@ export default function TarifsPage() {
                   E-retailer
                 </span>
                 <div className="mt-4 flex items-baseline gap-1">
-                  <span className="text-headline-lg font-headline-lg">199€</span>{" "}
+                  <span className="text-headline-lg font-headline-lg">897€</span>{" "}
                   <span className="text-text-muted font-body-md">/mois</span>
                 </div>
                 <p className="text-text-muted text-body-md mt-2">Volume et performance.</p>

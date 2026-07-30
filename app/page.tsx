@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ChooseOfferLink from "@/components/ChooseOfferLink";
 
 export default function AccueilPage() {
   return (
@@ -316,12 +317,12 @@ export default function AccueilPage() {
                     297 €{" "}
                     <span className="text-label-sm font-label-sm text-text-muted">HT / mois</span>
                   </div>
-                  <Link
+                  <ChooseOfferLink
+                    offerId="eshop"
                     className="inline-flex items-center justify-center w-full py-3 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all"
-                    href="/tarifs"
                   >
                     Choisir
-                  </Link>
+                  </ChooseOfferLink>
                 </div>
                 {/* Plan 2 */}
                 <div className="bg-primary p-8 rounded-xl card-shadow transform scale-105 z-10 border border-primary-container flex flex-col text-on-primary">
@@ -358,12 +359,12 @@ export default function AccueilPage() {
                       HT / mois
                     </span>
                   </div>
-                  <Link
+                  <ChooseOfferLink
+                    offerId="eboutique"
                     className="inline-flex items-center justify-center w-full py-3 rounded-lg bg-vibrant-orange text-white font-bold shadow-lg hover:brightness-110 transition-all"
-                    href="/tarifs"
                   >
                     Démarrer
-                  </Link>
+                  </ChooseOfferLink>
                 </div>
                 {/* Plan 3 */}
                 <div className="bg-white p-8 rounded-xl card-shadow border border-border-subtle flex flex-col">
@@ -395,12 +396,12 @@ export default function AccueilPage() {
                     897 €{" "}
                     <span className="text-label-sm font-label-sm text-text-muted">HT / mois</span>
                   </div>
-                  <Link
+                  <ChooseOfferLink
+                    offerId="eretailer"
                     className="inline-flex items-center justify-center w-full py-3 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all"
-                    href="/tarifs"
                   >
                     Choisir
-                  </Link>
+                  </ChooseOfferLink>
                 </div>
               </div>
             </div>
