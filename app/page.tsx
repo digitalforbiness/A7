@@ -416,7 +416,7 @@ export default function AccueilPage() {
                 </h3>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-                <div className="bg-white p-8 rounded-xl card-shadow border-t-4 border-secondary-container">
+                <div className="bg-white p-8 rounded-xl card-shadow border-t-4 border-secondary-container flex flex-col">
                   <h4 className="font-bold text-secondary mb-2">Editeur de sites</h4>
                   <p className="text-label-sm font-label-sm text-text-muted uppercase mb-6">
                     8 IP dédiées
@@ -425,9 +425,15 @@ export default function AccueilPage() {
                     897 €{" "}
                     <span className="text-label-sm font-label-sm text-text-muted">HT / mois</span>
                   </div>
+                  <ChooseOfferLink
+                    offerId="editeur"
+                    className="mt-auto inline-flex items-center justify-center w-full py-3 rounded-lg border-2 border-secondary-container text-secondary font-bold hover:bg-secondary-container hover:text-on-secondary-container transition-all"
+                  >
+                    Choisir
+                  </ChooseOfferLink>
                 </div>
-                <div className="bg-white p-8 rounded-xl card-shadow border-t-4 border-secondary-container">
-                  <h4 className="font-bold text-secondary mb-2">Performance</h4>
+                <div className="bg-white p-8 rounded-xl card-shadow border-t-4 border-secondary-container flex flex-col">
+                  <h4 className="font-bold text-secondary mb-2">Marketing Performance</h4>
                   <p className="text-label-sm font-label-sm text-text-muted uppercase mb-6">
                     16 IP dédiées + API
                   </p>
@@ -435,9 +441,15 @@ export default function AccueilPage() {
                     1297 €{" "}
                     <span className="text-label-sm font-label-sm text-text-muted">HT / mois</span>
                   </div>
+                  <ChooseOfferLink
+                    offerId="performance"
+                    className="mt-auto inline-flex items-center justify-center w-full py-3 rounded-lg border-2 border-secondary-container text-secondary font-bold hover:bg-secondary-container hover:text-on-secondary-container transition-all"
+                  >
+                    Choisir
+                  </ChooseOfferLink>
                 </div>
-                <div className="bg-white p-8 rounded-xl card-shadow border-t-4 border-secondary-container">
-                  <h4 className="font-bold text-secondary mb-2">Régie Multi-bases</h4>
+                <div className="bg-white p-8 rounded-xl card-shadow border-t-4 border-secondary-container flex flex-col">
+                  <h4 className="font-bold text-secondary mb-2">Régie multi-bases</h4>
                   <p className="text-label-sm font-label-sm text-text-muted uppercase mb-6">
                     32 IP dédiées
                   </p>
@@ -445,6 +457,12 @@ export default function AccueilPage() {
                     1997 €{" "}
                     <span className="text-label-sm font-label-sm text-text-muted">HT / mois</span>
                   </div>
+                  <ChooseOfferLink
+                    offerId="regie"
+                    className="mt-auto inline-flex items-center justify-center w-full py-3 rounded-lg border-2 border-secondary-container text-secondary font-bold hover:bg-secondary-container hover:text-on-secondary-container transition-all"
+                  >
+                    Choisir
+                  </ChooseOfferLink>
                 </div>
               </div>
             </div>

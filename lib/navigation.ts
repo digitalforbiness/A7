@@ -63,6 +63,15 @@ export const contact = {
 export const WEB3FORMS_ACCESS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY";
 
 /**
+ * Clé de site hCaptcha (protection anti-spam des formulaires). Valeur par défaut :
+ * la clé publique partagée de Web3Forms, valable sur tous les domaines.
+ *
+ * Pour un compte hCaptcha dédié, remplacer par sa propre clé de site et activer
+ * hCaptcha pour le formulaire dans le tableau de bord Web3Forms.
+ */
+export const HCAPTCHA_SITE_KEY = "50b2fe65-b00b-4b9e-ad62-3ba471098be2";
+
+/**
  * Vrai si `href` correspond à la route courante.
  * L'accueil doit matcher exactement, sinon il serait actif sur toutes les pages.
  */

@@ -1,7 +1,9 @@
 "use client";
 
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { HCAPTCHA_SITE_KEY } from "@/lib/navigation";
 import { euro, type Offer, priceParts } from "@/lib/offers";
 import { submitContact } from "@/lib/submit-form";
 
@@ -18,6 +20,8 @@ const inputClasses =
 export default function SubscriptionForm({ offer }: { offer?: Offer }) {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const captchaRef = useRef<HCaptcha>(null);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -37,12 +41,16 @@ export default function SubscriptionForm({ offer }: { offer?: Offer }) {
         Offre: offerLine,
         Entreprise: (form.elements.namedItem("societe") as HTMLInputElement).value,
         Email: (form.elements.namedItem("email") as HTMLInputElement).value,
+        captchaToken: captchaToken ?? undefined,
       });
       form.reset();
       setStatus("success");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Une erreur est survenue.");
       setStatus("error");
+    } finally {
+      captchaRef.current?.resetCaptcha();
+      setCaptchaToken(null);
     }
   }
 
@@ -125,6 +133,14 @@ export default function SubscriptionForm({ offer }: { offer?: Offer }) {
         </label>
       </div>
 
+      <HCaptcha
+        ref={captchaRef}
+        sitekey={HCAPTCHA_SITE_KEY}
+        onVerify={(token) => setCaptchaToken(token)}
+        onExpire={() => setCaptchaToken(null)}
+        onError={() => setCaptchaToken(null)}
+      />
+
       {status === "error" && error && (
         <p role="alert" className="text-body-md text-error flex items-center gap-2">
           <span className="material-symbols-outlined">info</span>
@@ -134,7 +150,7 @@ export default function SubscriptionForm({ offer }: { offer?: Offer }) {
 
       <button
         type="submit"
-        disabled={status === "submitting"}
+        disabled={status === "submitting" || !captchaToken}
         className="w-full py-4 rounded-xl bg-vibrant-orange text-white font-bold text-headline-md shadow-lg shadow-vibrant-orange/20 hover:scale-[1.02] active:scale-95 transition-all disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
       >
         {status === "submitting" ? "Envoi en cours…" : "Envoyer ma demande"}

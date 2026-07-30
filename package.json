@@ -10,6 +10,7 @@
     "icons": "node scripts/build-icon-font.mjs"
   },
   "dependencies": {
+    "@hcaptcha/react-hcaptcha": "^2.0.2",
     "next": "16.2.11",
     "react": "19.2.4",
     "react-dom": "19.2.4"

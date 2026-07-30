@@ -17,12 +17,23 @@ export type SubmitResult = { ok: true; fallback?: boolean };
  *
  * @throws {Error} lorsque Web3Forms rejette la soumission.
  */
-export async function submitContact(
-  fields: Record<string, string> & { subject?: string },
-): Promise<SubmitResult> {
-  const { subject, ...content } = fields;
+export type ContactFields = {
+  subject?: string;
+  captchaToken?: string;
+  /** Champs libres formant le corps de l'e-mail. */
+  [field: string]: string | undefined;
+};
+
+export async function submitContact(fields: ContactFields): Promise<SubmitResult> {
+  const { subject, captchaToken, ...rest } = fields;
+  // On ne garde que les champs réellement renseignés (valeurs non vides).
+  const content: Record<string, string> = {};
+  for (const [label, value] of Object.entries(rest)) {
+    if (value) content[label] = value;
+  }
 
   if (!hasKey) {
+    // Sans clé configurée, on ouvre le client mail : le captcha n'a pas de rôle ici.
     const mailSubject = encodeURIComponent(subject || DEFAULT_SUBJECT);
     const body = encodeURIComponent(
       Object.entries(content)
@@ -39,6 +50,8 @@ export async function submitContact(
     subject: subject || DEFAULT_SUBJECT,
     ...content,
   };
+  // Jeton hCaptcha vérifié côté Web3Forms.
+  if (captchaToken) payload["h-captcha-response"] = captchaToken;
 
   const res = await fetch("https://api.web3forms.com/submit", {
     method: "POST",

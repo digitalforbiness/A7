@@ -60,6 +60,11 @@ mail du visiteur (`mailto:`), donc rien n'est perdu.
 > `contact@a7emailing.com` et la coller dans `WEB3FORMS_ACCESS_KEY`
 > ([lib/navigation.ts](lib/navigation.ts)).
 
+Les formulaires sont protégés par **hCaptcha** : le bouton d'envoi reste inactif
+tant que le captcha n'est pas validé. La clé de site par défaut est la clé publique
+partagée de Web3Forms (`HCAPTCHA_SITE_KEY`) ; pour la vérification côté serveur,
+activer hCaptcha pour le formulaire dans le tableau de bord Web3Forms.
+
 **Design system** — les tokens de `reference/a7_digital_identity/DESIGN.md` sont portés
 dans le bloc `@theme` de `app/globals.css`. Les classes utilitaires nommées
 (`px-margin-desktop`, `text-display-lg`, `max-w-container-max`…) en découlent
