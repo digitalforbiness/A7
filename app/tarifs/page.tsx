@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import SubscriptionForm from "@/components/SubscriptionForm";
 
@@ -292,49 +291,6 @@ export default function TarifsPage() {
                       <p className="text-text-muted text-body-md">
                         Accès immédiat à tous vos outils.
                       </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-12">
-                  <p className="text-label-sm font-label-sm text-text-muted uppercase mb-4 tracking-widest">
-                    Moyens de paiement acceptés
-                  </p>
-                  <div className="flex flex-wrap gap-4 opacity-70">
-                    <div className="h-10 w-16 bg-white border border-border-subtle rounded flex items-center justify-center px-2">
-                      <Image
-                        src="/images/img-24.png"
-                        alt="Visa"
-                        width={512}
-                        height={512}
-                        className="h-6 object-contain"
-                      />
-                    </div>
-                    <div className="h-10 w-16 bg-white border border-border-subtle rounded flex items-center justify-center px-2">
-                      <Image
-                        src="/images/img-05.png"
-                        alt="Mastercard"
-                        width={512}
-                        height={512}
-                        className="h-6 object-contain"
-                      />
-                    </div>
-                    <div className="h-10 w-16 bg-white border border-border-subtle rounded flex items-center justify-center px-2">
-                      <Image
-                        src="/images/img-09.png"
-                        alt="American Express"
-                        width={512}
-                        height={512}
-                        className="h-6 object-contain"
-                      />
-                    </div>
-                    <div className="h-10 w-16 bg-white border border-border-subtle rounded flex items-center justify-center px-2">
-                      <Image
-                        src="/images/img-13.png"
-                        alt="PayPal"
-                        width={512}
-                        height={512}
-                        className="h-6 object-contain"
-                      />
                     </div>
                   </div>
                 </div>
