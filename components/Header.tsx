@@ -29,7 +29,7 @@ export default function Header() {
           <Logo className="h-10 w-auto" />
         </Link>
 
-        <nav aria-label="Navigation principale" className="hidden lg:flex items-center gap-8">
+        <nav aria-label="Navigation principale" className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => {
             const active = isActive(link.href, pathname);
             return (
@@ -49,17 +49,10 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="flex items-center gap-4">
-          <a className="hidden xl:flex flex-col items-end mr-2" href={contact.phoneHref}>
-            <span className="text-label-sm font-label-sm text-text-muted uppercase">
-              Support expert
-            </span>
-            <span className="text-body-md font-bold text-primary">{contact.phone}</span>
-          </a>
-
+        <div className="flex items-center gap-4 shrink-0">
           <Link
             href="/tarifs"
-            className="hidden sm:inline-block bg-primary text-on-primary px-6 py-2 rounded-lg font-bold text-body-md hover:bg-primary-container transition-all active:scale-95"
+            className="hidden sm:inline-block shrink-0 bg-primary text-on-primary px-6 py-2 rounded-lg font-bold text-body-md hover:bg-primary-container transition-all active:scale-95"
           >
             Essai gratuit
           </Link>
