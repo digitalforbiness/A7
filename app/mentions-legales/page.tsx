@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { asset } from "@/lib/base-path";
 
 export const metadata: Metadata = {
   title: "Mentions légales",
@@ -184,7 +185,7 @@ export default function MentionsLegalesPage() {
             <div
               className="bg-cover bg-center w-full h-full transform group-hover:scale-105 transition-transform duration-700"
               data-alt="A professional high-tech office environment in Monaco with a view of the Mediterranean sea through large windows. The interior is modern and minimalist with deep purple and vibrant orange accents in the decor. High-end computing hardware and clean architectural lines reflect technical mastery and data-driven confidence. The lighting is bright and natural, creating a premium corporate atmosphere."
-              style={{ backgroundImage: "url('/images/img-bg-mentions.png')" }}
+              style={{ backgroundImage: `url('${asset("/images/img-bg-mentions.png")}')` }}
             ></div>
           </div>
         </div>

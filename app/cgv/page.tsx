@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { asset } from "@/lib/base-path";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -146,7 +147,7 @@ export default function CgvPage() {
               <div
                 className="w-full h-48 bg-cover bg-center rounded-lg shadow-sm"
                 data-alt="A clean, professional workspace with a focus on a high-end laptop and tablet displaying complex data analytics dashboards. The lighting is bright and airy, representing a transparent and trustworthy corporate atmosphere. The color scheme uses deep purples and vibrant orange accents consistent with the A7 Emailing brand identity. The style is modern, minimalist, and conveys professional reliability for an enterprise tech solution."
-                style={{ backgroundImage: "url('/images/img-bg-cgv.png')" }}
+                style={{ backgroundImage: `url('${asset("/images/img-bg-cgv.png")}')` }}
               ></div>
             </div>
             <div className="md:w-2/3">

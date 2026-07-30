@@ -29,11 +29,20 @@ jobs:
           node-version: 20
           cache: npm
 
+      # Bascule GitHub Pages en source « GitHub Actions » (avec le token du workflow),
+      # sans dépendre d'un réglage manuel dans les paramètres du dépôt.
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
       - name: Install dependencies
         run: npm ci
 
       - name: Build (export statique dans out/)
         run: npm run build
+        env:
+          # Sous-chemin de la GitHub Page projet (digitalforbiness.github.io/A7).
+          # À vider lors du passage à un domaine personnalisé à la racine.
+          NEXT_PUBLIC_BASE_PATH: /A7
 
       # `_next/` commence par un underscore : sans .nojekyll, GitHub Pages
       # (Jekyll) l'ignorerait et casserait tout le JS/CSS. Fourni via public/,
