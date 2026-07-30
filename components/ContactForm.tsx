@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { submitContact } from "@/lib/submit-form";
 
 const SUBJECTS = [
   { value: "commercial", label: "Demande commerciale" },
@@ -11,14 +12,16 @@ const SUBJECTS = [
   { value: "autre", label: "Autre" },
 ] as const;
 
+const subjectLabel = (value: string) => SUBJECTS.find((s) => s.value === value)?.label ?? value;
+
 type Status = "idle" | "submitting" | "success" | "error";
 
 const inputClasses =
   "w-full bg-surface-gray border border-border-subtle rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all";
 
 /**
- * Formulaire de contact. Poste vers /api/contact et gère les états de
- * chargement, de succès et d'erreur sans quitter la page.
+ * Formulaire de contact. Transmet via Web3Forms (repli mailto, sans backend) et
+ * gère les états de chargement, de succès et d'erreur sans quitter la page.
  */
 export default function ContactForm({
   defaultSubject = "commercial",
@@ -34,27 +37,22 @@ export default function ContactForm({
     setError(null);
 
     const form = event.currentTarget;
-    const payload = {
-      nom: (form.elements.namedItem("nom") as HTMLInputElement).value,
-      email: (form.elements.namedItem("email") as HTMLInputElement).value,
-      entreprise: (form.elements.namedItem("entreprise") as HTMLInputElement).value,
-      sujet: (form.elements.namedItem("sujet") as HTMLSelectElement).value,
-      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
-      consentement: (form.elements.namedItem("consentement") as HTMLInputElement).checked,
-    };
+    const sujet = (form.elements.namedItem("sujet") as HTMLSelectElement).value;
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+      // Champs libellés en français : ils forment le corps de l'e-mail Web3Forms.
+      const result = await submitContact({
+        subject: `Contact A7 — ${subjectLabel(sujet)}`,
+        Nom: (form.elements.namedItem("nom") as HTMLInputElement).value,
+        Email: (form.elements.namedItem("email") as HTMLInputElement).value,
+        Entreprise: (form.elements.namedItem("entreprise") as HTMLInputElement).value || "—",
+        Sujet: subjectLabel(sujet),
+        Message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
       });
-      if (!res.ok) {
-        const data = (await res.json().catch(() => null)) as { error?: string } | null;
-        throw new Error(data?.error ?? "L'envoi a échoué.");
-      }
       form.reset();
+      // En repli mailto, le client mail s'ouvre : on confirme quand même l'envoi.
       setStatus("success");
+      return result;
     } catch (err) {
       setError(err instanceof Error ? err.message : "Une erreur est survenue.");
       setStatus("error");

@@ -51,6 +51,18 @@ export const contact = {
 } as const;
 
 /**
+ * Clé d'accès Web3Forms — service gratuit qui transforme une soumission de
+ * formulaire en e-mail, sans backend (compatible hébergement statique).
+ *
+ * 1. Créer une clé sur https://web3forms.com avec l'adresse contact@a7emailing.com.
+ * 2. Remplacer le placeholder ci-dessous (clé publique, sans risque à committer).
+ *
+ * Tant que la clé n'est pas renseignée, les formulaires basculent proprement sur
+ * le client mail du visiteur (mailto:) : aucune demande n'est perdue.
+ */
+export const WEB3FORMS_ACCESS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY";
+
+/**
  * Vrai si `href` correspond à la route courante.
  * L'accueil doit matcher exactement, sinon il serait actif sur toutes les pages.
  */

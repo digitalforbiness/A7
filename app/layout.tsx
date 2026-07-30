@@ -33,7 +33,7 @@ const materialSymbols = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.a7emailing.com"),
+  metadataBase: new URL("https://a7emailing.com"),
   title: {
     default: "A7 Emailing | Routage SaaS & Data Technologies",
     template: "%s | A7 Emailing",
