@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SubscriptionForm from "@/components/SubscriptionForm";
+import ChooseOfferButton from "@/components/ChooseOfferButton";
+import PaymentSummary from "@/components/PaymentSummary";
 
 export const metadata: Metadata = {
   title: "Tarification & paiement",
@@ -87,12 +88,12 @@ export default function TarifsPage() {
                   <span className="text-body-md">Segmentation clients</span>
                 </li>
               </ul>
-              <Link
+              <ChooseOfferButton
+                offerId="eshop"
                 className="inline-flex items-center justify-center w-full py-3 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all"
-                href="#paiement"
               >
                 Choisir E-shop
-              </Link>
+              </ChooseOfferButton>
             </div>
             {/* Tier: E-boutique (Popular) */}
             <div
@@ -142,12 +143,12 @@ export default function TarifsPage() {
                   <span className="text-body-md">Support Prioritaire 24/7</span>
                 </li>
               </ul>
-              <Link
+              <ChooseOfferButton
+                offerId="eboutique"
                 className="inline-flex items-center justify-center w-full py-3 rounded-lg bg-primary text-on-primary font-bold shadow-lg hover:brightness-110 transition-all"
-                href="#paiement"
               >
                 Choisir E-boutique
-              </Link>
+              </ChooseOfferButton>
             </div>
             {/* Tier: E-retailer */}
             <div
@@ -194,12 +195,12 @@ export default function TarifsPage() {
                   <span className="text-body-md">Dashboard personnalisé</span>
                 </li>
               </ul>
-              <Link
+              <ChooseOfferButton
+                offerId="eretailer"
                 className="inline-flex items-center justify-center w-full py-3 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all"
-                href="#paiement"
               >
                 Choisir E-retailer
-              </Link>
+              </ChooseOfferButton>
             </div>
             {/* Tier: E-marketing */}
             <div
@@ -264,60 +265,40 @@ export default function TarifsPage() {
               {/* Left: Trust & Information */}
               <div>
                 <h2 className="font-headline-lg text-headline-lg text-deep-purple mb-6">
-                  Payer en ligne et commencez maintenant
+                  Démarrez votre souscription
                 </h2>
                 <p className="text-text-muted mb-10 text-body-lg">
-                  Activez votre compte instantanément après le paiement. Nous utilisons des
-                  protocoles de sécurité de niveau bancaire pour protéger vos transactions.
+                  Indiquez votre entreprise et votre email professionnel : un conseiller vous
+                  recontacte sous 24&nbsp;heures ouvrées pour activer l&apos;offre choisie et
+                  finaliser le règlement en toute sécurité.
                 </p>
                 <div className="space-y-6">
                   <div className="flex gap-4 p-4 bg-white rounded-lg shadow-sm border border-border-subtle items-center">
                     <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                      <span className="material-symbols-outlined text-primary">security</span>
+                      <span className="material-symbols-outlined text-primary">schedule</span>
                     </div>
                     <div>
-                      <h4 className="font-bold text-deep-purple">Sécurité 256-bit SSL</h4>
+                      <h4 className="font-bold text-deep-purple">Réponse sous 24&nbsp;h</h4>
                       <p className="text-text-muted text-body-md">
-                        Vos données de paiement sont cryptées.
+                        Un expert A7 vous rappelle rapidement.
                       </p>
                     </div>
                   </div>
                   <div className="flex gap-4 p-4 bg-white rounded-lg shadow-sm border border-border-subtle items-center">
                     <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                      <span className="material-symbols-outlined text-primary">cloud_done</span>
+                      <span className="material-symbols-outlined text-primary">verified_user</span>
                     </div>
                     <div>
-                      <h4 className="font-bold text-deep-purple">Activation Instantanée</h4>
+                      <h4 className="font-bold text-deep-purple">Sans engagement</h4>
                       <p className="text-text-muted text-body-md">
-                        Accès immédiat à tous vos outils.
+                        Aucune donnée bancaire n&apos;est demandée ici.
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
-              {/* Right: Quick Checkout Form */}
-              <div className="bg-white rounded-2xl shadow-xl p-8 border border-border-subtle">
-                <div className="mb-8 pb-6 border-b border-border-subtle">
-                  <div className="flex justify-between items-center mb-4">
-                    <h3 className="font-headline-md text-headline-md text-deep-purple">
-                      Récapitulatif
-                    </h3>
-                    <span className="bg-primary/10 text-primary text-label-sm font-label-sm px-3 py-1 rounded">
-                      E-BOUTIQUE
-                    </span>
-                  </div>
-                  <div className="flex justify-between text-body-md text-text-main mb-2">
-                    <span className="">Abonnement mensuel</span> <span className="">79,00 €</span>
-                  </div>
-                  <div className="flex justify-between text-body-md text-text-main mb-2">
-                    <span className="">TVA (20%)</span> <span className="">15,80 €</span>
-                  </div>
-                  <div className="flex justify-between text-headline-md font-bold text-deep-purple mt-4">
-                    <span className="">Total à payer</span> <span className="">94,80 €</span>
-                  </div>
-                </div>
-                <SubscriptionForm />
-              </div>
+              {/* Right: Récapitulatif dynamique + formulaire */}
+              <PaymentSummary />
             </div>
           </div>
         </section>

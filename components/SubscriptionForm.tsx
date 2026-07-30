@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { euro, type Offer, priceParts } from "@/lib/offers";
 import { submitContact } from "@/lib/submit-form";
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -14,7 +15,7 @@ const inputClasses =
  * formulaire transmet la demande (via Web3Forms, repli mailto) : un conseiller
  * recontacte le prospect pour finaliser. Aucune donnée bancaire n'est collectée.
  */
-export default function SubscriptionForm() {
+export default function SubscriptionForm({ offer }: { offer?: Offer }) {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
 
@@ -24,9 +25,16 @@ export default function SubscriptionForm() {
     setError(null);
 
     const form = event.currentTarget;
+    // L'offre choisie voyage dans l'objet et le corps de l'e-mail.
+    const offerLine = offer
+      ? `${offer.name} — ${euro(priceParts(offer).ttc)}/mois TTC`
+      : "Non précisée";
     try {
       await submitContact({
-        subject: "Demande de souscription A7",
+        subject: offer
+          ? `Demande de souscription A7 — ${offer.name}`
+          : "Demande de souscription A7",
+        Offre: offerLine,
         Entreprise: (form.elements.namedItem("societe") as HTMLInputElement).value,
         Email: (form.elements.namedItem("email") as HTMLInputElement).value,
       });
