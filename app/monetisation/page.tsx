@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import ChooseOfferLink from "@/components/ChooseOfferLink";
 
 export const metadata: Metadata = {
   title: "Solutions de monétisation",
@@ -165,12 +166,12 @@ export default function MonetisationPage() {
                 </ul>
               </div>
               <div className="p-6 bg-surface-gray">
-                <Link
+                <ChooseOfferLink
+                  offerId="editeur"
                   className="inline-flex items-center justify-center w-full py-3 rounded-lg border border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all"
-                  href="/tarifs"
                 >
                   Choisir
-                </Link>
+                </ChooseOfferLink>
               </div>
             </div>
             {/* Tier 2 (Highlighted) */}
@@ -228,12 +229,12 @@ export default function MonetisationPage() {
                 </ul>
               </div>
               <div className="p-6 bg-surface-gray">
-                <Link
+                <ChooseOfferLink
+                  offerId="performance"
                   className="inline-flex items-center justify-center w-full py-3 rounded-lg bg-vibrant-orange text-white font-bold hover:shadow-lg transition-all"
-                  href="/tarifs"
                 >
                   Souscrire
-                </Link>
+                </ChooseOfferLink>
               </div>
             </div>
             {/* Tier 3 */}
@@ -279,12 +280,12 @@ export default function MonetisationPage() {
                 </ul>
               </div>
               <div className="p-6 bg-surface-gray">
-                <Link
+                <ChooseOfferLink
+                  offerId="regie"
                   className="inline-flex items-center justify-center w-full py-3 rounded-lg border border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all"
-                  href="/tarifs"
                 >
                   Choisir
-                </Link>
+                </ChooseOfferLink>
               </div>
             </div>
             {/* Tier 4 */}

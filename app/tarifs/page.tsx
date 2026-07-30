@@ -60,32 +60,32 @@ export default function TarifsPage() {
               </div>
               <div className="mb-6">
                 <span className="text-label-sm font-label-sm text-primary uppercase tracking-wider bg-surface-container px-2 py-1 rounded">
-                  E-shop
+                  E-shop &amp; TPE
                 </span>
                 <div className="mt-4 flex items-baseline gap-1">
                   <span className="text-headline-lg font-headline-lg">297€</span>{" "}
                   <span className="text-text-muted font-body-md">/mois</span>
                 </div>
-                <p className="text-text-muted text-body-md mt-2">Pour les boutiques émergentes.</p>
+                <p className="text-text-muted text-body-md mt-2">Idéal pour démarrer.</p>
               </div>
               <ul className="space-y-4 mb-10 flex-grow">
                 <li className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-vibrant-orange text-[20px]">
                     check_circle
                   </span>{" "}
-                  <span className="text-body-md">Jusqu’à 5 000 emails</span>
+                  <span className="text-body-md">50 000 contacts</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-vibrant-orange text-[20px]">
                     check_circle
                   </span>{" "}
-                  <span className="text-body-md">Automation de base</span>
+                  <span className="text-body-md">Emails illimités</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-vibrant-orange text-[20px]">
                     check_circle
                   </span>{" "}
-                  <span className="text-body-md">Segmentation clients</span>
+                  <span className="text-body-md">2 IP Dédiées</span>
                 </li>
               </ul>
               <ChooseOfferButton
@@ -115,32 +115,26 @@ export default function TarifsPage() {
                   <span className="text-headline-lg font-headline-lg">497€</span>{" "}
                   <span className="text-text-muted font-body-md">/mois</span>
                 </div>
-                <p className="text-text-muted text-body-md mt-2">Accélérez votre croissance.</p>
+                <p className="text-text-muted text-body-md mt-2">Profilage CRM complet.</p>
               </div>
               <ul className="space-y-4 mb-10 flex-grow">
                 <li className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-vibrant-orange text-[20px]">
                     check_circle
                   </span>{" "}
-                  <span className="text-body-md font-medium">Jusqu’à 25 000 emails</span>
+                  <span className="text-body-md">Marketing &amp; Transactionnel</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-vibrant-orange text-[20px]">
                     check_circle
                   </span>{" "}
-                  <span className="text-body-md">A/B Testing avancé</span>
+                  <span className="text-body-md">3 Millions d’emails</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-vibrant-orange text-[20px]">
                     check_circle
                   </span>{" "}
-                  <span className="text-body-md">Relance panier abandonné</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-vibrant-orange text-[20px]">
-                    check_circle
-                  </span>{" "}
-                  <span className="text-body-md">Support Prioritaire 24/7</span>
+                  <span className="text-body-md">NoSpam Configuration</span>
                 </li>
               </ul>
               <ChooseOfferButton
@@ -167,32 +161,26 @@ export default function TarifsPage() {
                   <span className="text-headline-lg font-headline-lg">897€</span>{" "}
                   <span className="text-text-muted font-body-md">/mois</span>
                 </div>
-                <p className="text-text-muted text-body-md mt-2">Volume et performance.</p>
+                <p className="text-text-muted text-body-md mt-2">Puissance Big Data.</p>
               </div>
               <ul className="space-y-4 mb-10 flex-grow">
                 <li className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-vibrant-orange text-[20px]">
                     check_circle
                   </span>{" "}
-                  <span className="text-body-md">Jusqu’à 100 000 emails</span>
+                  <span className="text-body-md">Hyper-segmentation</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-vibrant-orange text-[20px]">
                     check_circle
                   </span>{" "}
-                  <span className="text-body-md">IP Dédiée incluse</span>
+                  <span className="text-body-md">6 Millions d’emails</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-vibrant-orange text-[20px]">
                     check_circle
                   </span>{" "}
-                  <span className="text-body-md">Connecteurs CRM</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-vibrant-orange text-[20px]">
-                    check_circle
-                  </span>{" "}
-                  <span className="text-body-md">Dashboard personnalisé</span>
+                  <span className="text-body-md">Scénarios complexes</span>
                 </li>
               </ul>
               <ChooseOfferButton
@@ -213,37 +201,27 @@ export default function TarifsPage() {
             >
               <div className="mb-6">
                 <span className="text-label-sm font-label-sm text-secondary uppercase tracking-wider bg-white/10 px-2 py-1 rounded">
-                  E-marketing
+                  Agence e-marketing
                 </span>
                 <div className="mt-4 flex items-baseline gap-1">
-                  <span className="text-headline-lg font-headline-lg">Sur devis</span>
+                  <span className="text-headline-lg font-headline-lg">Sur mesure</span>
                 </div>
-                <p className="text-surface-variant/70 text-body-md mt-2">Solutions sur mesure.</p>
+                <p className="text-surface-variant/70 text-body-md mt-2">
+                  Besoins extrêmes en volume et personnalisation.
+                </p>
               </div>
               <ul className="space-y-4 mb-10 flex-grow">
                 <li className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-secondary-container text-[20px]">
                     check_circle
                   </span>{" "}
-                  <span className="text-body-md">Emails illimités</span>
+                  <span className="text-body-md">Custom Cloud High Volume</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-secondary-container text-[20px]">
                     check_circle
                   </span>{" "}
-                  <span className="text-body-md">Compte Manager dédié</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-secondary-container text-[20px]">
-                    check_circle
-                  </span>{" "}
-                  <span className="text-body-md">SLA Garanti 99.9%</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-secondary-container text-[20px]">
-                    check_circle
-                  </span>{" "}
-                  <span className="text-body-md">Accès API complet</span>
+                  <span className="text-body-md">Expert dédié (SLA)</span>
                 </li>
               </ul>
               <Link

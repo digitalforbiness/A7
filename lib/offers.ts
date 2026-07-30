@@ -9,9 +9,14 @@ export type Offer = {
 
 /** Offres à prix fixe, sélectionnables dans le récapitulatif de souscription. */
 export const OFFERS: Record<string, Offer> = {
-  eshop: { id: "eshop", name: "E-shop", priceHT: 297 },
+  // E-Commerce
+  eshop: { id: "eshop", name: "E-shop & TPE", priceHT: 297 },
   eboutique: { id: "eboutique", name: "E-boutique", priceHT: 497 },
   eretailer: { id: "eretailer", name: "E-retailer", priceHT: 897 },
+  // Monétisation
+  editeur: { id: "editeur", name: "Editeur de sites", priceHT: 897 },
+  performance: { id: "performance", name: "Marketing Performance", priceHT: 1297 },
+  regie: { id: "regie", name: "Régie multi-bases", priceHT: 1997 },
 };
 
 /** Offre affichée par défaut, avant toute sélection (la plus populaire). */
