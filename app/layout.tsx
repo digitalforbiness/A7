@@ -57,9 +57,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       lang="fr"
       className={`scroll-smooth antialiased ${montserrat.variable} ${inter.variable} ${materialSymbols.variable}`}
     >
-      {/* Google Tag Manager — chargé sur toutes les pages via le layout racine. */}
+      {/*
+        Google Tag Manager avec Consent Mode v2. Un seul script, exécuté dans
+        l'ordre : (1) état de consentement par défaut « denied », (2) mise à jour
+        immédiate si le visiteur a déjà choisi (localStorage), puis (3) chargement
+        de GTM. Les changements en direct sont poussés par le bandeau cookies.
+      */}
       <Script id="gtm" strategy="afterInteractive">
-        {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`}
+        {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});try{var c=JSON.parse(localStorage.getItem('a7-cookie-consent')||'null');if(c){gtag('consent','update',{analytics_storage:c.analytics?'granted':'denied',ad_storage:c.marketing?'granted':'denied',ad_user_data:c.marketing?'granted':'denied',ad_personalization:c.marketing?'granted':'denied'});}}catch(e){}(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`}
       </Script>
       <body className="bg-background text-on-background font-body-md text-body-md">
         {/* Google Tag Manager (noscript) */}
