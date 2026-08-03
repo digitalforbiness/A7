@@ -2,14 +2,14 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { CLIENT_CATEGORIES, clients, type ClientCategory } from "@/lib/clients";
+import { CLIENT_CATEGORIES, clientLogos, type FilterId } from "@/lib/client-logos";
 
-/** Mur de logos filtrable par secteur. */
+/** Mur de logos clients, filtrable par secteur (grille statique, sans défilement). */
 export default function ClientLogoWall() {
-  const [active, setActive] = useState<ClientCategory>("tous");
+  const [active, setActive] = useState<FilterId>("tous");
 
   const visible =
-    active === "tous" ? clients : clients.filter((client) => client.category === active);
+    active === "tous" ? clientLogos : clientLogos.filter((logo) => logo.category === active);
 
   return (
     <>
@@ -39,16 +39,16 @@ export default function ClientLogoWall() {
 
       <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-stack-lg">
         <ul className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-gutter list-none">
-          {visible.map((client) => (
+          {visible.map((logo) => (
             <li
-              key={client.logo}
+              key={logo.src}
               className="logo-grid-item bg-white p-8 rounded-lg flex items-center justify-center grayscale hover:grayscale-0"
             >
               <Image
-                src={client.logo}
-                alt={client.name}
-                width={512}
-                height={512}
+                src={logo.src}
+                alt={logo.alt}
+                width={logo.width}
+                height={logo.height}
                 className="max-h-12 w-auto object-contain"
               />
             </li>
