@@ -477,15 +477,17 @@ export default function AccueilPage() {
                 la carte.
               </p>
             </div>
-            <div className="flex items-center gap-6">
-              <a className="flex flex-col" href="tel:330183641616">
+            <div className="flex items-center gap-6 shrink-0">
+              <a className="flex flex-col shrink-0" href="tel:330183641616">
                 <span className="text-label-sm font-label-sm text-text-muted uppercase">
                   Ligne Directe
                 </span>{" "}
-                <span className="text-headline-md font-bold text-primary">01 83 64 16 16</span>
+                <span className="text-headline-md font-bold text-primary whitespace-nowrap">
+                  01 83 64 16 16
+                </span>
               </a>{" "}
               <Link
-                className="inline-flex items-center justify-center bg-deep-purple text-on-primary px-8 py-4 rounded-lg font-bold hover:bg-primary transition-all"
+                className="inline-flex items-center justify-center shrink-0 whitespace-nowrap bg-deep-purple text-on-primary px-8 py-4 rounded-lg font-bold hover:bg-primary transition-all"
                 href="/contact"
               >
                 Contactez-nous
