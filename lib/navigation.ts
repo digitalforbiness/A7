@@ -60,7 +60,7 @@ export const contact = {
  * Tant que la clé n'est pas renseignée, les formulaires basculent proprement sur
  * le client mail du visiteur (mailto:) : aucune demande n'est perdue.
  */
-export const WEB3FORMS_ACCESS_KEY = "ab6d6ed6-b7ff-48bd-a046-1f00b2f014b2";
+export const WEB3FORMS_ACCESS_KEY: string = "ab6d6ed6-b7ff-48bd-a046-1f00b2f014b2";
 
 /**
  * Clé de site hCaptcha (protection anti-spam des formulaires). Valeur par défaut :
