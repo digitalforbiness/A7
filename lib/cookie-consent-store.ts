@@ -6,12 +6,19 @@
  * onglets ouverts synchronisés.
  */
 
-const STORAGE_KEY = "a7-cookie-consent";
+/** Clé localStorage du choix. Partagée avec le script d'amorçage du Consent Mode. */
+export const STORAGE_KEY = "a7-cookie-consent";
+
+/**
+ * Durée de validité du consentement : 13 mois, conformément à la recommandation
+ * CNIL. Passé ce délai, le choix est ignoré et le bandeau réapparaît.
+ */
+export const CONSENT_MAX_AGE_MS = 396 * 24 * 60 * 60 * 1000;
 
 export type Consent = {
   analytics: boolean;
   marketing: boolean;
-  /** Date ISO du choix — le consentement est à renouveler au bout de 13 mois. */
+  /** Date ISO du choix, qui sert à mesurer les 13 mois de validité. */
   decidedAt: string;
 };
 
@@ -59,13 +66,36 @@ export function getServerSnapshot(): string | null {
   return null;
 }
 
-export function parseConsent(raw: string | null): Consent | null {
+/**
+ * Relit le choix stocké. Renvoie null si la valeur est absente, illisible,
+ * malformée (localStorage est modifiable par le visiteur) ou périmée.
+ */
+export function parseConsent(raw: string | null, now: number = Date.now()): Consent | null {
   if (!raw) return null;
+
+  let value: unknown;
   try {
-    return JSON.parse(raw) as Consent;
+    value = JSON.parse(raw);
   } catch {
     return null;
   }
+  if (!isConsent(value)) return null;
+
+  const age = now - Date.parse(value.decidedAt);
+  // NaN (date illisible) échoue les deux comparaisons : le choix est redemandé.
+  if (!(age >= 0 && age < CONSENT_MAX_AGE_MS)) return null;
+
+  return value;
+}
+
+function isConsent(value: unknown): value is Consent {
+  if (typeof value !== "object" || value === null) return false;
+  const candidate = value as Record<string, unknown>;
+  return (
+    typeof candidate.analytics === "boolean" &&
+    typeof candidate.marketing === "boolean" &&
+    typeof candidate.decidedAt === "string"
+  );
 }
 
 export function saveConsent(choice: Omit<Consent, "decidedAt">): void {

@@ -11,11 +11,11 @@ npm install
 npm run dev     # http://localhost:3000
 ```
 
-| Commande | Rôle |
-| --- | --- |
-| `npm run dev` | Serveur de développement |
-| `npm run build` | Export statique → dossier `out/` |
-| `npm run lint` | ESLint |
+| Commande        | Rôle                                                 |
+| --------------- | ---------------------------------------------------- |
+| `npm run dev`   | Serveur de développement                             |
+| `npm run build` | Export statique → dossier `out/`                     |
+| `npm run lint`  | ESLint                                               |
 | `npm run icons` | Régénère le sous-ensemble de police Material Symbols |
 
 Le site étant exporté en statique (`output: "export"`), il n'y a pas de serveur :
@@ -33,11 +33,14 @@ app/
   not-found.tsx           Page 404 (exportée en out/404.html)
   globals.css             Design tokens A7 + classes héritées des maquettes
 components/               Header, Footer, Logo, Accordion, ContactForm, SubscriptionForm…
+  GoogleTagManager.tsx    Conteneur GTM + amorçage du consentement
 lib/
   navigation.ts           Routes, coordonnées et clé Web3Forms
   submit-form.ts          Envoi de formulaire via Web3Forms (repli mailto)
   clients.ts              Mur de logos clients
-  cookie-consent-store.ts Store localStorage du consentement
+  cookie-consent-store.ts Store localStorage du consentement (validité 13 mois)
+  consent-mode.ts         Signaux Google Consent Mode v2
+.env.example              Variables de build (identifiant GTM, sous-chemin)
 public/
   CNAME                   Domaine GitHub Pages
   .nojekyll               Empêche Jekyll d'ignorer le dossier _next/
@@ -64,6 +67,23 @@ Les formulaires sont protégés par **hCaptcha** : le bouton d'envoi reste inact
 tant que le captcha n'est pas validé. La clé de site par défaut est la clé publique
 partagée de Web3Forms (`HCAPTCHA_SITE_KEY`) ; pour la vérification côté serveur,
 activer hCaptcha pour le formulaire dans le tableau de bord Web3Forms.
+
+**Mesure d'audience** — Google Tag Manager est chargé par
+[components/GoogleTagManager.tsx](components/GoogleTagManager.tsx) dans l'ordre imposé par
+le **Consent Mode v2** : un script inline pose l'état par défaut (`denied`) et restaure le
+choix du visiteur dès l'analyse du HTML, puis le conteneur se charge une fois la page
+interactive. Le bandeau cookies pousse ensuite les changements via
+[lib/consent-mode.ts](lib/consent-mode.ts), seul endroit où la correspondance
+« case du bandeau → signal Google » est définie.
+
+L'identifiant vient de `NEXT_PUBLIC_GTM_ID` : absent (cas du `npm run dev`), aucun script
+n'est injecté et rien n'est mesuré. Le déploiement le fournit via
+[deploy.yml](.github/workflows/deploy.yml). Le consentement est stocké 13 mois
+(recommandation CNIL) ; passé ce délai, le bandeau réapparaît.
+
+> **À faire dans l'interface GTM** : le conteneur ne contient aujourd'hui aucune balise —
+> le site charge GTM mais rien n'est mesuré. Ajouter la balise « Google Tag » (GA4) avec
+> le déclencheur _All Pages_, puis **publier** le conteneur.
 
 **Design system** — les tokens de `reference/a7_digital_identity/DESIGN.md` sont portés
 dans le bloc `@theme` de `app/globals.css`. Les classes utilitaires nommées
@@ -96,6 +116,10 @@ construit l'export statique et le publie sur GitHub Pages. Pour l'activer :
 2. Domaine personnalisé : ajuster [`public/CNAME`](public/CNAME) (actuellement
    `a7emailing.com`) et faire pointer le DNS vers GitHub Pages.
 3. Renseigner la clé Web3Forms (voir ci-dessus) pour activer les formulaires.
+
+Les variables de build (`NEXT_PUBLIC_BASE_PATH`, `NEXT_PUBLIC_GTM_ID`) sont déclarées dans
+le workflow, pas dans le code : voir [`.env.example`](.env.example) pour les reproduire en
+local.
 
 Sans domaine personnalisé (publication sur `username.github.io/<repo>`), supprimer le
 `CNAME` et décommenter `basePath` dans [`next.config.ts`](next.config.ts).

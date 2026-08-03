@@ -43,6 +43,9 @@ jobs:
           # Sous-chemin de la GitHub Page projet (digitalforbiness.github.io/A7).
           # À vider lors du passage à un domaine personnalisé à la racine.
           NEXT_PUBLIC_BASE_PATH: /A7
+          # Conteneur Google Tag Manager (identifiant public, pas un secret).
+          # Seul le site déployé mesure : en local, la variable est absente.
+          NEXT_PUBLIC_GTM_ID: GTM-PRW38XRL
 
       # `_next/` commence par un underscore : sans .nojekyll, GitHub Pages
       # (Jekyll) l'ignorerait et casserait tout le JS/CSS. Fourni via public/,
