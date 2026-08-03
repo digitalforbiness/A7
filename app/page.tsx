@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import ChooseOfferLink from "@/components/ChooseOfferLink";
+import { clientLogos } from "@/lib/client-logos";
 
 export default function AccueilPage() {
   return (
@@ -245,21 +247,18 @@ export default function AccueilPage() {
           </p>
         </div>
         <div className="flex whitespace-nowrap overflow-hidden py-4 opacity-60 hover:opacity-100 transition-opacity">
+          {/* La liste est rendue deux fois : le défilement de -50 % boucle sans saut. */}
           <div className="flex items-center gap-16 animate-marquee">
-            {/* Repeated logos for scrolling effect */}
-            <div className="text-headline-md font-bold text-outline">VISTAPRINT</div>
-            <div className="text-headline-md font-bold text-outline">ASSURLAND</div>
-            <div className="text-headline-md font-bold text-outline">SIGNAL</div>
-            <div className="text-headline-md font-bold text-outline">MEETIC</div>
-            <div className="text-headline-md font-bold text-outline">INKCLUB</div>
-            <div className="text-headline-md font-bold text-outline">3SUISSES</div>
-            {/* Duplicate for loop */}
-            <div className="text-headline-md font-bold text-outline">VISTAPRINT</div>
-            <div className="text-headline-md font-bold text-outline">ASSURLAND</div>
-            <div className="text-headline-md font-bold text-outline">SIGNAL</div>
-            <div className="text-headline-md font-bold text-outline">MEETIC</div>
-            <div className="text-headline-md font-bold text-outline">INKCLUB</div>
-            <div className="text-headline-md font-bold text-outline">3SUISSES</div>
+            {[...clientLogos, ...clientLogos].map((logo, i) => (
+              <Image
+                key={`${logo.src}-${i}`}
+                src={logo.src}
+                alt={logo.alt}
+                width={logo.width}
+                height={logo.height}
+                className="h-8 md:h-10 w-auto object-contain shrink-0"
+              />
+            ))}
           </div>
         </div>
       </section>
