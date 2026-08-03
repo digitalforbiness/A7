@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import localFont from "next/font/local";
+import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieConsentProvider from "@/components/CookieConsent";
+
+/** Identifiant du conteneur Google Tag Manager. */
+const GTM_ID = "GTM-PRW38XRL";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -53,7 +57,21 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       lang="fr"
       className={`scroll-smooth antialiased ${montserrat.variable} ${inter.variable} ${materialSymbols.variable}`}
     >
+      {/* Google Tag Manager — chargé sur toutes les pages via le layout racine. */}
+      <Script id="gtm" strategy="afterInteractive">
+        {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`}
+      </Script>
       <body className="bg-background text-on-background font-body-md text-body-md">
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+            title="Google Tag Manager"
+          />
+        </noscript>
         <a
           href="#contenu"
           className="sr-only focus:not-sr-only focus:absolute focus:z-60 focus:top-4 focus:left-4 focus:bg-primary focus:text-on-primary focus:px-4 focus:py-2 focus:rounded-lg"
