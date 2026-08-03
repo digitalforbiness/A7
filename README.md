@@ -121,5 +121,28 @@ Les variables de build (`NEXT_PUBLIC_BASE_PATH`, `NEXT_PUBLIC_GTM_ID`) sont déc
 le workflow, pas dans le code : voir [`.env.example`](.env.example) pour les reproduire en
 local.
 
-Sans domaine personnalisé (publication sur `username.github.io/<repo>`), supprimer le
-`CNAME` et décommenter `basePath` dans [`next.config.ts`](next.config.ts).
+### Domaine personnalisé
+
+Le site est servi à la racine de `a7emailing.com`. Deux réglages vont de pair, et
+**changer l'un sans l'autre casse le site** :
+
+| Publication | `NEXT_PUBLIC_BASE_PATH` (workflow) | Settings → Pages → Custom domain |
+| --- | --- | --- |
+| `a7emailing.com` | `""` | `a7emailing.com` |
+| `digitalforbiness.github.io/A7` | `/A7` | *(vide)* |
+
+Le domaine doit être déclaré **dans les réglages du dépôt** : les enregistrements DNS
+seuls ne suffisent pas. Les IP GitHub Pages étant mutualisées, c'est le nom de domaine
+présenté dans la requête qui désigne le dépôt à servir — un domaine non déclaré reçoit
+« Site not found ». [`public/CNAME`](public/CNAME) accompagne ce réglage dans l'export.
+
+DNS attendu côté registrar (zone chez OVH) :
+
+| Type | Nom | Valeur |
+| --- | --- | --- |
+| A | *(racine)* | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` |
+| AAAA | *(racine)* | `2606:50c0:8000::153` … `8003::153` |
+| CNAME | `www` | `digitalforbiness.github.io.` |
+
+L'apex étant déclaré comme domaine personnalisé, GitHub redirige `www` vers la racine.
+Ne pas toucher aux `MX`, aux `A` de `smtp1`/`smtp2` ni au SPF : la messagerie en dépend.
