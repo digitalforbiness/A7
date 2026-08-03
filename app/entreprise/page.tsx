@@ -14,27 +14,28 @@ export default function EntreprisePage() {
       {/* TopNavBar */}
       <div className="pt-24">
         {/* Hero Section: Notre Vision (Gilles Sabas) */}
-        <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-surface hero-gradient px-margin-mobile md:px-margin-desktop py-stack-lg">
+        <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-deep-purple px-margin-mobile md:px-margin-desktop py-stack-lg">
           <div className="max-w-container-max mx-auto grid md:grid-cols-2 gap-12 items-center w-full">
             <div className="space-y-6">
-              <span className="bg-primary-fixed-dim text-primary font-label-sm text-label-sm px-4 py-1 rounded-full uppercase tracking-widest">
+              <span className="bg-secondary-container/20 text-secondary-container font-label-sm text-label-sm px-4 py-1 rounded-full uppercase tracking-widest">
                 Notre Vision
               </span>
-              <h1 className="font-display-lg text-display-lg text-primary leading-tight">
-                La satisfaction de nos clients est notre moteur principal
+              <h1 className="font-display-lg text-display-lg text-on-primary leading-tight">
+                La satisfaction de nos clients est notre{" "}
+                <span className="text-secondary-fixed-dim">moteur principal</span>
               </h1>
-              <p className="font-body-lg text-body-lg text-on-surface-variant max-w-lg italic border-l-4 border-vibrant-orange pl-4">
+              <p className="font-body-lg text-body-lg text-surface-variant/80 max-w-lg italic border-l-4 border-vibrant-orange pl-4">
                 «&nbsp;Grimpons ensemble vers les sommets de votre réussite !&nbsp;» —{" "}
                 <span className="font-bold">Gilles Sabas</span>, Fondateur
               </p>
               <div className="space-y-4 pt-2">
-                <p className="text-on-surface-variant font-semibold">Nos 4 points cardinaux :</p>
+                <p className="text-surface-variant/70 font-semibold">Nos 4 points cardinaux :</p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <li className="flex items-start gap-2">
                     <span className="material-symbols-outlined text-vibrant-orange shrink-0">
                       sentiment_very_satisfied
                     </span>{" "}
-                    <span className="text-body-md">
+                    <span className="text-body-md text-surface-variant/90">
                       Des utilisateurs <span className="font-bold">heureux</span>
                     </span>
                   </li>
@@ -42,7 +43,7 @@ export default function EntreprisePage() {
                     <span className="material-symbols-outlined text-vibrant-orange shrink-0">
                       support_agent
                     </span>{" "}
-                    <span className="text-body-md">
+                    <span className="text-body-md text-surface-variant/90">
                       Des utilisateurs <span className="font-bold">bien accompagnés</span>
                     </span>
                   </li>
@@ -50,7 +51,7 @@ export default function EntreprisePage() {
                     <span className="material-symbols-outlined text-vibrant-orange shrink-0">
                       trending_up
                     </span>{" "}
-                    <span className="text-body-md">
+                    <span className="text-body-md text-surface-variant/90">
                       Des utilisateurs <span className="font-bold">qui réussissent</span>
                     </span>
                   </li>
@@ -58,7 +59,7 @@ export default function EntreprisePage() {
                     <span className="material-symbols-outlined text-vibrant-orange shrink-0">
                       handshake
                     </span>{" "}
-                    <span className="text-body-md">
+                    <span className="text-body-md text-surface-variant/90">
                       Des relations <span className="font-bold">dans la durée</span>
                     </span>
                   </li>
@@ -72,7 +73,7 @@ export default function EntreprisePage() {
                   Nous Contacter <span className="material-symbols-outlined">arrow_forward</span>
                 </Link>{" "}
                 <Link
-                  className="inline-flex items-center justify-center border-2 border-primary text-primary px-8 py-4 rounded-lg font-bold hover:bg-primary hover:text-white transition-all"
+                  className="inline-flex items-center justify-center border-2 border-white/40 text-on-primary px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-deep-purple transition-all"
                   href="/nos-clients"
                 >
                   Voir nos références
