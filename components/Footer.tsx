@@ -99,6 +99,13 @@ export default function Footer() {
             ))}
           </ul>
         </div>
+
+        {/* Signature de l'agence qui réalise et opère le site. */}
+        <div className="mt-8 flex justify-center">
+          <p className="text-label-sm font-label-sm text-surface-variant/50">
+            Powered by <span className="font-bold text-surface-variant/70">DFB</span>
+          </p>
+        </div>
       </div>
     </footer>
   );
