@@ -40,9 +40,9 @@ jobs:
       - name: Build (export statique dans out/)
         run: npm run build
         env:
-          # Sous-chemin de la GitHub Page projet (digitalforbiness.github.io/A7).
-          # À vider lors du passage à un domaine personnalisé à la racine.
-          NEXT_PUBLIC_BASE_PATH: /A7
+          # Le site est servi à la racine du domaine personnalisé a7emailing.com :
+          # aucun sous-chemin. (Sur la GitHub Page projet, il faudrait /A7.)
+          NEXT_PUBLIC_BASE_PATH: ""
           # Conteneur Google Tag Manager (identifiant public, pas un secret).
           # Seul le site déployé mesure : en local, la variable est absente.
           NEXT_PUBLIC_GTM_ID: GTM-PRW38XRL
