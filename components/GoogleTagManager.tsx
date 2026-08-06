@@ -1,14 +1,11 @@
-import Script from "next/script";
-import { consentBootstrapScript } from "@/lib/consent-mode";
-
 /**
- * Conteneur Google Tag Manager, branché sur le Consent Mode v2.
+ * Conteneur Google Tag Manager, chargé sans condition.
  *
- * Volontairement écrit à la main plutôt qu'avec `@next/third-parties` : ce
- * composant charge GTM *après* avoir posé l'état de consentement par défaut,
- * l'ordre exact qu'impose le Consent Mode. Un `<GoogleTagManager />` importé du
- * paquet chargerait le conteneur sans cette garantie, et une balise pourrait
- * partir avant que le choix du visiteur soit connu.
+ * Le composant est le premier enfant de `<body>` : le script s'exécute dès
+ * l'analyse du HTML, au plus tôt, comme le demande la procédure d'installation
+ * fournie par GTM. Aucun signal de consentement n'est posé — les balises du
+ * conteneur partent pour tous les visiteurs, quel que soit le choix affiché
+ * dans le bandeau cookies.
  *
  * L'identifiant vient de l'environnement (voir `.env.example`) : sans lui, rien
  * n'est injecté — un `npm run dev` ou une préversion n'envoie donc aucune mesure.
@@ -29,17 +26,10 @@ export default function GoogleTagManager() {
 
   return (
     <>
-      {/* (1) Consentement : script inline volontairement hors `next/script`.
-          `beforeInteractive` passerait par la file d'attente du runtime Next
-          (`__next_s`) ; ici le code s'exécute dès l'analyse du HTML, sans
-          dépendre d'aucun bundle, donc toujours avant le chargement du
-          conteneur ci-dessous. */}
-      <script dangerouslySetInnerHTML={{ __html: consentBootstrapScript() }} />
-
-      {/* (2) Conteneur GTM : snippet officiel, chargé une fois la page interactive. */}
-      <Script id="gtm" strategy="afterInteractive">
-        {gtmLoaderScript(GTM_ID)}
-      </Script>
+      {/* Snippet officiel, volontairement en clair plutôt qu'avec `next/script` :
+          aucune stratégie de chargement ne s'interpose, le conteneur part
+          immédiatement. */}
+      <script dangerouslySetInnerHTML={{ __html: gtmLoaderScript(GTM_ID) }} />
 
       {/* Repli sans JavaScript : la mesure de page reste possible. */}
       <noscript>

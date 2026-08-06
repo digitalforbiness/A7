@@ -33,13 +33,12 @@ app/
   not-found.tsx           Page 404 (exportée en out/404.html)
   globals.css             Design tokens A7 + classes héritées des maquettes
 components/               Header, Footer, Logo, Accordion, ContactForm, SubscriptionForm…
-  GoogleTagManager.tsx    Conteneur GTM + amorçage du consentement
+  GoogleTagManager.tsx    Conteneur GTM (chargé sans condition)
 lib/
   navigation.ts           Routes, coordonnées et clé Web3Forms
   submit-form.ts          Envoi de formulaire via Web3Forms (repli mailto)
   clients.ts              Mur de logos clients
   cookie-consent-store.ts Store localStorage du consentement (validité 13 mois)
-  consent-mode.ts         Signaux Google Consent Mode v2
 .env.example              Variables de build (identifiant GTM, sous-chemin)
 public/
   CNAME                   Domaine GitHub Pages
@@ -69,16 +68,18 @@ partagée de Web3Forms (`HCAPTCHA_SITE_KEY`) ; pour la vérification côté serv
 activer hCaptcha pour le formulaire dans le tableau de bord Web3Forms.
 
 **Mesure d'audience** — Google Tag Manager est chargé par
-[components/GoogleTagManager.tsx](components/GoogleTagManager.tsx) dans l'ordre imposé par
-le **Consent Mode v2** : un script inline pose l'état par défaut (`denied`) et restaure le
-choix du visiteur dès l'analyse du HTML, puis le conteneur se charge une fois la page
-interactive. Le bandeau cookies pousse ensuite les changements via
-[lib/consent-mode.ts](lib/consent-mode.ts), seul endroit où la correspondance
-« case du bandeau → signal Google » est définie.
+[components/GoogleTagManager.tsx](components/GoogleTagManager.tsx), premier enfant de
+`<body>` : le snippet officiel s'exécute dès l'analyse du HTML, sans condition.
+
+> ⚠️ **Le chargement n'est pas soumis au consentement.** Le Consent Mode v2 a été retiré
+> à la demande du client : les balises du conteneur se déclenchent pour tous les
+> visiteurs, y compris ceux qui refusent dans le bandeau. Le bandeau enregistre le choix
+> localement mais ne pilote plus Google. À rétablir si le site doit être conforme au
+> RGPD/aux recommandations CNIL sur les cookies de mesure.
 
 L'identifiant vient de `NEXT_PUBLIC_GTM_ID` : absent (cas du `npm run dev`), aucun script
 n'est injecté et rien n'est mesuré. Le déploiement le fournit via
-[deploy.yml](.github/workflows/deploy.yml). Le consentement est stocké 13 mois
+[deploy.yml](.github/workflows/deploy.yml). Le choix du bandeau est stocké 13 mois
 (recommandation CNIL) ; passé ce délai, le bandeau réapparaît.
 
 > **À faire dans l'interface GTM** : le conteneur ne contient aujourd'hui aucune balise —

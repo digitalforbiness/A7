@@ -17,7 +17,6 @@ import {
   saveConsent,
   subscribe,
 } from "@/lib/cookie-consent-store";
-import { pushConsentUpdate } from "@/lib/consent-mode";
 
 type CookieConsentValue = {
   consent: Consent | null;
@@ -43,10 +42,10 @@ export default function CookieConsentProvider({ children }: { children: React.Re
   const [analytics, setAnalytics] = useState(true);
   const [marketing, setMarketing] = useState(false);
 
+  // Le choix est enregistré côté navigateur uniquement : GTM est chargé sans
+  // condition (voir components/GoogleTagManager.tsx) et n'est pas piloté d'ici.
   const persist = useCallback((choice: Omit<Consent, "decidedAt">) => {
     saveConsent(choice);
-    // Répercute le choix vers Google Consent Mode (GTM).
-    pushConsentUpdate(choice);
     setModalOpen(false);
   }, []);
 

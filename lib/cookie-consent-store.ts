@@ -6,7 +6,7 @@
  * onglets ouverts synchronisés.
  */
 
-/** Clé localStorage du choix. Partagée avec le script d'amorçage du Consent Mode. */
+/** Clé localStorage du choix du visiteur. */
 export const STORAGE_KEY = "a7-cookie-consent";
 
 /**
